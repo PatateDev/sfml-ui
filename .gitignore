@@ -11,3 +11,13 @@
 *.lai
 *.la
 *.a
+
+#Binaries folder
+Debug
+Release
+bin
+
+#Eclipse files
+.project
+.cproject
+.settings
