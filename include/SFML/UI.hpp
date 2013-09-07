@@ -27,5 +27,7 @@
 #include <SFML/UI/Component.h>
 #include <SFML/UI/Label.h>
 #include <SFML/UI/Focusable.h>
+#include <SFML/UI/AbstractButton.h>
+#include <SFML/UI/Button.h>
 
 #endif /* UI_HPP_ */
