@@ -18,7 +18,7 @@
 #ifndef ABSTRACTBUTTON_H_
 #define ABSTRACTBUTTON_H_
 
-#include "Focusable.h"
+#include <SFML/UI/Focusable.h>
 
 namespace sf
 {

@@ -80,6 +80,13 @@ void Button::updateFixed(sf::Time delta)
 
 }
 
+void Button::doClick()
+{
+	m_clicked = true;
+	onClick();
+	m_clicked = false;
+}
+
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	AbstractButton::draw(target, states);

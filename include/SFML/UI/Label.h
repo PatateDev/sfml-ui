@@ -19,13 +19,14 @@
 #define LABEL_H_
 
 #include <SFML/UI/Component.h>
+#include <SFML/UI/IText.h>
 
 namespace sf
 {
 namespace ui
 {
 
-class Label: public Component
+class Label : public Component, public IText
 {
 public:
 
@@ -89,48 +90,48 @@ public:
 	/*
 	 * Returns the text's string
 	 */
-	const sf::String& getText() const;
+	virtual const sf::String& getText() const;
 
 	/*
-	 * Sets the text's string of the label
-	 * Don't forget to set the font ;)
+	 * Sets the text's string of the component
+	 * Don't forget to set the font
 	 * Params:
-	 * 	text - the new string of the label
+	 * 	text - the new string of the component
 	 */
-	void setText(sf::String const &text);
+	virtual void setText(sf::String const &text);
 
 	/*
-	 * Returns the font of the label, if any returns null
+	 * Returns the font of the component, if any returns null
 	 */
-	const sf::Font* getFont() const;
+	virtual const sf::Font* getFont() const;
 
 	/*
-	 * Sets the font of the label's text
+	 * Sets the font of the component's text
 	 */
-	void setFont(sf::Font const &font);
+	virtual void setFont(sf::Font const &font);
 
 	/*
-	 * Returns the font's size of the label
+	 * Returns the font's size of the component
 	 */
-	unsigned int getFontSize() const;
+	virtual unsigned int getFontSize() const;
 
 	/*
-	 * Set the font's size of the label
+	 * Set the font's size of the component
 	 * Params:
 	 * 	size - the font's size
 	 */
-	void setFontSize(unsigned int size);
+	virtual void setFontSize(unsigned int size);
 
 	/*
 	 * Returns the font's color of the text
 	 */
-	sf::Color getFontColor() const;
+	virtual sf::Color getFontColor() const;
 
 	/*
 	 * Sets the color's font of the text
 	 * Params: the text's color
 	 */
-	void setFontColor(sf::Color color);
+	virtual void setFontColor(sf::Color color);
 
 	/*
 	 * Returns the label's image or null
