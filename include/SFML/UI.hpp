@@ -19,7 +19,7 @@
 #define UI_HPP_
 
 #define SFML_UI_VERSION_MAJOR 0
-#define SFML_UI_VERSION_MINOR 1
+#define SFML_UI_VERSION_MINOR 2
 #define SFML_UI_VERSION_REVISION 0
 
 #include <SFML/Graphics.hpp>
