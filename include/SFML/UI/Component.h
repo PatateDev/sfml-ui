@@ -125,7 +125,7 @@ public:
 	/*
 	 * Returns the size of the component
 	 */
-	sf::Vector2f getSize() const;
+	virtual sf::Vector2f getSize() const;
 	//--------------------------------------------------------------------
 
 	//FIELDS -------------------------------------------------------------

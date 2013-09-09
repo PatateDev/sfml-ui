@@ -29,5 +29,6 @@
 #include <SFML/UI/Focusable.h>
 #include <SFML/UI/AbstractButton.h>
 #include <SFML/UI/Button.h>
+#include <SFML/UI/CheckBox.h>
 
 #endif /* UI_HPP_ */

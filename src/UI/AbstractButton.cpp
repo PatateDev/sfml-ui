@@ -49,11 +49,9 @@ void AbstractButton::updateEvent(const sf::Event& event)
 
 		if (m_sprite.getGlobalBounds().contains(pos))
 		{
-			m_focused = true;
 			onClick();
 		}
-		else
-			m_focused = false;
+
 		break;
 	}
 	default:

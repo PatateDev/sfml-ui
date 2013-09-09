@@ -33,6 +33,9 @@ SFMLUtils::~SFMLUtils()
 //From http://en.sfml-dev.org/forums/index.php?topic=7174
 sf::Vector2f SFMLUtils::getLocalSize(const sf::Text& text)
 {
+	if (text.getFont() == 0)
+		return sf::Vector2f(0, 0);
+
     const sf::String str = text.getString() + '\n';
 
     float maxLineWidth = 0.f;
