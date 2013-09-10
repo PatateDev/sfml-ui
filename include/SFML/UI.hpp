@@ -30,5 +30,6 @@
 #include <SFML/UI/AbstractButton.h>
 #include <SFML/UI/Button.h>
 #include <SFML/UI/CheckBox.h>
+#include <SFML/UI/KeyField.h>
 
 #endif /* UI_HPP_ */

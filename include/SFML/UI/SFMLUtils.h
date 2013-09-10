@@ -36,6 +36,7 @@ public:
 
 	//METHODS ------------------------------------------------------------
 	static sf::Vector2f getLocalSize(const sf::Text& text);
+	static sf::String keyToString(sf::Keyboard::Key key);
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
