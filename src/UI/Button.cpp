@@ -30,10 +30,7 @@ void Button::updateEvent(const sf::Event& event)
 	switch (event.type)
 	{
 	case sf::Event::MouseMoved:
-	{
-		sf::Vector2f pos(event.mouseMove.x, event.mouseMove.y);
-
-		m_focused = m_sprite.getGlobalBounds().contains(pos);
+		m_focused = isCoordOnComponent(event.mouseMove.x, event.mouseMove.y);
 
 		if (m_focused && sf::Mouse::isButtonPressed(sf::Mouse::Left) && m_textureFired)
 			m_sprite.setTexture(*m_textureFired, false);
@@ -43,12 +40,11 @@ void Button::updateEvent(const sf::Event& event)
 			m_sprite.setTexture(*m_texture, false);
 
 		break;
-	}
 	case sf::Event::MouseButtonPressed:
 		if (event.mouseButton.button != sf::Mouse::Left)
 			break;
 
-		m_clicked = m_sprite.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y);
+		m_clicked = checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
 
 		if (m_clicked && m_textureFired)
 			m_sprite.setTexture(*m_textureFired, false);
@@ -60,7 +56,7 @@ void Button::updateEvent(const sf::Event& event)
 		if (event.mouseButton.button != sf::Mouse::Left)
 			break;
 
-		if (m_sprite.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y) && m_textureFocused)
+		if (isCoordOnComponent(event.mouseButton.x, event.mouseButton.y) && m_textureFocused)
 		{
 			onClick();
 			m_sprite.setTexture(*m_textureFocused, false);

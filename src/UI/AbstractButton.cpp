@@ -41,19 +41,13 @@ void AbstractButton::updateEvent(const sf::Event& event)
 	switch(event.type)
 	{
 	case sf::Event::MouseButtonReleased:
-	{
-		if (event.mouseButton.button != sf::Mouse::Left)
-			break;
 
-		sf::Vector2f pos(event.mouseButton.x, event.mouseButton.y);
-
-		if (m_sprite.getGlobalBounds().contains(pos))
+		if (checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y))
 		{
 			onClick();
 		}
 
 		break;
-	}
 	default:
 		break;
 	}

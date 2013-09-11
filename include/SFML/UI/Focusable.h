@@ -51,7 +51,16 @@ public:
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
+protected:
+	/*
+	 * Returns whether the click should focus the component or not
+	 */
+	virtual bool checkClickOn(sf::Mouse::Button button, int x, int y) const;
 
+	/*
+	 * Returns whether the given coordinate is on the component or out
+	 */
+	virtual bool isCoordOnComponent(int x, int y) const;
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------

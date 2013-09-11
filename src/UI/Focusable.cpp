@@ -57,3 +57,15 @@ void Focusable::setTextureFocused(const sf::Texture& textureFocused)
 {
 	m_textureFocused = &textureFocused;
 }
+
+bool Focusable::checkClickOn(sf::Mouse::Button button, int x, int y) const
+{
+	return button == sf::Mouse::Left && isCoordOnComponent(x, y);
+}
+
+bool Focusable::isCoordOnComponent(int x, int y) const
+{
+	sf::Vector2f pos(x, y);
+
+	return m_sprite.getGlobalBounds().contains(pos);
+}

@@ -99,7 +99,6 @@ public:
 	 * Remove the key from the allowed keys set
 	 */
 	void removeKey(sf::Keyboard::Key key);
-	/*
 
 	/*
 	 * Returns the text's string
