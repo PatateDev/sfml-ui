@@ -108,10 +108,12 @@ sf::String SFMLUtils::keyToString(sf::Keyboard::Key key)
 		return "U";
 	case sf::Keyboard::V:
 		return "V";
-	case sf::Keyboard::X:
+	case sf::Keyboard::W:
 		return "W";
-	case sf::Keyboard::Y:
+	case sf::Keyboard::X:
 		return "X";
+	case sf::Keyboard::Y:
+		return "Y";
 	case sf::Keyboard::Z:
 		return "Z";
 	case sf::Keyboard::Num0:
