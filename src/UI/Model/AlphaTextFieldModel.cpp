@@ -15,24 +15,20 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef UI_HPP_
-#define UI_HPP_
+#include <SFML/UI/Model/AlphaTextFieldModel.h>
 
-#define SFML_UI_VERSION_MAJOR 0
-#define SFML_UI_VERSION_MINOR 2
-#define SFML_UI_VERSION_REVISION 0
+using namespace sf::ui;
 
-#include <SFML/Graphics.hpp>
+AlphaTextFieldModel::AlphaTextFieldModel()
+{
+	for (sf::Uint32 i = 'A'; i <= 'Z'; i++)
+		m_whitelist.insert(i);
 
-#include <SFML/UI/Component.h>
-#include <SFML/UI/Label.h>
-#include <SFML/UI/Focusable.h>
-#include <SFML/UI/AbstractButton.h>
-#include <SFML/UI/Button.h>
-#include <SFML/UI/CheckBox.h>
-#include <SFML/UI/KeyField.h>
-#include <SFML/UI/TextField.h>
+	for (sf::Uint32 i = 'a'; i <= 'z'; i++)
+		m_whitelist.insert(i);
+}
 
-#include <SFML/UI/Model/DefaultTextFieldModel.h>
+AlphaTextFieldModel::~AlphaTextFieldModel()
+{
 
-#endif /* UI_HPP_ */
+}

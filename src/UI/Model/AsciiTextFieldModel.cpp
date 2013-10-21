@@ -15,24 +15,21 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef UI_HPP_
-#define UI_HPP_
+#include <SFML/UI/Model/AsciiTextFieldModel.h>
 
-#define SFML_UI_VERSION_MAJOR 0
-#define SFML_UI_VERSION_MINOR 2
-#define SFML_UI_VERSION_REVISION 0
+using namespace sf::ui;
 
-#include <SFML/Graphics.hpp>
+AsciiTextFieldModel::AsciiTextFieldModel()
+{
 
-#include <SFML/UI/Component.h>
-#include <SFML/UI/Label.h>
-#include <SFML/UI/Focusable.h>
-#include <SFML/UI/AbstractButton.h>
-#include <SFML/UI/Button.h>
-#include <SFML/UI/CheckBox.h>
-#include <SFML/UI/KeyField.h>
-#include <SFML/UI/TextField.h>
+}
 
-#include <SFML/UI/Model/DefaultTextFieldModel.h>
+AsciiTextFieldModel::~AsciiTextFieldModel()
+{
 
-#endif /* UI_HPP_ */
+}
+
+bool AsciiTextFieldModel::isCharAllowed(sf::Uint32 c) const
+{
+	return c >= 32 && c <= 126;
+}
