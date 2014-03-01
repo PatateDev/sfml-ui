@@ -17,6 +17,7 @@ Debug
 Release
 bin
 build
+build-static
 
 #Eclipse files
 .project
@@ -26,3 +27,6 @@ build
 #IDE Files generated
 Eclipse
 CodeBlocks
+
+#Temporary files
+*~
