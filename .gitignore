@@ -16,8 +16,13 @@
 Debug
 Release
 bin
+build
 
 #Eclipse files
 .project
 .cproject
 .settings
+
+#IDE Files generated
+Eclipse
+CodeBlocks
