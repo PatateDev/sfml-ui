@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Sfml-ui : A simple UI library for SFML" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sfml-ui</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/PatateDev/sfml-ui">View on GitHub</a>
+
+          <h1 id="project_title">Sfml-ui</h1>
+          <h2 id="project_tagline">A simple UI library for SFML</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/PatateDev/sfml-ui/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/PatateDev/sfml-ui/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="sfml-ui" class="anchor" href="#sfml-ui"><span class="octicon octicon-link"></span></a>sfml-ui</h1>
+
+<p>A simple UI library for SFML.
+Works on GNU/Linux, Windows. Currently not tested on Mac OS X.</p>
+
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>Checkout this <a href="doc/index.html">page</a> to see the documentation.</p>
+
+<h2>
+<a name="how-to-compile" class="anchor" href="#how-to-compile"><span class="octicon octicon-link"></span></a>How to compile</h2>
+
+<p><em>Make sure you have already compiled SFML and CMake is installed</em></p>
+
+<p>If you use a graphical version of CMake :</p>
+
+<ol>
+<li>Open CMake</li>
+<li>Enter the path of the source (the root folder of the project, not src folder)</li>
+<li>Enter the path of the folder where you would like the library to be compiled</li>
+<li>Click on the button configure and choose your generator</li>
+<li>Set up the different settings (i.e change the path to your SFML libraries)</li>
+<li>Click on generate button</li>
+<li>If you choose 'Makefiles' as generator, open a terminal in your folder and type your system's make command, if you choose your IDE as generator, then open your IDE in your folder</li>
+</ol><p>Else, enter these command in your terminal :</p>
+
+<ul>
+<li><code>mkdir build &amp;&amp; cd build</code></li>
+<li>
+<code>cmake .. -G "Unix Makefiles"</code> replace "Unix Makefiles" by your makefile generator</li>
+<li><code>make</code></li>
+</ul><p>And to install : <code>sudo make install</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sfml-ui maintained by <a href="https://github.com/PatateDev">PatateDev</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
