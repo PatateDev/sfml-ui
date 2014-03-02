@@ -18,12 +18,11 @@
 #ifndef COMPONENT_EVENT_H
 #define COMPONENT_EVENT_H
 
-#include <SFML/UI/Component.h>
-
 namespace sf
 {
 namespace ui
 {
+class Component;
 
 class ComponentEvent
 {
@@ -34,7 +33,7 @@ public:
      * Params:
      *  source - the component that triggers this event
      */
-    ComponentEvent(sf::ui::Component *source);
+    ComponentEvent(Component *source);
 
     virtual ~ComponentEvent();
     //--------------------------------------------------------------------
@@ -44,12 +43,12 @@ public:
     /*
      * Return the component that triggers this event
      */
-    sf::ui::Component* getSource() const;
+    Component* getSource() const;
     //--------------------------------------------------------------------
     
     //FIELDS -------------------------------------------------------------
 protected:
-    sf::ui::Component *m_source;
+    Component *m_source;
     //--------------------------------------------------------------------
 };
 

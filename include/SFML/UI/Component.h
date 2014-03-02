@@ -19,13 +19,14 @@
 #define COMPONENT_H_
 
 #include <SFML/Graphics.hpp>
+#include <SFML/UI/ComponentObservable.h>
 
 namespace sf
 {
 namespace ui
 {
 
-class Component : public Drawable
+class Component : public Drawable, public ComponentObservable
 {
 
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------

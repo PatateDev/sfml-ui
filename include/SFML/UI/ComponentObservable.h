@@ -20,12 +20,12 @@
 
 #include <vector>
 #include <SFML/UI/ComponentObserver.h>
-#include <SFML/UI/Event/ComponentEvent.h>
 
 namespace sf
 {
 namespace ui
 {
+class ComponentEvent;
 
 class ComponentObservable
 {

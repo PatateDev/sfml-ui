@@ -16,6 +16,7 @@
  */
 
 #include <SFML/UI/ComponentObservable.h>
+#include <SFML/UI/Event/ComponentEvent.h>
 
 using namespace sf::ui;
 

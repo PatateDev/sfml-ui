@@ -20,7 +20,8 @@
 using namespace sf::ui;
 
 Component::Component()
-: m_sprite(), m_texture(0)
+: ComponentObservable(),
+  m_sprite(), m_texture(0)
 {
 
 }

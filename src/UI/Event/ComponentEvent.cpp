@@ -15,6 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <SFML/UI/Event/ComponentEvent.h>
+#include <SFML/UI/Component.h>
 
 using namespace sf::ui;
 
