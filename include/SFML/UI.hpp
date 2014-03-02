@@ -36,6 +36,7 @@
 #include <SFML/UI/TextField.h>
 
 #include <SFML/UI/Event/ComponentEvent.h>
+#include <SFML/UI/Event/FocusedEvent.h>
 
 #include <SFML/UI/Model/TextFieldModel.h>
 #include <SFML/UI/Model/BlacklistTextFieldModel.h>

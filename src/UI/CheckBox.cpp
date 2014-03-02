@@ -55,7 +55,7 @@ void CheckBox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void CheckBox::onClick()
 {
-	m_focused = !m_focused;
+	setFocused(!m_focused);
 	m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
 }
 
@@ -74,7 +74,7 @@ void CheckBox::updateCoord()
 
 void CheckBox::setSelected(bool selected)
 {
-	m_focused = selected;
+	setFocused(selected);
 }
 
 sf::Vector2f CheckBox::getSize() const

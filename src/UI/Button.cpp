@@ -30,7 +30,7 @@ void Button::updateEvent(const sf::Event& event)
 	switch (event.type)
 	{
 	case sf::Event::MouseMoved:
-		m_focused = isCoordOnComponent(event.mouseMove.x, event.mouseMove.y);
+		setFocused(isCoordOnComponent(event.mouseMove.x, event.mouseMove.y));
 
 		if (m_focused && sf::Mouse::isButtonPressed(sf::Mouse::Left) && m_textureFired)
 			m_sprite.setTexture(*m_textureFired, false);

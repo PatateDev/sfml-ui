@@ -29,7 +29,7 @@ class ComponentEvent
     //CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
     /*
-     * Any object which extends of this can observe a component
+     * An event related to the source component
      * Params:
      *  source - the component that triggers this event
      */

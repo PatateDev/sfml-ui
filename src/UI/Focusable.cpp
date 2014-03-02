@@ -16,6 +16,7 @@
  */
 
 #include <SFML/UI/Focusable.h>
+#include <SFML/UI/Event/FocusedEvent.h>
 
 using namespace sf::ui;
 
@@ -45,7 +46,15 @@ bool Focusable::isFocused() const
 
 void Focusable::setFocused(bool focused)
 {
+    bool triggerEvent = m_focused != focused;
+
 	m_focused = focused;
+
+	if (triggerEvent)
+	{
+	    FocusedEvent event(this, focused);
+	    this->triggerEvent(event);
+	}
 }
 
 const sf::Texture* Focusable::getTextureFocused() const

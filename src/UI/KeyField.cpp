@@ -57,7 +57,7 @@ void KeyField::updateEvent(const sf::Event& event)
 		if (event.mouseButton.button != sf::Mouse::Left)
 			break;
 
-		m_focused = m_sprite.getGlobalBounds().contains(pos);
+		setFocused(m_sprite.getGlobalBounds().contains(pos));
 
 		break;
 	}
@@ -70,10 +70,10 @@ void KeyField::updateEvent(const sf::Event& event)
 			m_key = key;
 			m_text.setString(SFMLUtils::keyToString(m_key));
 			updateCoord();
-			m_focused = false;
+			setFocused(false);
 		}
 		else if (key == sf::Keyboard::Escape)
-			m_focused = false;
+			setFocused(false);
 
 		break;
 	}

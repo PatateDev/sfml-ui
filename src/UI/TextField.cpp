@@ -65,10 +65,10 @@ void TextField::updateEvent(const sf::Event& event)
 	{
 	case sf::Event::MouseButtonPressed:
 		if (checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y))
-			m_focused = true;
+			setFocused(true);
 		else if (event.mouseButton.button == sf::Mouse::Left && !isCoordOnComponent(event.mouseButton.x, event.mouseButton.y)
 					&& !(m_text.getString().getSize() == 0 && !m_canBeEmpty))
-			m_focused = false;
+			setFocused(false);
 
 		m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
 		break;
@@ -82,7 +82,7 @@ void TextField::updateEvent(const sf::Event& event)
 			if (m_text.getString().getSize() == 0 && !m_canBeEmpty)
 				break;
 
-			m_focused = false;
+			setFocused(false);
 			m_cursor = m_text.getString().getSize();
 			m_sprite.setTexture(*m_texture, false);
 			break;
