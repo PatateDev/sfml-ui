@@ -29,17 +29,22 @@ class AbstractButton : public Focusable
 {
 public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * Creates an empty abstract button that is implemented by buttons, check box ...
-	 */
+	
+    ////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates an empty abstract button that is implemented by buttons, check box ...
+	///
+    ////////////////////////////////////////////////////////////
 	AbstractButton();
 
-	/*
-	 * Creates an abstract button that is implemented by buttons, check box ...
-	 * Params:
-	 * 	texture - the basic texture of this abstract button
-	 * 	textureFocused - the texture when the abstract button is focused
-	 */
+    ////////////////////////////////////////////////////////////
+    ///
+	/// \brief Creates an abstract button that is implemented by buttons, check box ...
+	/// 
+	///	\param texture the basic texture of this abstract button
+	/// \param textureFocused the texture when the abstract button is focused
+    ///	
+    ////////////////////////////////////////////////////////////
 	AbstractButton(sf::Texture const &texture, sf::Texture const &textureFocused);
 
 	virtual ~AbstractButton();
@@ -47,18 +52,22 @@ public:
 
 	//METHODS ------------------------------------------------------------
 protected:
-	/*
-	 * Called when the button is clicked
-	 * That defines what the button does
-	 */
+    ////////////////////////////////////////////////////////////
+	///
+	/// \brief Called when the button is clicked
+	/// 
+	/// This function defines what the button does
+	///
+    ////////////////////////////////////////////////////////////
 	virtual void onClick() = 0;
 
 public:
-	/*
-	 * Update the component each time an event has been polled
-	 * Params:
-	 * 	event - the window's event polled
-	 */
+    ////////////////////////////////////////////////////////////
+	///
+	/// \brief Update the component each time an event has been polled
+	/// \param event the window's event polled
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateEvent(sf::Event const &event);
 	//--------------------------------------------------------------------
 
@@ -74,3 +83,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* ABSTRACTBUTTON_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::AbstractButton
+/// \brief Abstract class for all component that are button-like
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

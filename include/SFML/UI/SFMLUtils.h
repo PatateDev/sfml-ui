@@ -35,7 +35,23 @@ public:
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the local size of the text
+	///
+	/// \param text the text to check size
+	///
+	////////////////////////////////////////////////////////////
 	static sf::Vector2f getLocalSize(const sf::Text& text);
+	
+	////////////////////////////////////////////////////////////
+	///
+	/// \return string that describes the key
+	///
+	/// \param key the key to convert to string
+	///
+	////////////////////////////////////////////////////////////
 	static sf::String keyToString(sf::Keyboard::Key key);
 	//--------------------------------------------------------------------
 
@@ -51,3 +67,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* SFMLUTILS_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::SFMLUtils
+/// \brief A utility class
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

@@ -25,11 +25,6 @@ namespace sf
 namespace ui
 {
 
-/*
- * An interface that allow component to have a text.
- * Implement it in your component to make faster
- * components that use text.
- */
 class IText
 {
 public:
@@ -38,50 +33,67 @@ public:
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
-	/*
-	 * Returns the text's string
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the text's string
+	///
+	////////////////////////////////////////////////////////////
 	virtual const sf::String& getText() const = 0;
 
-	/*
-	 * Sets the text's string of the component
-	 * Don't forget to set the font
-	 * Params:
-	 * 	text - the new string of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the text's string of the component
+	/// Don't forget to set the font
+	///
+	/// \param text the new string of the component
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setText(sf::String const &text) = 0;
 
-	/*
-	 * Returns the font of the component, if any returns null
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font of the component, if any returns null
+	///
+	////////////////////////////////////////////////////////////
 	virtual const sf::Font* getFont() const = 0;
 
-	/*
-	 * Sets the font of the component's text
-	 */
+	////////////////////////////////////////////////////////////
+	/// 
+	/// \brief Sets the font of the component's text
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFont(sf::Font const &font) = 0;
 
-	/*
-	 * Returns the font's size of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font's size of the component
+	///
+	////////////////////////////////////////////////////////////
 	virtual unsigned int getFontSize() const = 0;
 
-	/*
-	 * Set the font's size of the component
-	 * Params:
-	 * 	size - the font's size
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the font's size of the component
+	///
+	/// \param size the font's size
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFontSize(unsigned int size) = 0;
 
-	/*
-	 * Returns the font's color of the text
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font's color of the text
+	///
+	////////////////////////////////////////////////////////////
 	virtual sf::Color getFontColor() const = 0;
 
-	/*
-	 * Sets the color's font of the text
-	 * Params: the text's color
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the color's font of the text
+	///
+	/// \param the text's color
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFontColor(sf::Color color) = 0;
 	//--------------------------------------------------------------------
 };
@@ -89,3 +101,14 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* ITEXT_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::IText
+/// \brief An interface that allow component to have a text.
+/// \ingroup ui
+///
+/// Implement it in your component to make faster
+/// components that use text.
+///
+////////////////////////////////////////////////////////////

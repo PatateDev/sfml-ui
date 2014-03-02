@@ -31,9 +31,12 @@ class Button : public AbstractButton, public IText
 public:
 
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * Creates a button without textures that does nothing
-	 */
+	
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button without textures that does nothing
+	///
+	////////////////////////////////////////////////////////////
 	Button()
 	: AbstractButton(),
 	  m_textureFired(0), m_text(), m_clicked(false),
@@ -42,14 +45,16 @@ public:
 
 	}
 
-	/*
-	 * Creates a button with textures that does nothing
-	 * Do not forget to set the font !
-	 * Params:
-	 * 	texture - the texture of this button
-	 * 	textureFocused - the texture when the button is focused
-	 * 	textureFired - the texture when the button is fired
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button with textures that does nothing
+	/// Do not forget to set the font !
+	///
+	///	\param texture the texture of this button
+	///	\param textureFocused the texture when the button is focused
+	/// \param textureFired the texture when the button is fired
+	///
+	////////////////////////////////////////////////////////////
 	Button(sf::Texture const &texture, sf::Texture const &textureFocused, sf::Texture const &textureFired)
 	: AbstractButton(texture, textureFocused),
 	  m_textureFired(&textureFired), m_text(), m_clicked(false),
@@ -58,13 +63,15 @@ public:
 
 	}
 
-	/*
-	 * Creates a button without textures that call a function in a object
-	 * Do not forget to set textures and font !
-	 * Params:
-	 * 	object - the object that contains the function to execute
-	 * 	function - the function to execute
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button without textures that call a function in a object
+	/// Do not forget to set textures and font !
+	///
+	/// \param object the object that contains the function to execute
+	///	\function the function to execute
+	///
+	////////////////////////////////////////////////////////////
 	template<typename C>
 	Button(C *object, void (C::*function)())
 	: AbstractButton(),
@@ -74,16 +81,18 @@ public:
 
 	}
 
-	/*
-	 * Creates a button with textures that call a function in a object
-	 * Do not forget to set the font !
-	 * Params:
-	 * 	object - the object that contains the function to execute
-	 * 	function - the function to execute
-	 * 	texture - the texture of this button
-	 * 	textureFocused - the texture when the button is focused
-	 * 	textureFired - the texture when the button is fired
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button with textures that call a function in a object
+	/// Do not forget to set the font !
+	///
+	///	\param object the object that contains the function to execute
+	/// \param function the function to execute
+	/// \param texture the texture of this button
+	/// \param textureFocused the texture when the button is focused
+	/// \param textureFired the texture when the button is fired
+	///
+	////////////////////////////////////////////////////////////
 	template<typename C>
 	Button(C *object, void (C::*function)(), sf::Texture const &texture, sf::Texture const &textureFocused, sf::Texture const &textureFired)
 	: AbstractButton(texture, textureFocused),
@@ -93,12 +102,14 @@ public:
 
 	}
 
-	/*
-	 * Creates a button without textures that call a function or a functor (struct with operator() )
-	 * Do not forget to set textures and font !
-	 * Params:
-	 * 	function - the function/functor to execute
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button without textures that call a function or a functor (struct with operator() )
+	/// Do not forget to set textures and font !
+	///
+	/// \param function the function/functor to execute
+	///
+	////////////////////////////////////////////////////////////
 	template<typename F>
 	Button(F function)
 	: AbstractButton(),
@@ -108,15 +119,17 @@ public:
 
 	}
 
-	/*
-	 * Creates a button with textures that call a function or a functor (struct with operator() )
-	 * Do not forget to set the font !
-	 * Params:
-	 * 	function - the function/functor to execute
-	 * 	texture - the texture of this button
-	 * 	textureFocused - the texture when the button is focused
-	 * 	textureFired - the texture when the button is fired
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a button with textures that call a function or a functor (struct with operator() )
+	/// Do not forget to set the font !
+	///
+	/// \param function the function/functor to execute
+	/// \param texture the texture of this button
+	/// \param textureFocused the texture when the button is focused
+	/// \param textureFired the texture when the button is fired
+	///
+	////////////////////////////////////////////////////////////
 	template<typename F>
 	Button(F function, sf::Texture const &texture, sf::Texture const &textureFocused, sf::Texture const &textureFired)
 	: AbstractButton(texture, textureFocused),
@@ -132,107 +145,142 @@ public:
 
 	//METHODS ------------------------------------------------------------
 protected:
-	/*
-	 * Called when the button is clicked
-	 * Execute the task
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Called when the button is clicked
+	/// Execute the task
+	///
+	////////////////////////////////////////////////////////////
 	virtual void onClick();
 
-	/*
-	 * Draw the component to the render target
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Draw the component to the render target
+	///
+	////////////////////////////////////////////////////////////
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-	/*
-	 * Called when the component need update its geometry
-	 * Inherit when you need to update some sprite
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Called when the component need update its geometry
+	/// Inherit when you need to update some sprite
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateCoord();
 
 public:
-	/*
-	 * Perform a click on the button
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Perform a click on the button
+	///
+	////////////////////////////////////////////////////////////
 	void doClick();
 
-	/*
-	 * Update the component each time an event has been polled
-	 * Params:
-	 * 	event - the window's event polled
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Update the component each time an event has been polled
+	///
+	/// \param event the window's event polled
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateEvent(sf::Event const &event);
 
-	/*
-	 * Update the component with the main loop's frequency.
-	 * Can be useful for animation, or time's needed stuff
-	 * Params:
-	 * 	delta - the time between this update and the last
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Update the component with the main loop's frequency
+	/// Can be useful for animation, or time's needed stuff
+	///
+	/// \param delta the time between this update and the last
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateFixed(sf::Time delta);
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
-	/*
-	 * Returns if the button is fired (or clicked)
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return if the button is fired (or clicked)
+	///
+	////////////////////////////////////////////////////////////
 	bool isFired() const;
 
-	/*
-	 * Returns the texture when the button is fired
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the texture when the button is fired
+	///
+	////////////////////////////////////////////////////////////
 	sf::Texture const *getTextureFired() const;
 
-	/*
-	 * Sets the texture fired
-	 * Params:
-	 * 	textureFired - the texture when the button is fired
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the texture fired
+	///
+	/// \param textureFired the texture when the button is fired
+	///
+	////////////////////////////////////////////////////////////
 	void setTextureFired(sf::Texture const *textureFired);
 
-	/*
-	 * Returns the text's string
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the text's string
+	///
+	////////////////////////////////////////////////////////////
 	virtual const sf::String& getText() const;
 
-	/*
-	 * Sets the text's string of the component
-	 * Don't forget to set the font
-	 * Params:
-	 * 	text - the new string of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the text's string of the component
+	/// Don't forget to set the font
+	///
+	/// \param text the new string of the component
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setText(sf::String const &text);
 
-	/*
-	 * Returns the font of the component, if any returns null
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font of the component, if any returns null
+	///
+	////////////////////////////////////////////////////////////
 	virtual const sf::Font* getFont() const;
 
-	/*
-	 * Sets the font of the component's text
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the font of the component's text
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFont(sf::Font const &font);
 
-	/*
-	 * Returns the font's size of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font's size of the component
+	///
+	////////////////////////////////////////////////////////////
 	virtual unsigned int getFontSize() const;
 
-	/*
-	 * Set the font's size of the component
-	 * Params:
-	 * 	size - the font's size
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the font's size of the component
+    ///
+	/// \param size the font's size
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFontSize(unsigned int size);
 
-	/*
-	 * Returns the font's color of the text
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the font's color of the text
+	///
+	////////////////////////////////////////////////////////////
 	virtual sf::Color getFontColor() const;
 
-	/*
-	 * Sets the color's font of the text
-	 * Params: the text's color
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Sets the color's font of the text
+	/// 
+	/// \param the text's color
+	///
+	////////////////////////////////////////////////////////////
 	virtual void setFontColor(sf::Color color);
 	//--------------------------------------------------------------------
 
@@ -248,3 +296,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* BUTTON_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::Button
+/// \brief A button which does a simply task when clicked
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////
