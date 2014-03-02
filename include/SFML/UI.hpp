@@ -25,6 +25,8 @@
 #include <SFML/Graphics.hpp>
 
 #include <SFML/UI/Component.h>
+#include <SFML/UI/ComponentObservable.h>
+#include <SFML/UI/ComponentObserver.h>
 #include <SFML/UI/Label.h>
 #include <SFML/UI/Focusable.h>
 #include <SFML/UI/AbstractButton.h>
@@ -33,6 +35,14 @@
 #include <SFML/UI/KeyField.h>
 #include <SFML/UI/TextField.h>
 
+#include <SFML/UI/Event/ComponentEvent.h>
+
+#include <SFML/UI/Model/TextFieldModel.h>
+#include <SFML/UI/Model/BlacklistTextFieldModel.h>
 #include <SFML/UI/Model/DefaultTextFieldModel.h>
+#include <SFML/UI/Model/WhitelistTextFieldModel.h>
+#include <SFML/UI/Model/AlphaNumericTextFieldModel.h>
+#include <SFML/UI/Model/AsciiTextFieldModel.h>
+#include <SFML/UI/Model/NumericTextFieldModel.h>
 
 #endif /* UI_HPP_ */

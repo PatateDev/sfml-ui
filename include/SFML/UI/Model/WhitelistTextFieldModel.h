@@ -16,7 +16,7 @@
  */
 
 #ifndef WITHELISTTEXTFIELDMODEL_H_
-#define WHITELISTTEXTFIELDMODEL_H_
+#define WITHELISTTEXTFIELDMODEL_H_
 
 #include <SFML/UI/Model/TextFieldModel.h>
 #include <set>
