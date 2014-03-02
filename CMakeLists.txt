@@ -5,7 +5,6 @@ set(SFML_UI_VERSION_MAJOR 0)
 set(SFML_UI_VERSION_MINOR 3)
 set(SFML_UI_VERSION_REVISION 0)
 
-set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type : Release or Debug" FORCE)
 set(SFML_INCLUDE_PATH  /usr/include CACHE PATH "Location of SFML's include folder")
 set(SFML_LIBRARY_PATH /usr/lib CACHE PATH "Location of SFML's library folder")
 set(BUILD_SHARED TRUE CACHE BOOL "Build the library shared or not (static)")
