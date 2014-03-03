@@ -1,19 +1,21 @@
 cmake_minimum_required(VERSION 2.6)
 project(sfml-ui)
 
-set(SFML_UI_VERSION_MAJOR 0)
-set(SFML_UI_VERSION_MINOR 3)
-set(SFML_UI_VERSION_REVISION 0)
+if (NOT CMAKE_BUILD_TYPE)
+	set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE)
+endif()
 
-set(SFML_INCLUDE_PATH  /usr/include CACHE PATH "Location of SFML's include folder")
-set(SFML_LIBRARY_PATH /usr/lib CACHE PATH "Location of SFML's library folder")
-set(BUILD_SHARED TRUE CACHE BOOL "Build the library shared or not (static)")
+if (NOT SFML_INCLUDE_PATH)
+	set(SFML_INCLUDE_PATH  /usr/include CACHE PATH "Location of SFML's include folder")
+endif()
+if (NOT BUILD_SHARED)
+	set(BUILD_SHARED TRUE CACHE BOOL "Build the library shared or not (static)")
+endif()
 
-set(LIBRARY_OUTPUT_PATH lib/)
-set(SFML_LIBS sfml-graphics sfml-window sfml-system)
+set(LIBRARY_OUTPUT_PATH lib)
+
 include_directories(include)
 include_directories(${SFML_INCLUDE_PATH})
-link_directories(${SFML_LIBRARY_PATH})
 
 if(BUILD_SHARED)
     set(BUILD_NAME SHARED)
@@ -32,11 +34,6 @@ add_library(
     sfml-ui
     ${BUILD_NAME}
     ${sources}
-)
-
-target_link_libraries(
-    sfml-ui
-    ${SFML_LIBS}
 )
 
 install(TARGETS sfml-ui DESTINATION lib)
