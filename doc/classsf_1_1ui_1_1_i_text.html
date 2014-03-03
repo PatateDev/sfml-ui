@@ -113,6 +113,9 @@ $(document).ready(function(){initNavTree('classsf_1_1ui_1_1_i_text.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>An interface that allow component to have a text.Implement it in your component to make faster components that use text.  
+ <a href="classsf_1_1ui_1_1_i_text.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_i_text_8h_source.html">IText.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sf::ui::IText:</div>
@@ -121,10 +124,10 @@ Inheritance diagram for sf::ui::IText:</div>
   <img src="classsf_1_1ui_1_1_i_text.png" usemap="#sf::ui::IText_map" alt=""/>
   <map id="sf::ui::IText_map" name="sf::ui::IText_map">
 <area href="classsf_1_1ui_1_1_button.html" title="A button which does a simply task when clicked. " alt="sf::ui::Button" shape="rect" coords="0,56,101,80"/>
-<area href="classsf_1_1ui_1_1_check_box.html" alt="sf::ui::CheckBox" shape="rect" coords="111,56,212,80"/>
+<area href="classsf_1_1ui_1_1_check_box.html" title="A box which can be checked or not. " alt="sf::ui::CheckBox" shape="rect" coords="111,56,212,80"/>
 <area href="classsf_1_1ui_1_1_key_field.html" title="A field that stores a keyboard&#39;s key. " alt="sf::ui::KeyField" shape="rect" coords="222,56,323,80"/>
-<area href="classsf_1_1ui_1_1_label.html" alt="sf::ui::Label" shape="rect" coords="333,56,434,80"/>
-<area href="classsf_1_1ui_1_1_text_field.html" alt="sf::ui::TextField" shape="rect" coords="444,56,545,80"/>
+<area href="classsf_1_1ui_1_1_label.html" title="A label which show text or image. " alt="sf::ui::Label" shape="rect" coords="333,56,434,80"/>
+<area href="classsf_1_1ui_1_1_text_field.html" title="A text field which stores a text. " alt="sf::ui::TextField" shape="rect" coords="444,56,545,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -135,21 +138,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8557ecaeb2b93d8e1370c870a532798e"><td class="memItemLeft" align="right" valign="top">virtual const sf::String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#a8557ecaeb2b93d8e1370c870a532798e">getText</a> () const =0</td></tr>
 <tr class="separator:a8557ecaeb2b93d8e1370c870a532798e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3c26ffd1f8f14c23591f0fff934a1dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#aa3c26ffd1f8f14c23591f0fff934a1dc">setText</a> (sf::String const &amp;text)=0</td></tr>
+<tr class="memdesc:aa3c26ffd1f8f14c23591f0fff934a1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text's string of the component Don't forget to set the font.  <a href="#aa3c26ffd1f8f14c23591f0fff934a1dc">More...</a><br/></td></tr>
 <tr class="separator:aa3c26ffd1f8f14c23591f0fff934a1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3ee239f657d493706fdd3843aca9f4a"><td class="memItemLeft" align="right" valign="top">virtual const sf::Font *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#ab3ee239f657d493706fdd3843aca9f4a">getFont</a> () const =0</td></tr>
 <tr class="separator:ab3ee239f657d493706fdd3843aca9f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f99bf1026da4808ff561f7f624b4da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#a17f99bf1026da4808ff561f7f624b4da">setFont</a> (sf::Font const &amp;font)=0</td></tr>
+<tr class="memdesc:a17f99bf1026da4808ff561f7f624b4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the font of the component's text.  <a href="#a17f99bf1026da4808ff561f7f624b4da">More...</a><br/></td></tr>
 <tr class="separator:a17f99bf1026da4808ff561f7f624b4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4509e775286dd110028842966b0cfa0"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#ad4509e775286dd110028842966b0cfa0">getFontSize</a> () const =0</td></tr>
 <tr class="separator:ad4509e775286dd110028842966b0cfa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb793d6ce4ec19012cc1fcc2a6d674ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#adb793d6ce4ec19012cc1fcc2a6d674ef">setFontSize</a> (unsigned int size)=0</td></tr>
+<tr class="memdesc:adb793d6ce4ec19012cc1fcc2a6d674ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font's size of the component.  <a href="#adb793d6ce4ec19012cc1fcc2a6d674ef">More...</a><br/></td></tr>
 <tr class="separator:adb793d6ce4ec19012cc1fcc2a6d674ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dd135cbb6adaeb2876fd3aff2f8cdf1"><td class="memItemLeft" align="right" valign="top">virtual sf::Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#a1dd135cbb6adaeb2876fd3aff2f8cdf1">getFontColor</a> () const =0</td></tr>
 <tr class="separator:a1dd135cbb6adaeb2876fd3aff2f8cdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed5fed85a69fed4ebea474926996675c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_i_text.html#aed5fed85a69fed4ebea474926996675c">setFontColor</a> (sf::Color color)=0</td></tr>
+<tr class="memdesc:aed5fed85a69fed4ebea474926996675c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color's font of the text.  <a href="#aed5fed85a69fed4ebea474926996675c">More...</a><br/></td></tr>
 <tr class="separator:aed5fed85a69fed4ebea474926996675c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An interface that allow component to have a text.</p>
+<p>Implement it in your component to make faster components that use text. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a382cd0dd90fedfb8d2a42456080f1ba6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -194,6 +204,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font of the component, if any returns null </dd></dl>
 
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#a6c2a116dca8c927be37b9976b85d2bfb">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a8dcc8b93cdb31639ec5cbfaa84ea6328">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#ae8aaee8b8fef057bc4f71ecb9a1b616b">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a142ed8d4c52a1fcd0c7c4f5cd87d06af">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a4aa3c349ac9d20630e42c1fc7564a4a6">sf::ui::Label</a>.</p>
 
@@ -219,6 +230,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font's color of the text </dd></dl>
 
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#a0c0e485758e3325be6d0767134611686">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a8b3a3530a7af9d56922c970b7fc0d12a">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#aef2d6fd95502d428312376c834a36ba2">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#aff58b2b445335952dee7083c2dd846c6">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a11c0b6f88e9f078429a53d2c0db13cae">sf::ui::Label</a>.</p>
 
@@ -244,6 +256,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font's size of the component </dd></dl>
 
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#acdf2fe6b64b143dd635077ebf0608a48">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#aef18265e3a2255380dda57c15fc23002">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#a980ba2b3ed344fbbb8b2406710a2cf4a">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a52b84d1233c6e529bdd41cd63d51164b">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a454f046f62b5ecb79d842b0a729d150f">sf::ui::Label</a>.</p>
 
@@ -269,6 +282,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the text's string </dd></dl>
 
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#a156d168c4e2a513d579f18f7f21d6898">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a3550ce7f5d0633fbd4c1d1cb23e78906">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#a241be01caae394757d4c3aa97115db61">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#afa28ff9a86ac31418834e3d66c671325">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a7a39a14d50ac9d5bbb97b2e9da1d87c3">sf::ui::Label</a>.</p>
 
@@ -296,6 +310,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the font of the component's text. </p>
+
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#acf49bd57d0782b733d6904dcfbe85415">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a9f9eb974ceffc8e1e2ebe06d6f2825e5">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#a75f04727bc3ffb121b7941ee169b6403">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a55f7ff770de77af96135759d240b57da">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a09cc2a45aa231b3bc3a890dd1109d141">sf::ui::Label</a>.</p>
 
 </div>
@@ -321,6 +337,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the color's font of the text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>text's color </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#a20d793aaea05e68f2eb597171e188267">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a5cc9934cd58162c4500e64f1af13310d">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#ae80d0a876cad9971a508f33aed11813e">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a6408c2d865cb8b26bd26845a5eb80b68">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#ae3bb92fa81396806c7cd8f40f1d9788d">sf::ui::Label</a>.</p>
 
@@ -348,6 +372,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the font's size of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the font's size </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#a64cbb346f532b31e2effb02f134f57ad">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a767890cdc4c4d5510f9c4de4758ee244">sf::ui::KeyField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#ace64238e53176ed5482f9d181c069392">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#ab199f163be1373844a3041c339a27366">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#a2ed104f94bb5a27dd15e4fda5f5941ba">sf::ui::Label</a>.</p>
 
 </div>
@@ -374,6 +406,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the text's string of the component Don't forget to set the font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>the new string of the component </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#ab1bc7ada41f8712ea1ddb25ffdc42830">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#a59ed9dc13a56c3bc55c2bf96997ff52d">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a064ac9be6b082081ada502e4b938a7e2">sf::ui::TextField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#adfa37e56862688bb8795b72f58fc05d8">sf::ui::Label</a>.</p>
 
 </div>
@@ -387,7 +427,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_i_text.html">IText</a></li>
-    <li class="footer">Generated on Mon Mar 3 2014 00:33:27 for SFML-UI by
+    <li class="footer">Generated on Mon Mar 3 2014 01:37:23 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

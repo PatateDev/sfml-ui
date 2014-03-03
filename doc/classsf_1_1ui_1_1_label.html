@@ -115,6 +115,9 @@ $(document).ready(function(){initNavTree('classsf_1_1ui_1_1_label.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>A label which show text or image.  
+ <a href="classsf_1_1ui_1_1_label.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_label_8h_source.html">Label.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sf::ui::Label:</div>
@@ -122,8 +125,8 @@ Inheritance diagram for sf::ui::Label:</div>
  <div class="center">
   <img src="classsf_1_1ui_1_1_label.png" usemap="#sf::ui::Label_map" alt=""/>
   <map id="sf::ui::Label_map" name="sf::ui::Label_map">
-<area href="classsf_1_1ui_1_1_component.html" alt="sf::ui::Component" shape="rect" coords="91,56,264,80"/>
-<area href="classsf_1_1ui_1_1_i_text.html" alt="sf::ui::IText" shape="rect" coords="274,56,447,80"/>
+<area href="classsf_1_1ui_1_1_component.html" title="The base class for all UI components. " alt="sf::ui::Component" shape="rect" coords="91,56,264,80"/>
+<area href="classsf_1_1ui_1_1_i_text.html" title="An interface that allow component to have a text.Implement it in your component to make faster compon..." alt="sf::ui::IText" shape="rect" coords="274,56,447,80"/>
 <area href="classsf_1_1ui_1_1_component_observable.html" title="The class who call the observers. " alt="sf::ui::ComponentObservable" shape="rect" coords="183,0,356,24"/>
 </map>
  </div></div>
@@ -131,57 +134,74 @@ Inheritance diagram for sf::ui::Label:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a64b06f7e7b66bd09a2fecde54f95a300"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a64b06f7e7b66bd09a2fecde54f95a300">Label</a> ()</td></tr>
+<tr class="memdesc:a64b06f7e7b66bd09a2fecde54f95a300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty label.  <a href="#a64b06f7e7b66bd09a2fecde54f95a300">More...</a><br/></td></tr>
 <tr class="separator:a64b06f7e7b66bd09a2fecde54f95a300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2be9634a56a880298068bf398e2e2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#abd2be9634a56a880298068bf398e2e2c">Label</a> (sf::Texture const &amp;image)</td></tr>
+<tr class="memdesc:abd2be9634a56a880298068bf398e2e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a label-image.  <a href="#abd2be9634a56a880298068bf398e2e2c">More...</a><br/></td></tr>
 <tr class="separator:abd2be9634a56a880298068bf398e2e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91ff75387fba1a1c74ac77010cedb92a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a91ff75387fba1a1c74ac77010cedb92a">Label</a> (sf::Font const &amp;font, sf::String const &amp;text, int fontSize=35)</td></tr>
+<tr class="memdesc:a91ff75387fba1a1c74ac77010cedb92a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a text label.  <a href="#a91ff75387fba1a1c74ac77010cedb92a">More...</a><br/></td></tr>
 <tr class="separator:a91ff75387fba1a1c74ac77010cedb92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa039699a56936315988c33954f429a34"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#aa039699a56936315988c33954f429a34">~Label</a> ()</td></tr>
 <tr class="separator:aa039699a56936315988c33954f429a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9e9935b40419ae448001338eef3b67f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#ac9e9935b40419ae448001338eef3b67f">updateEvent</a> (sf::Event const &amp;event)</td></tr>
+<tr class="memdesc:ac9e9935b40419ae448001338eef3b67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the component each time an event has been polled.  <a href="#ac9e9935b40419ae448001338eef3b67f">More...</a><br/></td></tr>
 <tr class="separator:ac9e9935b40419ae448001338eef3b67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b03ef8afb865033def88df0c8e18bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#aa3b03ef8afb865033def88df0c8e18bb">updateFixed</a> (sf::Time delta)</td></tr>
+<tr class="memdesc:aa3b03ef8afb865033def88df0c8e18bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the component with the main loop's frequency Can be useful for animation, or time's needed stuff.  <a href="#aa3b03ef8afb865033def88df0c8e18bb">More...</a><br/></td></tr>
 <tr class="separator:aa3b03ef8afb865033def88df0c8e18bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a39a14d50ac9d5bbb97b2e9da1d87c3"><td class="memItemLeft" align="right" valign="top">virtual const sf::String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a7a39a14d50ac9d5bbb97b2e9da1d87c3">getText</a> () const </td></tr>
 <tr class="separator:a7a39a14d50ac9d5bbb97b2e9da1d87c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa37e56862688bb8795b72f58fc05d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#adfa37e56862688bb8795b72f58fc05d8">setText</a> (sf::String const &amp;text)</td></tr>
+<tr class="memdesc:adfa37e56862688bb8795b72f58fc05d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text's string of the component Don't forget to set the font.  <a href="#adfa37e56862688bb8795b72f58fc05d8">More...</a><br/></td></tr>
 <tr class="separator:adfa37e56862688bb8795b72f58fc05d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa3c349ac9d20630e42c1fc7564a4a6"><td class="memItemLeft" align="right" valign="top">virtual const sf::Font *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a4aa3c349ac9d20630e42c1fc7564a4a6">getFont</a> () const </td></tr>
 <tr class="separator:a4aa3c349ac9d20630e42c1fc7564a4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09cc2a45aa231b3bc3a890dd1109d141"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a09cc2a45aa231b3bc3a890dd1109d141">setFont</a> (sf::Font const &amp;font)</td></tr>
+<tr class="memdesc:a09cc2a45aa231b3bc3a890dd1109d141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the font of the component's text.  <a href="#a09cc2a45aa231b3bc3a890dd1109d141">More...</a><br/></td></tr>
 <tr class="separator:a09cc2a45aa231b3bc3a890dd1109d141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a454f046f62b5ecb79d842b0a729d150f"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a454f046f62b5ecb79d842b0a729d150f">getFontSize</a> () const </td></tr>
 <tr class="separator:a454f046f62b5ecb79d842b0a729d150f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed104f94bb5a27dd15e4fda5f5941ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a2ed104f94bb5a27dd15e4fda5f5941ba">setFontSize</a> (unsigned int size)</td></tr>
+<tr class="memdesc:a2ed104f94bb5a27dd15e4fda5f5941ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the font's size of the component.  <a href="#a2ed104f94bb5a27dd15e4fda5f5941ba">More...</a><br/></td></tr>
 <tr class="separator:a2ed104f94bb5a27dd15e4fda5f5941ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11c0b6f88e9f078429a53d2c0db13cae"><td class="memItemLeft" align="right" valign="top">virtual sf::Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a11c0b6f88e9f078429a53d2c0db13cae">getFontColor</a> () const </td></tr>
 <tr class="separator:a11c0b6f88e9f078429a53d2c0db13cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3bb92fa81396806c7cd8f40f1d9788d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#ae3bb92fa81396806c7cd8f40f1d9788d">setFontColor</a> (sf::Color color)</td></tr>
+<tr class="memdesc:ae3bb92fa81396806c7cd8f40f1d9788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color's font of the text.  <a href="#ae3bb92fa81396806c7cd8f40f1d9788d">More...</a><br/></td></tr>
 <tr class="separator:ae3bb92fa81396806c7cd8f40f1d9788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95621d117d6cfd20a08686df59876b17"><td class="memItemLeft" align="right" valign="top">const sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a95621d117d6cfd20a08686df59876b17">getImage</a> () const </td></tr>
 <tr class="separator:a95621d117d6cfd20a08686df59876b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72af297a78a8ba8e7c4a6e67e64b57c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a72af297a78a8ba8e7c4a6e67e64b57c9">setImage</a> (sf::Texture const &amp;image)</td></tr>
+<tr class="memdesc:a72af297a78a8ba8e7c4a6e67e64b57c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the label's image Similar to <a class="el" href="classsf_1_1ui_1_1_component.html#af894e98611f19434f8c2f075cbb3cdb6" title="Set the texture of the component. ">setTexture(sf::Texture const&amp;)</a>  <a href="#a72af297a78a8ba8e7c4a6e67e64b57c9">More...</a><br/></td></tr>
 <tr class="separator:a72af297a78a8ba8e7c4a6e67e64b57c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classsf_1_1ui_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsf_1_1ui_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsf_1_1ui_1_1_component.html">sf::ui::Component</a></td></tr>
 <tr class="memitem:ac479286e53c9940baf229e5ed4ec7184 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#ac479286e53c9940baf229e5ed4ec7184">Component</a> ()</td></tr>
+<tr class="memdesc:ac479286e53c9940baf229e5ed4ec7184 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty component, without texture.  <a href="#ac479286e53c9940baf229e5ed4ec7184">More...</a><br/></td></tr>
 <tr class="separator:ac479286e53c9940baf229e5ed4ec7184 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4ca7d1febb594ac57d6a3c74b47a65 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#ade4ca7d1febb594ac57d6a3c74b47a65">Component</a> (sf::Texture const &amp;texture)</td></tr>
+<tr class="memdesc:ade4ca7d1febb594ac57d6a3c74b47a65 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a component with the give texture.  <a href="#ade4ca7d1febb594ac57d6a3c74b47a65">More...</a><br/></td></tr>
 <tr class="separator:ade4ca7d1febb594ac57d6a3c74b47a65 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53203405ca1866fe3c05089d0f6ba0b5 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a53203405ca1866fe3c05089d0f6ba0b5">~Component</a> ()</td></tr>
 <tr class="separator:a53203405ca1866fe3c05089d0f6ba0b5 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2">move</a> (sf::Vector2f const &amp;vector)</td></tr>
+<tr class="memdesc:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the component.  <a href="#ad7dabe06735fce695d29bdd0358826b2">More...</a><br/></td></tr>
 <tr class="separator:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11c8008207e85e087ff7f2c9cdd5646 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#af11c8008207e85e087ff7f2c9cdd5646">move</a> (float x, float y)</td></tr>
+<tr class="memdesc:af11c8008207e85e087ff7f2c9cdd5646 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the component.  <a href="#af11c8008207e85e087ff7f2c9cdd5646">More...</a><br/></td></tr>
 <tr class="separator:af11c8008207e85e087ff7f2c9cdd5646 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dfee74c13c84ce9e1b239ca75a96a86 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">const sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a4dfee74c13c84ce9e1b239ca75a96a86">getTexture</a> () const </td></tr>
 <tr class="separator:a4dfee74c13c84ce9e1b239ca75a96a86 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af894e98611f19434f8c2f075cbb3cdb6 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#af894e98611f19434f8c2f075cbb3cdb6">setTexture</a> (const sf::Texture &amp;texture)</td></tr>
+<tr class="memdesc:af894e98611f19434f8c2f075cbb3cdb6 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture of the component.  <a href="#af894e98611f19434f8c2f075cbb3cdb6">More...</a><br/></td></tr>
 <tr class="separator:af894e98611f19434f8c2f075cbb3cdb6 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493a2fc95ddbed818df8dba09043bd06 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a493a2fc95ddbed818df8dba09043bd06">getPosition</a> () const </td></tr>
 <tr class="separator:a493a2fc95ddbed818df8dba09043bd06 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd8b33f63f9bbf5def9c3e6af42b5a3 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a2cd8b33f63f9bbf5def9c3e6af42b5a3">setPosition</a> (sf::Vector2f const &amp;position)</td></tr>
+<tr class="memdesc:a2cd8b33f63f9bbf5def9c3e6af42b5a3 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the component's position.  <a href="#a2cd8b33f63f9bbf5def9c3e6af42b5a3">More...</a><br/></td></tr>
 <tr class="separator:a2cd8b33f63f9bbf5def9c3e6af42b5a3 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e1a8c7b9e7316df377056aa843c758e inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a4e1a8c7b9e7316df377056aa843c758e">setPosition</a> (float x, float y)</td></tr>
+<tr class="memdesc:a4e1a8c7b9e7316df377056aa843c758e inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the component's position.  <a href="#a4e1a8c7b9e7316df377056aa843c758e">More...</a><br/></td></tr>
 <tr class="separator:a4e1a8c7b9e7316df377056aa843c758e inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a450d6ee3a129e85949865d58c8e7a0b9 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a450d6ee3a129e85949865d58c8e7a0b9">getSize</a> () const </td></tr>
 <tr class="separator:a450d6ee3a129e85949865d58c8e7a0b9 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,8 +231,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a63d99d89838a78928c58af4e105ac754"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a63d99d89838a78928c58af4e105ac754">draw</a> (sf::RenderTarget &amp;target, sf::RenderStates states) const </td></tr>
+<tr class="memdesc:a63d99d89838a78928c58af4e105ac754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the component to the render target.  <a href="#a63d99d89838a78928c58af4e105ac754">More...</a><br/></td></tr>
 <tr class="separator:a63d99d89838a78928c58af4e105ac754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a309be30cb18108084a7d489694d9de63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_label.html#a309be30cb18108084a7d489694d9de63">updateCoord</a> ()</td></tr>
+<tr class="memdesc:a309be30cb18108084a7d489694d9de63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the component need update its geometry Inherit when you need to update some sprite.  <a href="#a309be30cb18108084a7d489694d9de63">More...</a><br/></td></tr>
 <tr class="separator:a309be30cb18108084a7d489694d9de63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -229,7 +251,9 @@ Protected Attributes</h2></td></tr>
 &lt; <a class="el" href="classsf_1_1ui_1_1_component_observer.html">sf::ui::ComponentObserver</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_observable.html#a354fe94b44057f1c7c2c9f8889967d73">m_observers</a></td></tr>
 <tr class="separator:a354fe94b44057f1c7c2c9f8889967d73 inherit pro_attribs_classsf_1_1ui_1_1_component_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A label which show text or image. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a64b06f7e7b66bd09a2fecde54f95a300"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +266,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates an empty label. </p>
 
 </div>
 </div>
@@ -258,6 +284,14 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a label-image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>the label's image </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -290,6 +324,16 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a text label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">font</td><td>the text's font </td></tr>
+    <tr><td class="paramname">text</td><td>the text's string </td></tr>
+    <tr><td class="paramname">fontSize</td><td>the fint's size </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -349,6 +393,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Draw the component to the render target. </p>
+
 <p>Reimplemented from <a class="el" href="classsf_1_1ui_1_1_component.html#a2ab2f64c8ad5c9617802ec5a8f98ca5f">sf::ui::Component</a>.</p>
 
 </div>
@@ -373,6 +419,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font of the component, if any returns null </dd></dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#ab3ee239f657d493706fdd3843aca9f4a">sf::ui::IText</a>.</p>
 
@@ -398,6 +445,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font's color of the text </dd></dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#a1dd135cbb6adaeb2876fd3aff2f8cdf1">sf::ui::IText</a>.</p>
 
@@ -423,6 +471,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the font's size of the component </dd></dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#ad4509e775286dd110028842966b0cfa0">sf::ui::IText</a>.</p>
 
@@ -440,6 +489,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the label's image or null Similar to <a class="el" href="classsf_1_1ui_1_1_component.html#a4dfee74c13c84ce9e1b239ca75a96a86">getTexture()</a> </dd></dl>
 
 </div>
 </div>
@@ -463,6 +513,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the text's string </dd></dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#a8557ecaeb2b93d8e1370c870a532798e">sf::ui::IText</a>.</p>
 
@@ -490,6 +541,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the font of the component's text. </p>
+
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#a17f99bf1026da4808ff561f7f624b4da">sf::ui::IText</a>.</p>
 
 </div>
@@ -515,6 +568,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the color's font of the text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>text's color </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#aed5fed85a69fed4ebea474926996675c">sf::ui::IText</a>.</p>
 
@@ -542,6 +603,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the font's size of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the font's size </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#adb793d6ce4ec19012cc1fcc2a6d674ef">sf::ui::IText</a>.</p>
 
 </div>
@@ -559,6 +628,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the label's image Similar to <a class="el" href="classsf_1_1ui_1_1_component.html#af894e98611f19434f8c2f075cbb3cdb6" title="Set the texture of the component. ">setTexture(sf::Texture const&amp;)</a> </p>
 
 </div>
 </div>
@@ -584,6 +655,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the text's string of the component Don't forget to set the font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>the new string of the component </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_i_text.html#aa3c26ffd1f8f14c23591f0fff934a1dc">sf::ui::IText</a>.</p>
 
 </div>
@@ -608,6 +687,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called when the component need update its geometry Inherit when you need to update some sprite. </p>
 
 <p>Reimplemented from <a class="el" href="classsf_1_1ui_1_1_component.html#a83932e7b8da38e94e5ff95fb95b8fa81">sf::ui::Component</a>.</p>
 
@@ -635,6 +716,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Update the component each time an event has been polled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>the window's event polled </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_component.html#a4df4b2373f53cb24236c1a5e125d95d5">sf::ui::Component</a>.</p>
 
 </div>
@@ -660,6 +749,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Update the component with the main loop's frequency Can be useful for animation, or time's needed stuff. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>- the time between this update and the last </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classsf_1_1ui_1_1_component.html#a944c251fcced34859846811a68134e1b">sf::ui::Component</a>.</p>
 
@@ -695,7 +792,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_label.html">Label</a></li>
-    <li class="footer">Generated on Mon Mar 3 2014 00:33:27 for SFML-UI by
+    <li class="footer">Generated on Mon Mar 3 2014 01:37:23 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

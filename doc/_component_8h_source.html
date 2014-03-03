@@ -135,127 +135,68 @@ $(document).ready(function(){initNavTree('_component_8h_source.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>ui</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsf_1_1ui_1_1_component.html">Component</a> : <span class="keyword">public</span> Drawable, <span class="keyword">public</span> <a class="code" href="classsf_1_1ui_1_1_component_observable.html" title="The class who call the observers. ">ComponentObservable</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsf_1_1ui_1_1_component.html" title="The base class for all UI components. ">Component</a> : <span class="keyword">public</span> Drawable, <span class="keyword">public</span> <a class="code" href="classsf_1_1ui_1_1_component_observable.html" title="The class who call the observers. ">ComponentObservable</a></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//CONSTRUCTORS/DESTRUCTORS -------------------------------------------</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * Creates an empty component, without texture</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classsf_1_1ui_1_1_component.html#ac479286e53c9940baf229e5ed4ec7184">Component</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * Creates a component with the give texture</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     *  texture - the texture displayed by the component</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classsf_1_1ui_1_1_component.html#ac479286e53c9940baf229e5ed4ec7184">Component</a>(sf::Texture <span class="keyword">const</span> &amp;texture);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a53203405ca1866fe3c05089d0f6ba0b5">~Component</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//METHODS ------------------------------------------------------------</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * Update the component each time an event has been polled</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     *  event - the window&#39;s event polled</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a4df4b2373f53cb24236c1a5e125d95d5">updateEvent</a>(sf::Event <span class="keyword">const</span> &amp;event) = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * Update the component with the main loop&#39;s frequency.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * Can be useful for animation, or time&#39;s needed stuff</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     *  delta - the time between this update and the last</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a944c251fcced34859846811a68134e1b">updateFixed</a>(sf::Time delta) = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * Move the component</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     *  vector - the move&#39;s vector</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2">move</a>(sf::Vector2f <span class="keyword">const</span> &amp;vector);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     * Move the component</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     *  x - the x move</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     *  y - the y move</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2">move</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     * Draw the component to the render target</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2ab2f64c8ad5c9617802ec5a8f98ca5f">draw</a>(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     * Called when the component need update its geometry</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * Inherit when you need to update some sprite</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a83932e7b8da38e94e5ff95fb95b8fa81">updateCoord</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//GETTERS/SETTERS ----------------------------------------------------</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">     * Returns the texture of the component</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> sf::Texture* <a class="code" href="classsf_1_1ui_1_1_component.html#a4dfee74c13c84ce9e1b239ca75a96a86">getTexture</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">     * Set the texture of the component</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#af894e98611f19434f8c2f075cbb3cdb6">setTexture</a>(<span class="keyword">const</span> sf::Texture&amp; texture);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">     * Returns the position of the component</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> sf::Vector2f&amp; <a class="code" href="classsf_1_1ui_1_1_component.html#a493a2fc95ddbed818df8dba09043bd06">getPosition</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">     * Set the component&#39;s position</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">     *  position - the position vector</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2cd8b33f63f9bbf5def9c3e6af42b5a3">setPosition</a>(sf::Vector2f <span class="keyword">const</span> &amp;position);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classsf_1_1ui_1_1_component.html#ac479286e53c9940baf229e5ed4ec7184" title="Creates an empty component, without texture. ">Component</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classsf_1_1ui_1_1_component.html#ac479286e53c9940baf229e5ed4ec7184" title="Creates an empty component, without texture. ">Component</a>(sf::Texture <span class="keyword">const</span> &amp;texture);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a53203405ca1866fe3c05089d0f6ba0b5">~Component</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//METHODS ------------------------------------------------------------</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a4df4b2373f53cb24236c1a5e125d95d5" title="Update the component each time an event has been polled. ">updateEvent</a>(sf::Event <span class="keyword">const</span> &amp;event) = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a944c251fcced34859846811a68134e1b" title="Update the component with the main loop&#39;s frequency Can be useful for animation, or time&#39;s needed stu...">updateFixed</a>(sf::Time delta) = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2" title="Move the component. ">move</a>(sf::Vector2f <span class="keyword">const</span> &amp;vector);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2" title="Move the component. ">move</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2ab2f64c8ad5c9617802ec5a8f98ca5f" title="Draw the component to the render target. ">draw</a>(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a83932e7b8da38e94e5ff95fb95b8fa81" title="Called when the component need update its geometry Inherit when you need to update some sprite...">updateCoord</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//GETTERS/SETTERS ----------------------------------------------------</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> sf::Texture* <a class="code" href="classsf_1_1ui_1_1_component.html#a4dfee74c13c84ce9e1b239ca75a96a86">getTexture</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">     * Set the component&#39;s position</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">     * Params:</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">     *  x - the x coordinate</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">     *  y - the y coordinate</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2cd8b33f63f9bbf5def9c3e6af42b5a3">setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">     * Returns the size of the component</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">virtual</span> sf::Vector2f <a class="code" href="classsf_1_1ui_1_1_component.html#a450d6ee3a129e85949865d58c8e7a0b9">getSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#af894e98611f19434f8c2f075cbb3cdb6" title="Set the texture of the component. ">setTexture</a>(<span class="keyword">const</span> sf::Texture&amp; texture);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> sf::Vector2f&amp; <a class="code" href="classsf_1_1ui_1_1_component.html#a493a2fc95ddbed818df8dba09043bd06">getPosition</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">//FIELDS -------------------------------------------------------------</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html#ad12b55206288603188a6c30c6a80dc08">  134</a></span>&#160;    sf::Sprite <a class="code" href="classsf_1_1ui_1_1_component.html#ad12b55206288603188a6c30c6a80dc08">m_sprite</a>; <span class="comment">// The component&#39;s sprite displayed</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html#ac4a73e37dcac79a1ec037dc6ffa84bd6">  135</a></span>&#160;    sf::Texture <span class="keyword">const</span> *<a class="code" href="classsf_1_1ui_1_1_component.html#ac4a73e37dcac79a1ec037dc6ffa84bd6">m_texture</a>; <span class="comment">//The component&#39;s texture</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;} <span class="comment">/* namespace ui */</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;} <span class="comment">/* namespace sf */</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* COMPONENT_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2cd8b33f63f9bbf5def9c3e6af42b5a3" title="Set the component&#39;s position. ">setPosition</a>(sf::Vector2f <span class="keyword">const</span> &amp;position);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_component.html#a2cd8b33f63f9bbf5def9c3e6af42b5a3" title="Set the component&#39;s position. ">setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">virtual</span> sf::Vector2f <a class="code" href="classsf_1_1ui_1_1_component.html#a450d6ee3a129e85949865d58c8e7a0b9">getSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">//FIELDS -------------------------------------------------------------</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html#ad12b55206288603188a6c30c6a80dc08">  162</a></span>&#160;    sf::Sprite <a class="code" href="classsf_1_1ui_1_1_component.html#ad12b55206288603188a6c30c6a80dc08">m_sprite</a>; <span class="comment">// The component&#39;s sprite displayed</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_component.html#ac4a73e37dcac79a1ec037dc6ffa84bd6">  163</a></span>&#160;    sf::Texture <span class="keyword">const</span> *<a class="code" href="classsf_1_1ui_1_1_component.html#ac4a73e37dcac79a1ec037dc6ffa84bd6">m_texture</a>; <span class="comment">//The component&#39;s texture</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;} <span class="comment">/* namespace ui */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;} <span class="comment">/* namespace sf */</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* COMPONENT_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_75c9a9360f747771b8e72372db89d159.html">sfml-ui</a></li><li class="navelem"><a class="el" href="dir_d6142e3813d6d080cf63af0472235b19.html">include</a></li><li class="navelem"><a class="el" href="dir_c553f07c428d866955e51a7c49f1e5c6.html">SFML</a></li><li class="navelem"><a class="el" href="dir_4cabc74441f26485d2dcef8a4e58d85d.html">UI</a></li><li class="navelem"><a class="el" href="_component_8h.html">Component.h</a></li>
-    <li class="footer">Generated on Mon Mar 3 2014 00:33:27 for SFML-UI by
+    <li class="footer">Generated on Mon Mar 3 2014 01:37:23 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
