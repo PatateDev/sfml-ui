@@ -1,8 +1,9 @@
 sfml-ui
 =======
 
-A simple UI library for SFML.
-Works on GNU/Linux, Windows. Currently not tested on Mac OS X.
+A simple UI library for SFML. Works on GNU/Linux, Windows. Currently not tested on Mac OS X.
+
+Website (including documentation) : [patatedev.github.io/sfml-ui](http://patatedev.github.io/sfml-ui)
 
 How to compile
 --------------
