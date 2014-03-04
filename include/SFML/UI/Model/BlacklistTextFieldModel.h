@@ -29,43 +29,55 @@ namespace ui
 
 class BlacklistTextFieldModel : public TextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * Creates a text field model that denies character present in the blacklist
-	 * Note that the blacklist is empty in this class
-	 */
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a text field model that denies character present in the blacklist
+	/// Notice that the blacklist is empty in this class
+	///
+	////////////////////////////////////////////////////////////
 	BlacklistTextFieldModel();
+	
 	virtual ~BlacklistTextFieldModel();
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
-	/*
-	 * Returns if the given character is denied for the text field
-	 * Params:
-	 * 	c - the character to check
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return if the given character is allowed for the text field
+	///
+	/// \param c the character to check
+	///
+	////////////////////////////////////////////////////////////
 	virtual bool isCharAllowed(sf::Uint32 c) const;
 
-	/*
-	 * Adds a character to the blacklist
-	 * Params:
-	 * 	c - the character to deny
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Add a character to the blacklist
+	///
+	/// \param c the character to deny
+	///
+	////////////////////////////////////////////////////////////
 	void addCharDenied(sf::Uint32 c);
 
-	/*
-	 * Removes a character to the blacklist
-	 * Params:
-	 * 	c - the character to allow
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Removes a character to the blacklist
+	///
+	/// \param c the character to allow
+	///
+	////////////////////////////////////////////////////////////
 	void rmCharDenied(sf::Uint32 c);
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
-	/*
-	 * Returns all of the chars blacklisted
-	 */
+public:
+    ////////////////////////////////////////////////////////////
+	///
+	/// \return all of the chars blacklisted
+	///
+	////////////////////////////////////////////////////////////
 	std::vector<sf::Uint32> getCharsDenied() const;
 	//--------------------------------------------------------------------
 
@@ -78,3 +90,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* BLACKLISTTEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::BlacklistTextFieldModel
+/// \brief A textfield model that denies some chars
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

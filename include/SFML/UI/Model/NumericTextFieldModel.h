@@ -29,10 +29,13 @@ class NumericTextFieldModel : public WhitelistTextFieldModel
 {
 public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * A text field model that allows only number ('0' - '9') and point ('.')
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief A text field model that allows only number ('0' - '9') and point ('.')
+	///
+	////////////////////////////////////////////////////////////
 	NumericTextFieldModel();
+	
 	virtual ~NumericTextFieldModel();
 	//--------------------------------------------------------------------
 
@@ -52,3 +55,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* NUMERICTEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::NumericTextFieldModel
+/// \brief A textfield model that allows only numbers
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

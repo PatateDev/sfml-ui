@@ -27,22 +27,25 @@ namespace ui
 
 class TextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * An abstract class that control if the text field should or not
-	 * allow a given character
-	 */
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief An abstract class that controls if the text field should or not allow a given character
+	///
+	////////////////////////////////////////////////////////////
 	TextFieldModel();
 	virtual ~TextFieldModel();
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
-	/*
-	 * Returns if the given character is allowed for the text field
-	 * Params:
-	 * 	c - the character to check
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return if the given character is allowed for the text field
+	///
+	/// \param c - the character to check
+	///
+	////////////////////////////////////////////////////////////
 	virtual bool isCharAllowed(sf::Uint32 c) const = 0;
 	//--------------------------------------------------------------------
 
@@ -58,3 +61,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* TEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::TextFieldModel
+/// \brief The abstract class that defines what can be typed into the text field
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

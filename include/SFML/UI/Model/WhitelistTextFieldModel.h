@@ -29,43 +29,56 @@ namespace ui
 
 class WhitelistTextFieldModel : public TextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * Creates a text field model that allows only character present in the whitelist
-	 * Note that the whitelist is empty in this class
-	 */
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a text field model that allows only character present in the whitelist
+	/// Notice that the whitelist is empty in this class
+	///
+	////////////////////////////////////////////////////////////
 	WhitelistTextFieldModel();
+	
 	virtual ~WhitelistTextFieldModel();
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
-	/*
-	 * Returns if the given character is allowed for the text field
-	 * Params:
-	 * 	c - the character to check
-	 */
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \return if the given character is allowed for the text field
+	///
+	/// \param c the character to check
+	///
+	////////////////////////////////////////////////////////////
 	virtual bool isCharAllowed(sf::Uint32 c) const;
 
-	/*
-	 * Adds a character to the whitelist
-	 * Params:
-	 * 	c - the character to allow
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Add a character to the whitelist
+	///
+	/// \param c the character to allow
+	///
+	////////////////////////////////////////////////////////////
 	void addCharAllowed(sf::Uint32 c);
 
-	/*
-	 * Removes a character to the whitelist
-	 * Params:
-	 * 	c - the character to disallow
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Remove a character to the whitelist
+	///
+    /// \param c the character to disallow
+	///
+	////////////////////////////////////////////////////////////
 	void rmCharAllowed(sf::Uint32 c);
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
-	/*
-	 * Returns all of the chars whitelisted
-	 */
+public:
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return all of the chars whitelisted
+    ///
+    ////////////////////////////////////////////////////////////
 	std::vector<sf::Uint32> getCharsAllowed() const;
 	//--------------------------------------------------------------------
 
@@ -78,3 +91,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* WHITELISTTEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::WhitelistTextFieldModel
+/// \brief A textfield model that allows some chars
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////
