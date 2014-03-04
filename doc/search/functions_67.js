@@ -1,6 +1,7 @@
 var searchData=
 [
   ['getallowedkeys',['getAllowedKeys',['../classsf_1_1ui_1_1_key_field.html#aaa0a1f05b79bef5453d5e0abf014398b',1,'sf::ui::KeyField']]],
+  ['getbutton',['getButton',['../classsf_1_1ui_1_1_button_clicked_event.html#a1e6fe6ac26d87dad65eb95d468c14a8b',1,'sf::ui::ButtonClickedEvent']]],
   ['getcharsallowed',['getCharsAllowed',['../classsf_1_1ui_1_1_whitelist_text_field_model.html#a65ae3bd7edf49fd408990ba67e58b04d',1,'sf::ui::WhitelistTextFieldModel']]],
   ['getcharsdenied',['getCharsDenied',['../classsf_1_1ui_1_1_blacklist_text_field_model.html#a8c2770e372c00df781c391ecd6836a12',1,'sf::ui::BlacklistTextFieldModel']]],
   ['getcursor',['getCursor',['../classsf_1_1ui_1_1_text_field.html#a1a69ff386d5b14c2bc0b542efd9e7633',1,'sf::ui::TextField']]],
@@ -18,5 +19,7 @@ var searchData=
   ['gettext',['getText',['../classsf_1_1ui_1_1_button.html#a156d168c4e2a513d579f18f7f21d6898',1,'sf::ui::Button::getText()'],['../classsf_1_1ui_1_1_check_box.html#a241be01caae394757d4c3aa97115db61',1,'sf::ui::CheckBox::getText()'],['../classsf_1_1ui_1_1_i_text.html#a8557ecaeb2b93d8e1370c870a532798e',1,'sf::ui::IText::getText()'],['../classsf_1_1ui_1_1_key_field.html#a3550ce7f5d0633fbd4c1d1cb23e78906',1,'sf::ui::KeyField::getText()'],['../classsf_1_1ui_1_1_label.html#a7a39a14d50ac9d5bbb97b2e9da1d87c3',1,'sf::ui::Label::getText()'],['../classsf_1_1ui_1_1_text_field.html#afa28ff9a86ac31418834e3d66c671325',1,'sf::ui::TextField::getText()']]],
   ['gettexture',['getTexture',['../classsf_1_1ui_1_1_component.html#a4dfee74c13c84ce9e1b239ca75a96a86',1,'sf::ui::Component']]],
   ['gettexturefired',['getTextureFired',['../classsf_1_1ui_1_1_button.html#a603bbe9d20c46f8ca8d78dd55211295e',1,'sf::ui::Button']]],
-  ['gettexturefocused',['getTextureFocused',['../classsf_1_1ui_1_1_focusable.html#a6816b61bb67eda5e6ca112e274cf9cea',1,'sf::ui::Focusable']]]
+  ['gettexturefocused',['getTextureFocused',['../classsf_1_1ui_1_1_focusable.html#a6816b61bb67eda5e6ca112e274cf9cea',1,'sf::ui::Focusable']]],
+  ['getx',['getX',['../classsf_1_1ui_1_1_button_clicked_event.html#a584979f27ab62ccab9b5457987f35990',1,'sf::ui::ButtonClickedEvent']]],
+  ['gety',['getY',['../classsf_1_1ui_1_1_button_clicked_event.html#a5da22d85691a09901bbdf0e542dd6ee8',1,'sf::ui::ButtonClickedEvent']]]
 ];

@@ -6,6 +6,7 @@ var searchData=
   ['_7easciitextfieldmodel',['~AsciiTextFieldModel',['../classsf_1_1ui_1_1_ascii_text_field_model.html#ac62d7f373477e7bd862c810ea974bc68',1,'sf::ui::AsciiTextFieldModel']]],
   ['_7eblacklisttextfieldmodel',['~BlacklistTextFieldModel',['../classsf_1_1ui_1_1_blacklist_text_field_model.html#ab8a27ec9d0f87b13f60435ae0df2d48e',1,'sf::ui::BlacklistTextFieldModel']]],
   ['_7ebutton',['~Button',['../classsf_1_1ui_1_1_button.html#a9f9d1e1139207d07580558be606b9e69',1,'sf::ui::Button']]],
+  ['_7ebuttonclickedevent',['~ButtonClickedEvent',['../classsf_1_1ui_1_1_button_clicked_event.html#a53e0a17a94e5934b61592a5d2eac585b',1,'sf::ui::ButtonClickedEvent']]],
   ['_7echeckbox',['~CheckBox',['../classsf_1_1ui_1_1_check_box.html#ae16f0f78d395b754a5bb9c990b01631e',1,'sf::ui::CheckBox']]],
   ['_7ecomponent',['~Component',['../classsf_1_1ui_1_1_component.html#a53203405ca1866fe3c05089d0f6ba0b5',1,'sf::ui::Component']]],
   ['_7ecomponentevent',['~ComponentEvent',['../classsf_1_1ui_1_1_component_event.html#a2a3bfec097661e45da007effeaddcca4',1,'sf::ui::ComponentEvent']]],

@@ -6,6 +6,7 @@ var namespacesf_1_1ui =
     [ "Component", "classsf_1_1ui_1_1_component.html", "classsf_1_1ui_1_1_component" ],
     [ "ComponentObservable", "classsf_1_1ui_1_1_component_observable.html", "classsf_1_1ui_1_1_component_observable" ],
     [ "ComponentObserver", "classsf_1_1ui_1_1_component_observer.html", "classsf_1_1ui_1_1_component_observer" ],
+    [ "ButtonClickedEvent", "classsf_1_1ui_1_1_button_clicked_event.html", "classsf_1_1ui_1_1_button_clicked_event" ],
     [ "ComponentEvent", "classsf_1_1ui_1_1_component_event.html", "classsf_1_1ui_1_1_component_event" ],
     [ "FocusedEvent", "classsf_1_1ui_1_1_focused_event.html", "classsf_1_1ui_1_1_focused_event" ],
     [ "Focusable", "classsf_1_1ui_1_1_focusable.html", "classsf_1_1ui_1_1_focusable" ],

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>SFML-UI: sf::ui::FocusedEvent Class Reference</title>
+<title>SFML-UI: sf::ui::ButtonClickedEvent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('classsf_1_1ui_1_1_focused_event.html','');});
+$(document).ready(function(){initNavTree('classsf_1_1ui_1_1_button_clicked_event.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -107,38 +107,39 @@ $(document).ready(function(){initNavTree('classsf_1_1ui_1_1_focused_event.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="classsf_1_1ui_1_1_focused_event-members.html">List of all members</a>  </div>
+<a href="classsf_1_1ui_1_1_button_clicked_event-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">sf::ui::FocusedEvent Class Reference</div>  </div>
+<div class="title">sf::ui::ButtonClickedEvent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A focused event.  
- <a href="classsf_1_1ui_1_1_focused_event.html#details">More...</a></p>
+<p>An event triggered when an <a class="el" href="classsf_1_1ui_1_1_abstract_button.html" title="Abstract class for all component that are button-like. ">AbstractButton</a> is fired.  
+ <a href="classsf_1_1ui_1_1_button_clicked_event.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_focused_event_8h_source.html">FocusedEvent.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_button_clicked_event_8h_source.html">ButtonClickedEvent.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for sf::ui::FocusedEvent:</div>
+Inheritance diagram for sf::ui::ButtonClickedEvent:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classsf_1_1ui_1_1_focused_event.png" usemap="#sf::ui::FocusedEvent_map" alt=""/>
-  <map id="sf::ui::FocusedEvent_map" name="sf::ui::FocusedEvent_map">
-<area href="classsf_1_1ui_1_1_component_event.html" title="The base class for all UI component events. " alt="sf::ui::ComponentEvent" shape="rect" coords="0,0,139,24"/>
+  <img src="classsf_1_1ui_1_1_button_clicked_event.png" usemap="#sf::ui::ButtonClickedEvent_map" alt=""/>
+  <map id="sf::ui::ButtonClickedEvent_map" name="sf::ui::ButtonClickedEvent_map">
+<area href="classsf_1_1ui_1_1_component_event.html" title="The base class for all UI component events. " alt="sf::ui::ComponentEvent" shape="rect" coords="0,0,153,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa5fbe7af64123b2d158f2502956234d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focused_event.html#aa5fbe7af64123b2d158f2502956234d5">FocusedEvent</a> (<a class="el" href="classsf_1_1ui_1_1_component.html">sf::ui::Component</a> *source, bool nowFocused)</td></tr>
-<tr class="memdesc:aa5fbe7af64123b2d158f2502956234d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event that is triggered each time a component change its focus status.  <a href="#aa5fbe7af64123b2d158f2502956234d5">More...</a><br/></td></tr>
-<tr class="separator:aa5fbe7af64123b2d158f2502956234d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaffccd70c908ca83e1f1ac4e36d8e5b1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focused_event.html#aaffccd70c908ca83e1f1ac4e36d8e5b1">~FocusedEvent</a> ()</td></tr>
-<tr class="separator:aaffccd70c908ca83e1f1ac4e36d8e5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a161383541ffbfc31ddc82ffcdc6da548"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focused_event.html#a161383541ffbfc31ddc82ffcdc6da548">isFocused</a> () const </td></tr>
-<tr class="separator:a161383541ffbfc31ddc82ffcdc6da548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98822c837ac61f299603c6e3f82daf36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focused_event.html#a98822c837ac61f299603c6e3f82daf36">wasFocused</a> () const </td></tr>
-<tr class="separator:a98822c837ac61f299603c6e3f82daf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9486b300f7586c159544f4af04dc30d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html#ac9486b300f7586c159544f4af04dc30d">ButtonClickedEvent</a> (<a class="el" href="classsf_1_1ui_1_1_abstract_button.html">AbstractButton</a> *source, sf::Mouse::Button button, int x, int y)</td></tr>
+<tr class="memdesc:ac9486b300f7586c159544f4af04dc30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event that is triggered each time a button is fired.  <a href="#ac9486b300f7586c159544f4af04dc30d">More...</a><br/></td></tr>
+<tr class="separator:ac9486b300f7586c159544f4af04dc30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e0a17a94e5934b61592a5d2eac585b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html#a53e0a17a94e5934b61592a5d2eac585b">~ButtonClickedEvent</a> ()</td></tr>
+<tr class="separator:a53e0a17a94e5934b61592a5d2eac585b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6fe6ac26d87dad65eb95d468c14a8b"><td class="memItemLeft" align="right" valign="top">sf::Mouse::Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html#a1e6fe6ac26d87dad65eb95d468c14a8b">getButton</a> () const </td></tr>
+<tr class="separator:a1e6fe6ac26d87dad65eb95d468c14a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584979f27ab62ccab9b5457987f35990"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html#a584979f27ab62ccab9b5457987f35990">getX</a> () const </td></tr>
+<tr class="separator:a584979f27ab62ccab9b5457987f35990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da22d85691a09901bbdf0e542dd6ee8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html#a5da22d85691a09901bbdf0e542dd6ee8">getY</a> () const </td></tr>
+<tr class="separator:a5da22d85691a09901bbdf0e542dd6ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classsf_1_1ui_1_1_component_event"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsf_1_1ui_1_1_component_event')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsf_1_1ui_1_1_component_event.html">sf::ui::ComponentEvent</a></td></tr>
 <tr class="memitem:a6a65a234a7934dbe5d29b62d62843290 inherit pub_methods_classsf_1_1ui_1_1_component_event"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a6a65a234a7934dbe5d29b62d62843290">ComponentEvent</a> (<a class="el" href="classsf_1_1ui_1_1_component.html">Component</a> *source)</td></tr>
 <tr class="memdesc:a6a65a234a7934dbe5d29b62d62843290 inherit pub_methods_classsf_1_1ui_1_1_component_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event related to the source component.  <a href="#a6a65a234a7934dbe5d29b62d62843290">More...</a><br/></td></tr>
@@ -148,32 +149,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40edb7c2d4b505f2caf46620c2d416c9 inherit pub_methods_classsf_1_1ui_1_1_component_event"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1ui_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a40edb7c2d4b505f2caf46620c2d416c9">getSource</a> () const </td></tr>
 <tr class="separator:a40edb7c2d4b505f2caf46620c2d416c9 inherit pub_methods_classsf_1_1ui_1_1_component_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a3a5fb8468b0a83b1a851a4dc09740c36"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focused_event.html#a3a5fb8468b0a83b1a851a4dc09740c36">m_isFocused</a></td></tr>
-<tr class="separator:a3a5fb8468b0a83b1a851a4dc09740c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classsf_1_1ui_1_1_component_event"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classsf_1_1ui_1_1_component_event')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classsf_1_1ui_1_1_component_event.html">sf::ui::ComponentEvent</a></td></tr>
 <tr class="memitem:a8ad2881cd759b88fc4d77f2033386504 inherit pro_attribs_classsf_1_1ui_1_1_component_event"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1ui_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a8ad2881cd759b88fc4d77f2033386504">m_source</a></td></tr>
 <tr class="separator:a8ad2881cd759b88fc4d77f2033386504 inherit pro_attribs_classsf_1_1ui_1_1_component_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A focused event. </p>
+<div class="textblock"><p>An event triggered when an <a class="el" href="classsf_1_1ui_1_1_abstract_button.html" title="Abstract class for all component that are button-like. ">AbstractButton</a> is fired. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa5fbe7af64123b2d158f2502956234d5"></a>
+<a class="anchor" id="ac9486b300f7586c159544f4af04dc30d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">sf::ui::FocusedEvent::FocusedEvent </td>
+          <td class="memname">sf::ui::ButtonClickedEvent::ButtonClickedEvent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classsf_1_1ui_1_1_component.html">sf::ui::Component</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classsf_1_1ui_1_1_abstract_button.html">AbstractButton</a> *&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>nowFocused</em>&#160;</td>
+          <td class="paramtype">sf::Mouse::Button&#160;</td>
+          <td class="paramname"><em>button</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -183,18 +194,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>An event that is triggered each time a component change its focus status. </p>
+<p>An event that is triggered each time a button is fired. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>the component that triggers this event </td></tr>
-    <tr><td class="paramname">nowFocused</td><td>whether the component is focused or not currently </td></tr>
+    <tr><td class="paramname">source</td><td>the abstract button fired </td></tr>
+    <tr><td class="paramname">button</td><td>the mouse button clicked </td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aaffccd70c908ca83e1f1ac4e36d8e5b1"></a>
+<a class="anchor" id="a53e0a17a94e5934b61592a5d2eac585b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -202,7 +215,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual sf::ui::FocusedEvent::~FocusedEvent </td>
+          <td class="memname">virtual sf::ui::ButtonClickedEvent::~ButtonClickedEvent </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td></td>
@@ -218,68 +231,63 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a161383541ffbfc31ddc82ffcdc6da548"></a>
+<a class="anchor" id="a1e6fe6ac26d87dad65eb95d468c14a8b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool sf::ui::FocusedEvent::isFocused </td>
+          <td class="memname">sf::Mouse::Button sf::ui::ButtonClickedEvent::getButton </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>if the component is focused </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the mouse button used </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a98822c837ac61f299603c6e3f82daf36"></a>
+<a class="anchor" id="a584979f27ab62ccab9b5457987f35990"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool sf::ui::FocusedEvent::wasFocused </td>
+          <td class="memname">int sf::ui::ButtonClickedEvent::getX </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>if the component was focused before </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>x </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a3a5fb8468b0a83b1a851a4dc09740c36"></a>
+<a class="anchor" id="a5da22d85691a09901bbdf0e542dd6ee8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const bool sf::ui::FocusedEvent::m_isFocused</td>
+          <td class="memname">int sf::ui::ButtonClickedEvent::getY </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>y </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>sfml-ui/include/SFML/UI/Event/<a class="el" href="_focused_event_8h_source.html">FocusedEvent.h</a></li>
+<li>sfml-ui/include/SFML/UI/Event/<a class="el" href="_button_clicked_event_8h_source.html">ButtonClickedEvent.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_focused_event.html">FocusedEvent</a></li>
+    <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_button_clicked_event.html">ButtonClickedEvent</a></li>
     <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>

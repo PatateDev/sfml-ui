@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "sf::ui::ComponentEvent", "classsf_1_1ui_1_1_component_event.html", [
+      [ "sf::ui::ButtonClickedEvent", "classsf_1_1ui_1_1_button_clicked_event.html", null ],
       [ "sf::ui::FocusedEvent", "classsf_1_1ui_1_1_focused_event.html", null ]
     ] ],
     [ "sf::ui::ComponentObservable", "classsf_1_1ui_1_1_component_observable.html", [

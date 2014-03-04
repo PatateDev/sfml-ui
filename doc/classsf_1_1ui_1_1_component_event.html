@@ -114,6 +114,9 @@ $(document).ready(function(){initNavTree('classsf_1_1ui_1_1_component_event.html
 </div><!--header-->
 <div class="contents">
 
+<p>The base class for all UI component events.  
+ <a href="classsf_1_1ui_1_1_component_event.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_component_event_8h_source.html">ComponentEvent.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for sf::ui::ComponentEvent:</div>
@@ -121,13 +124,15 @@ Inheritance diagram for sf::ui::ComponentEvent:</div>
  <div class="center">
   <img src="classsf_1_1ui_1_1_component_event.png" usemap="#sf::ui::ComponentEvent_map" alt=""/>
   <map id="sf::ui::ComponentEvent_map" name="sf::ui::ComponentEvent_map">
-<area href="classsf_1_1ui_1_1_focused_event.html" alt="sf::ui::FocusedEvent" shape="rect" coords="0,56,139,80"/>
+<area href="classsf_1_1ui_1_1_button_clicked_event.html" title="An event triggered when an AbstractButton is fired. " alt="sf::ui::ButtonClickedEvent" shape="rect" coords="0,56,153,80"/>
+<area href="classsf_1_1ui_1_1_focused_event.html" title="A focused event. " alt="sf::ui::FocusedEvent" shape="rect" coords="163,56,316,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a65a234a7934dbe5d29b62d62843290"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a6a65a234a7934dbe5d29b62d62843290">ComponentEvent</a> (<a class="el" href="classsf_1_1ui_1_1_component.html">Component</a> *source)</td></tr>
+<tr class="memdesc:a6a65a234a7934dbe5d29b62d62843290"><td class="mdescLeft">&#160;</td><td class="mdescRight">An event related to the source component.  <a href="#a6a65a234a7934dbe5d29b62d62843290">More...</a><br/></td></tr>
 <tr class="separator:a6a65a234a7934dbe5d29b62d62843290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a3bfec097661e45da007effeaddcca4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a2a3bfec097661e45da007effeaddcca4">~ComponentEvent</a> ()</td></tr>
 <tr class="separator:a2a3bfec097661e45da007effeaddcca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,7 +144,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a8ad2881cd759b88fc4d77f2033386504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsf_1_1ui_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component_event.html#a8ad2881cd759b88fc4d77f2033386504">m_source</a></td></tr>
 <tr class="separator:a8ad2881cd759b88fc4d77f2033386504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The base class for all UI component events. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6a65a234a7934dbe5d29b62d62843290"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,6 +160,14 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>An event related to the source component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>the component that triggers this event </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -192,6 +207,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the component that triggers this event </dd></dl>
 
 </div>
 </div>
@@ -225,7 +241,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_component_event.html">ComponentEvent</a></li>
-    <li class="footer">Generated on Mon Mar 3 2014 01:37:23 for SFML-UI by
+    <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
