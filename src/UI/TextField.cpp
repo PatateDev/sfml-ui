@@ -18,6 +18,7 @@
 #include <SFML/UI/TextField.h>
 #include <SFML/UI/SFMLUtils.h>
 #include <SFML/UI/Model/DefaultTextFieldModel.h>
+#include <SFML/UI/Event/TextEnteredEvent.h>
 
 using namespace sf::ui;
 
@@ -136,6 +137,8 @@ void TextField::updateEvent(const sf::Event& event)
 			m_text.setString(string);
 			m_cursor++;
 			updateCoord();
+			TextEnteredEvent textEvent(this, text);
+			triggerEvent(textEvent);
 		}
 
 		break;
