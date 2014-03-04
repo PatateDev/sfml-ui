@@ -29,9 +29,11 @@ class ComponentObserver
 {
     //CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
-    /*
-     * Any object which extends of this can observe a component
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Any object which extends of this can observe a component
+    ///
+    ////////////////////////////////////////////////////////////
     ComponentObserver();
 
     virtual ~ComponentObserver();
@@ -39,6 +41,11 @@ public:
 
     //METHODS ------------------------------------------------------------
 public:
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Called each time a component change
+    ///
+    ////////////////////////////////////////////////////////////
     virtual void onComponentEvent(const ComponentEvent &event) = 0;
     //--------------------------------------------------------------------
 };
@@ -47,3 +54,11 @@ public:
 } /* namespace sf */
 
 #endif // OBSERVER_H
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::ComponentObserver
+/// \brief A object updated each time a ComponentObservable change
+/// \ingroup ui
+/// \see sf::ui::ComponentObservable
+///
+////////////////////////////////////////////////////////////

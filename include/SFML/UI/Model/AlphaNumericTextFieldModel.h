@@ -27,13 +27,16 @@ namespace ui
 
 class AlphaNumericTextFieldModel : public WhitelistTextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * A text field model that allows letters and numbers,
-	 * only character between 'A' - 'Z', 'a' - 'z', '0' - '9' and '-'.
-	 */
+public:
+    ////////////////////////////////////////////////////////////
+	///
+	/// \brief A text field model that allows letters and numbers,
+	/// only character between 'A' - 'Z', 'a' - 'z', '0' - '9' and '-'.
+	///
+	////////////////////////////////////////////////////////////
 	AlphaNumericTextFieldModel();
+	
 	virtual ~AlphaNumericTextFieldModel();
 	//--------------------------------------------------------------------
 
@@ -53,3 +56,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* ALPHANUMERICTEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::AlphaNumericTextFieldModel
+/// \brief A textfield model that allows all alpha-numeric chars
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

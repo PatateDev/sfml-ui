@@ -29,16 +29,25 @@ class AsciiTextFieldModel : public TextFieldModel
 {
 public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief A textfield model which allow all ASCII characters
+	/// i.e all characters between 32 (include) and 126 (include)
+	/// as 127 is backspace
+	///
+	////////////////////////////////////////////////////////////
 	AsciiTextFieldModel();
 	virtual ~AsciiTextFieldModel();
 	//--------------------------------------------------------------------
 
 	//METHODS ------------------------------------------------------------
-	/*
-	 * Returns if the given character is allowed for the text field
-	 * Params:
-	 * 	c - the character to check
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return if the given character is allowed for the text field
+	///
+	/// \param c the character to check
+	///
+	////////////////////////////////////////////////////////////
 	virtual bool isCharAllowed(sf::Uint32 c) const;
 	//--------------------------------------------------------------------
 
@@ -54,3 +63,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* ASCIITEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::AsciiTextFieldModel
+/// \brief A textfield model that allows only ASCII chars
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

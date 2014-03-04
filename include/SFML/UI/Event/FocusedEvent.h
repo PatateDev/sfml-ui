@@ -29,12 +29,14 @@ class FocusedEvent : public ComponentEvent
 {
 //CONSTRUCTORS - DESTRUCTOR -----------------------------------------------------------
 public:
-    /*
-     * An event that is triggered each time a component change its focus status
-     * Params:
-     *  source - the component that triggers this event
-     *  nowFocused - whether the component is focused or not currently
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief An event that is triggered each time a component change its focus status
+    /// 
+    /// \param source the component that triggers this event
+    /// \param nowFocused whether the component is focused or not currently
+    ///
+    ////////////////////////////////////////////////////////////
     FocusedEvent(sf::ui::Component* source, bool nowFocused);
 
     virtual ~FocusedEvent();
@@ -46,14 +48,18 @@ public:
 
 //GETTERS - SETTERS -------------------------------------------------------------------
 public:
-    /*
-     * Returns if the component is focused
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return if the component is focused
+    ///
+    ////////////////////////////////////////////////////////////
     bool isFocused() const;
 
-    /*
-     * Returns is the component was focused before
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return if the component was focused before
+    ///
+    ////////////////////////////////////////////////////////////
     bool wasFocused() const;
 //-------------------------------------------------------------------------------------
 
@@ -66,3 +72,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* FOCUSEDEVENT_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::FocusedEvent
+/// \brief A focused event
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

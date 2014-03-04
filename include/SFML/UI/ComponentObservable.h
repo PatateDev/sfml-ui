@@ -31,44 +31,63 @@ class ComponentObservable
 {
 //CONSTRUCTORS - DESTRUCTOR -----------------------------------------------------------
 public:
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief The default constructor
+    ///
+    ////////////////////////////////////////////////////////////
     ComponentObservable();
+    
     virtual ~ComponentObservable();
 //-------------------------------------------------------------------------------------
 
 //METHODS -----------------------------------------------------------------------------
 public:
-    /*
-     * Add an observer
-     * Returns the index of the observer
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Add an observer
+    ///
+    /// \return the index of the observer
+    ///
+    ////////////////////////////////////////////////////////////
     int addObserver(sf::ui::ComponentObserver* observer);
 
-    /*
-     * Returns the observer at the given index
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the observer at the given index
+    ///
+    ////////////////////////////////////////////////////////////
     const sf::ui::ComponentObserver* getObserver(int index) const;
 
-    /*
-     * Returns the number of observers
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the number of observers
+    ///
+    ////////////////////////////////////////////////////////////
     int countObservers();
 
-    /*
-     * Remove the observer at the given index
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Remove the observer at the given index
+    ///
+    ////////////////////////////////////////////////////////////
     void removeObserver(int index);
 
-    /**
-     * Remove all the observers
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Remove all the observers
+    ///
+    ////////////////////////////////////////////////////////////
     void removeAllObservers();
 
 protected:
-    /**
-     * Triggers the event and notify all observers
-     * Params:
-     *  event - the event to push
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Triggers the event and notify all observers
+    ///
+    /// \param event - the event to push
+    ///
+    ////////////////////////////////////////////////////////////
     void triggerEvent(sf::ui::ComponentEvent &event);
 //-------------------------------------------------------------------------------------
 
@@ -85,3 +104,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* COMPONENTOBSERVABLE_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::ComponentObservable
+/// \brief The class who call the observers
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

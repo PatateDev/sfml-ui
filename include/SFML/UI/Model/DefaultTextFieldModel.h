@@ -27,12 +27,14 @@ namespace ui
 
 class DefaultTextFieldModel : public BlacklistTextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * The default text field model used that allows
-	 * all character excluding 0(NUL) - 31(US) and 127(DEL)
-	 */
+public:
+    ////////////////////////////////////////////////////////////
+    ///
+	/// \brief The default text field model used
+	/// It allows all character excluding 0(NUL) - 31(US) and 127(DEL)
+	///
+	////////////////////////////////////////////////////////////
 	DefaultTextFieldModel();
 
 	virtual ~DefaultTextFieldModel();
@@ -54,3 +56,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* DEFAULTTEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::DefaultTextFieldModel
+/// \brief The default textfield model
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

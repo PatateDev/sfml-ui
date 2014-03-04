@@ -27,13 +27,16 @@ namespace ui
 
 class AlphaTextFieldModel : public WhitelistTextFieldModel
 {
-public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
-	/*
-	 * An alphabetic text field model that allows
-	 * only character in range 'A' - 'Z' and 'a' - 'z'
-	 */
+public:
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief An alphabetic text field model that allows
+	/// only character in range 'A' - 'Z' and 'a' - 'z'
+	///
+	////////////////////////////////////////////////////////////
 	AlphaTextFieldModel();
+	
 	virtual ~AlphaTextFieldModel();
 	//--------------------------------------------------------------------
 
@@ -53,3 +56,11 @@ public:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* ALPHATEXTFIELDMODEL_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::AlphaTextFieldModel
+/// \brief A textfield model that allows only letters
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

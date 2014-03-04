@@ -31,16 +31,20 @@ class Component : public Drawable, public ComponentObservable
 
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
-	/*
-	 * Creates an empty component, without texture
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates an empty component, without texture
+	///
+	////////////////////////////////////////////////////////////
 	Component();
 
-	/*
-	 * Creates a component with the give texture
-	 * Params:
-	 * 	texture - the texture displayed by the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a component with the give texture
+	///
+	/// \param texture - the texture displayed by the component
+	///
+	////////////////////////////////////////////////////////////
 	Component(sf::Texture const &texture);
 
 	virtual ~Component();
@@ -48,84 +52,108 @@ public:
 
 	//METHODS ------------------------------------------------------------
 public:
-	/*
-	 * Update the component each time an event has been polled
-	 * Params:
-	 * 	event - the window's event polled
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Update the component each time an event has been polled
+	///
+	/// \param event the window's event polled
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateEvent(sf::Event const &event) = 0;
 
-	/*
-	 * Update the component with the main loop's frequency.
-	 * Can be useful for animation, or time's needed stuff
-	 * Params:
-	 * 	delta - the time between this update and the last
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Update the component with the main loop's frequency
+	/// Can be useful for animation, or time's needed stuff
+	///
+	/// \param delta the time between this update and the last one
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateFixed(sf::Time delta) = 0;
 
-	/*
-	 * Move the component
-	 * Params:
-	 *  vector - the move's vector
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Move the component
+	///
+	/// \param vector the move's vector
+	///
+	////////////////////////////////////////////////////////////
 	void move(sf::Vector2f const &vector);
 
-	/*
-	 * Move the component
-	 * Params:
-	 *  x - the x move
-	 *  y - the y move
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Move the component
+	///
+	/// \param x the x movement
+	/// \param y the y movement
+	////////////////////////////////////////////////////////////
 	void move(float x, float y);
 
 protected:
-	/*
-	 * Draw the component to the render target
-	 */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Draw the component to the render target
+    ///
+    ////////////////////////////////////////////////////////////
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-	/*
-	 * Called when the component need update its geometry
-	 * Inherit when you need to update some sprite
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Called when the component need update its geometry
+	/// Inherit when you need to update some sprite
+	///
+	////////////////////////////////////////////////////////////
 	virtual void updateCoord();
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
 public:
-	/*
-	 * Returns the texture of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the texture of the component
+	///
+	////////////////////////////////////////////////////////////
 	const sf::Texture* getTexture() const;
 
-	/*
-	 * Set the texture of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the texture of the component
+	///
+	////////////////////////////////////////////////////////////
 	void setTexture(const sf::Texture& texture);
 
-	/*
-	 * Returns the position of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the position of the component
+	///
+	////////////////////////////////////////////////////////////
 	const sf::Vector2f& getPosition() const;
 
-	/*
-	 * Set the component's position
-	 * Params:
-	 * 	position - the position vector
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the component's position
+	///
+	/// \param position - the position vector
+	///
+	////////////////////////////////////////////////////////////
 	void setPosition(sf::Vector2f const &position);
 
-	/*
-	 * Set the component's position
-	 * Params:
-	 * 	x - the x coordinate
-	 * 	y - the y coordinate
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the component's position
+	///
+	///
+	/// \param x - the x coordinate
+	/// \param y - the y coordinate
+	///
+	////////////////////////////////////////////////////////////
 	void setPosition(float x, float y);
 
-	/*
-	 * Returns the size of the component
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the size of the component
+	///
+	////////////////////////////////////////////////////////////
 	virtual sf::Vector2f getSize() const;
 	//--------------------------------------------------------------------
 
@@ -140,3 +168,11 @@ protected:
 } /* namespace sf */
 
 #endif /* COMPONENT_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::Component
+/// \brief The base class for all UI components
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

@@ -28,11 +28,13 @@ class ComponentEvent
 {
     //CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
-    /*
-     * An event related to the source component
-     * Params:
-     *  source - the component that triggers this event
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief An event related to the source component
+    ///
+    /// \param source the component that triggers this event
+    ///
+    ////////////////////////////////////////////////////////////
     ComponentEvent(Component *source);
 
     virtual ~ComponentEvent();
@@ -40,9 +42,11 @@ public:
     
     //GETTERS/SETTERS ----------------------------------------------------
 public:
-    /*
-     * Return the component that triggers this event
-     */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the component that triggers this event
+    ///
+    ////////////////////////////////////////////////////////////
     Component* getSource() const;
     //--------------------------------------------------------------------
     
@@ -56,3 +60,11 @@ protected:
 } /* namespace sf */
 
 #endif // COMPONENT_EVENT_H
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::ComponentEvent
+/// \brief The base class for all UI component events
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////

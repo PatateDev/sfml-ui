@@ -29,22 +29,25 @@ class Focusable: public Component
 {
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
-	/*
-	 * Creates an empty Component Focusable, without textures.
-	 * This class does NOT define when the component should be focused,
-	 * You have to do that in the inherited class
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates an empty Component Focusable, without textures.
+	/// This class does NOT define when the component should be focused,
+	/// You have to do that in the inherited class
+	///
+	////////////////////////////////////////////////////////////
 	Focusable();
 
-	/*
-	 * Creates a Component Focusable with given textures.
-	 * This class does NOT define when the component should be focused,
-	 * You have to do that in the inherited class.
-	 *
-	 * Params:
-	 * 	texture - the default texture of the component
-	 * 	textureFocused - the texture when the component is focused
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Creates a Component Focusable with given textures.
+	/// This class does NOT define when the component should be focused,
+	/// You have to do that in the inherited class.
+	///
+	/// \param texture the default texture of the component
+	/// \param textureFocused the texture when the component is focused
+	///
+	////////////////////////////////////////////////////////////
 	Focusable(sf::Texture const &texture, sf::Texture const &textureFocused);
 
 	virtual ~Focusable();
@@ -52,41 +55,60 @@ public:
 
 	//METHODS ------------------------------------------------------------
 protected:
-	/*
-	 * Returns whether the click should focus the component or not
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return whether the click should focus the component or not
+	///
+	/// \param button - the mouse's button
+	/// \param x - the x coord
+	/// \param y - the y coord
+	///
+	////////////////////////////////////////////////////////////
 	virtual bool checkClickOn(sf::Mouse::Button button, int x, int y) const;
 
-	/*
-	 * Returns whether the given coordinate is on the component or out
-	 */
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return whether the given coordinate is on the component or out
+    ///
+    /// \param x - the x coord
+    /// \param y - the y coord
+    ///
+    ////////////////////////////////////////////////////////////
 	virtual bool isCoordOnComponent(int x, int y) const;
 	//--------------------------------------------------------------------
 
 	//GETTERS/SETTERS ----------------------------------------------------
 public:
-	/*
-	 * Returns whether the component is focused or not
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return whether the component is focused or not
+	///
+	////////////////////////////////////////////////////////////
 	bool isFocused() const;
 
-	/*
-	 * Set if the component is focused
-	 * Params:
-	 * 	focused - is focused
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set if the component is focused
+	///
+	/// \param focused - is focused
+	///
+	////////////////////////////////////////////////////////////
 	void setFocused(bool focused);
 
-	/*
-	 * Returns the texture when the component is focused
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \return the texture when the component is focused
+	///
+	////////////////////////////////////////////////////////////
 	const sf::Texture* getTextureFocused() const;
 
-	/*
-	 * Set the texture that is displayed when the component is displayed
-	 * Params:
-	 * 	textureFocused - the texture when the component is focused
-	 */
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Set the texture that is displayed when the component is displayed
+	///
+	/// \param textureFocused - the texture when the component is focused
+	///
+	////////////////////////////////////////////////////////////
 	void setTextureFocused(const sf::Texture& textureFocused);
 	//--------------------------------------------------------------------
 
@@ -100,3 +122,11 @@ protected:
 } /* namespace ui */
 } /* namespace sf */
 #endif /* FOCUSABLE_H_ */
+
+////////////////////////////////////////////////////////////
+///
+/// \class sf::ui::Focusable
+/// \brief The base class for all UI components that can be focused
+/// \ingroup ui
+///
+////////////////////////////////////////////////////////////
