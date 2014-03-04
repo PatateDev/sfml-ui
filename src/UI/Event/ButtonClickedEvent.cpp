@@ -15,43 +15,35 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <SFML/UI/AbstractButton.h>
 #include <SFML/UI/Event/ButtonClickedEvent.h>
 
 using namespace sf::ui;
 
-AbstractButton::AbstractButton()
-: Focusable()
+ButtonClickedEvent::ButtonClickedEvent(AbstractButton* source, sf::Mouse::Button button, int x, int y)
+: ComponentEvent(source),
+  m_button(button), m_x(x), m_y(y)
 {
 
 }
 
-AbstractButton::AbstractButton(const sf::Texture& texture, const sf::Texture& textureFocused)
-: Focusable(texture, textureFocused)
+ButtonClickedEvent::~ButtonClickedEvent()
 {
 
 }
 
-AbstractButton::~AbstractButton()
+sf::Mouse::Button ButtonClickedEvent::getButton() const
 {
-
+    return m_button;
 }
 
-void AbstractButton::updateEvent(const sf::Event& event)
+int ButtonClickedEvent::getX() const
 {
-	switch(event.type)
-	{
-	case sf::Event::MouseButtonReleased:
-
-		if (checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y))
-		{
-		    sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
-			onClick();
-			triggerEvent(buttonEvent);
-		}
-
-		break;
-	default:
-		break;
-	}
+    return m_x;
 }
+
+int ButtonClickedEvent::getY() const
+{
+    return m_y;
+}
+
+
