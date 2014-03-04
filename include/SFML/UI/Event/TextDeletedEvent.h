@@ -15,8 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TEXTENTEREDEVENT_H_
-#define TEXTENTEREDEVENT_H_
+#ifndef EVENTTEXTDELETEDEVENT_H_
+#define EVENTTEXTDELETEDEVENT_H_
 
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/TextField.h>
@@ -27,22 +27,25 @@ namespace sf
 namespace ui
 {
 
-class TextEnteredEvent : public ComponentEvent
+class TextDeletedEvent : public sf::ui::ComponentEvent
 {
-//CONSTRUCTORS - DESTRUCTOR -----------------------------------------------------------
 public:
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief An event that is triggered each time a text is typed
+    /// \brief An event that is triggered each time a text is deleted
     /// Triggered only with TextField
     ///
     /// \param source source the TextField that has triggered this event
-    /// \param text the text entered
+    /// \param text the text deleted
+    /// \param position the index of the char deleted
     ///
     ///////////////////////////////////////////////////////////////
-    TextEnteredEvent(TextField* source, sf::Uint32 text);
+    TextDeletedEvent(TextField* source, sf::Uint32 text, unsigned int position);
 
-    virtual ~TextEnteredEvent();
+    virtual ~TextDeletedEvent();
+
+//CONSTRUCTORS - DESTRUCTOR -----------------------------------------------------------
+
 //-------------------------------------------------------------------------------------
 
 //METHODS -----------------------------------------------------------------------------
@@ -51,28 +54,36 @@ public:
 
 //GETTERS - SETTERS -------------------------------------------------------------------
 public:
-    ////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     ///
-    /// \return the text entered
+    /// \return the text deleted
     ///
-    ////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     sf::Uint32 getText() const;
+
+    ///////////////////////////////////////////////////////////////
+    ///
+    /// \return the position of the char deleted
+    ///
+    ///////////////////////////////////////////////////////////////
+    unsigned int getPosition() const;
 //-------------------------------------------------------------------------------------
 
 //FIELDS ------------------------------------------------------------------------------
 private:
     const sf::Uint32 m_text;
+    const unsigned int m_position;
 //-------------------------------------------------------------------------------------
 };
 
 } /* namespace ui */
 } /* namespace sf */
-#endif /* TEXTENTEREDEVENT_H_ */
+#endif /* EVENTTEXTDELETEDEVENT_H_ */
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::TextEnteredEvent
-/// \brief An event triggered when a text is typed on a TextField
+/// \class sf::ui::TextDeltedEvent
+/// \brief An event triggered when a text is deleted on a TextField
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////

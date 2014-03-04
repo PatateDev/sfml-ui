@@ -19,6 +19,7 @@
 #include <SFML/UI/SFMLUtils.h>
 #include <SFML/UI/Model/DefaultTextFieldModel.h>
 #include <SFML/UI/Event/TextEnteredEvent.h>
+#include <SFML/UI/Event/TextDeletedEvent.h>
 
 using namespace sf::ui;
 
@@ -101,10 +102,8 @@ void TextField::updateEvent(const sf::Event& event)
 
 			if (m_cursor != 0 && m_text.getString().getSize() > 0)
 			{
-				sf::String str = m_text.getString();
-				str.erase(m_cursor - 1);
-				m_text.setString(str);
-				m_cursor--;
+			    deleteText(m_cursor - 1);
+			    m_cursor--;
 			}
 
 			break;
@@ -112,9 +111,7 @@ void TextField::updateEvent(const sf::Event& event)
 
 			if (m_cursor < m_text.getString().getSize())
 			{
-				sf::String str = m_text.getString();
-				str.erase(m_cursor);
-				m_text.setString(str);
+			    deleteText(m_cursor);
 			}
 
 			break;
@@ -146,6 +143,15 @@ void TextField::updateEvent(const sf::Event& event)
 	default:
 		break;
 	}
+}
+
+void TextField::deleteText(unsigned int index)
+{
+    sf::String str = m_text.getString();
+    TextDeletedEvent textEvent(this, str[index], index);
+    str.erase(index);
+    m_text.setString(str);
+    triggerEvent(textEvent);
 }
 
 void TextField::draw(sf::RenderTarget& target, sf::RenderStates states) const
