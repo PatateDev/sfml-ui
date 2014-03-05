@@ -34,6 +34,7 @@
 #include <SFML/UI/CheckBox.h>
 #include <SFML/UI/KeyField.h>
 #include <SFML/UI/TextField.h>
+#include <SFML/UI/CheckBoxGroup.h>
 
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/Event/FocusedEvent.h>
