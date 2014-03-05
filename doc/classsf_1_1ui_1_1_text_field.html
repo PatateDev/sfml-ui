@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SFML-UI
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">Simple UI library for SFML</div>
   </td>
@@ -219,6 +219,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade4ca7d1febb594ac57d6a3c74b47a65 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53203405ca1866fe3c05089d0f6ba0b5 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a53203405ca1866fe3c05089d0f6ba0b5">~Component</a> ()</td></tr>
 <tr class="separator:a53203405ca1866fe3c05089d0f6ba0b5 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ed884e53bbd365451cc02647471194 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a73ed884e53bbd365451cc02647471194">updateSize</a> ()</td></tr>
+<tr class="memdesc:a73ed884e53bbd365451cc02647471194 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the size of the component Call it when you update your texture after it was set, to recalculate the component's size with new texture loaded.  <a href="#a73ed884e53bbd365451cc02647471194">More...</a><br/></td></tr>
+<tr class="separator:a73ed884e53bbd365451cc02647471194 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2">move</a> (sf::Vector2f const &amp;vector)</td></tr>
 <tr class="memdesc:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the component.  <a href="#ad7dabe06735fce695d29bdd0358826b2">More...</a><br/></td></tr>
 <tr class="separator:ad7dabe06735fce695d29bdd0358826b2 inherit pub_methods_classsf_1_1ui_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +274,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab16c8a320d11e1f6516d71d5e5350a3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_text_field.html#ab16c8a320d11e1f6516d71d5e5350a3f">updateCoord</a> ()</td></tr>
 <tr class="memdesc:ab16c8a320d11e1f6516d71d5e5350a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the component need update its geometry Inherit when you need to update some sprite.  <a href="#ab16c8a320d11e1f6516d71d5e5350a3f">More...</a><br/></td></tr>
 <tr class="separator:ab16c8a320d11e1f6516d71d5e5350a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae75c57e5babbf2175ca403367613e082"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_text_field.html#ae75c57e5babbf2175ca403367613e082">deleteText</a> (unsigned int index)</td></tr>
+<tr class="memdesc:ae75c57e5babbf2175ca403367613e082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the char at the given index Trigger a <a class="el" href="classsf_1_1ui_1_1_text_deleted_event.html" title="An event triggered when a text is deleted on a TextField. ">TextDeletedEvent</a>.  <a href="#ae75c57e5babbf2175ca403367613e082">More...</a><br/></td></tr>
+<tr class="separator:ae75c57e5babbf2175ca403367613e082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classsf_1_1ui_1_1_focusable"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classsf_1_1ui_1_1_focusable')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classsf_1_1ui_1_1_focusable.html">sf::ui::Focusable</a></td></tr>
 <tr class="memitem:a6ddac7126ea226b4f58d87ab504d4ea1 inherit pro_methods_classsf_1_1ui_1_1_focusable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_focusable.html#a6ddac7126ea226b4f58d87ab504d4ea1">checkClickOn</a> (sf::Mouse::Button button, int x, int y) const </td></tr>
 <tr class="separator:a6ddac7126ea226b4f58d87ab504d4ea1 inherit pro_methods_classsf_1_1ui_1_1_focusable"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +460,38 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>if the string can be empty </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae75c57e5babbf2175ca403367613e082"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void sf::ui::TextField::deleteText </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delete the char at the given index Trigger a <a class="el" href="classsf_1_1ui_1_1_text_deleted_event.html" title="An event triggered when a text is deleted on a TextField. ">TextDeletedEvent</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index of the char to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1086,7 +1124,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_text_field.html">TextField</a></li>
-    <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
+    <li class="footer">Generated on Wed Mar 5 2014 23:56:00 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

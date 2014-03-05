@@ -2,7 +2,11 @@ var hierarchy =
 [
     [ "sf::ui::ComponentEvent", "classsf_1_1ui_1_1_component_event.html", [
       [ "sf::ui::ButtonClickedEvent", "classsf_1_1ui_1_1_button_clicked_event.html", null ],
-      [ "sf::ui::FocusedEvent", "classsf_1_1ui_1_1_focused_event.html", null ]
+      [ "sf::ui::CheckBoxChangeEvent", "classsf_1_1ui_1_1_check_box_change_event.html", null ],
+      [ "sf::ui::FocusedEvent", "classsf_1_1ui_1_1_focused_event.html", null ],
+      [ "sf::ui::KeyfieldSetEvent", "classsf_1_1ui_1_1_keyfield_set_event.html", null ],
+      [ "sf::ui::TextDeletedEvent", "classsf_1_1ui_1_1_text_deleted_event.html", null ],
+      [ "sf::ui::TextEnteredEvent", "classsf_1_1ui_1_1_text_entered_event.html", null ]
     ] ],
     [ "sf::ui::ComponentObservable", "classsf_1_1ui_1_1_component_observable.html", [
       [ "sf::ui::Component", "classsf_1_1ui_1_1_component.html", [
@@ -17,7 +21,9 @@ var hierarchy =
         [ "sf::ui::Label", "classsf_1_1ui_1_1_label.html", null ]
       ] ]
     ] ],
-    [ "sf::ui::ComponentObserver", "classsf_1_1ui_1_1_component_observer.html", null ],
+    [ "sf::ui::ComponentObserver", "classsf_1_1ui_1_1_component_observer.html", [
+      [ "sf::ui::CheckBoxGroup", "classsf_1_1ui_1_1_check_box_group.html", null ]
+    ] ],
     [ "Drawable", null, [
       [ "sf::ui::Component", "classsf_1_1ui_1_1_component.html", null ]
     ] ],

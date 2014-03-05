@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SFML-UI
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">Simple UI library for SFML</div>
   </td>
@@ -152,6 +152,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a944c251fcced34859846811a68134e1b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a944c251fcced34859846811a68134e1b">updateFixed</a> (sf::Time delta)=0</td></tr>
 <tr class="memdesc:a944c251fcced34859846811a68134e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the component with the main loop's frequency Can be useful for animation, or time's needed stuff.  <a href="#a944c251fcced34859846811a68134e1b">More...</a><br/></td></tr>
 <tr class="separator:a944c251fcced34859846811a68134e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ed884e53bbd365451cc02647471194"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#a73ed884e53bbd365451cc02647471194">updateSize</a> ()</td></tr>
+<tr class="memdesc:a73ed884e53bbd365451cc02647471194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the size of the component Call it when you update your texture after it was set, to recalculate the component's size with new texture loaded.  <a href="#a73ed884e53bbd365451cc02647471194">More...</a><br/></td></tr>
+<tr class="separator:a73ed884e53bbd365451cc02647471194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7dabe06735fce695d29bdd0358826b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsf_1_1ui_1_1_component.html#ad7dabe06735fce695d29bdd0358826b2">move</a> (sf::Vector2f const &amp;vector)</td></tr>
 <tr class="memdesc:ad7dabe06735fce695d29bdd0358826b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the component.  <a href="#ad7dabe06735fce695d29bdd0358826b2">More...</a><br/></td></tr>
 <tr class="separator:ad7dabe06735fce695d29bdd0358826b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -608,8 +611,30 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#aae9e09424c3186ff8a7600d17710a4f2">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#aa125c2eae20bd011945e9cf9b67d40d7">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a5b58578189662b908e35e69a72dcd4b0">sf::ui::TextField</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a34e16b013cbde23f5dede6fea2adfea0">sf::ui::KeyField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#aa3b03ef8afb865033def88df0c8e18bb">sf::ui::Label</a>.</p>
+<p>Implemented in <a class="el" href="classsf_1_1ui_1_1_button.html#aae9e09424c3186ff8a7600d17710a4f2">sf::ui::Button</a>, <a class="el" href="classsf_1_1ui_1_1_text_field.html#a5b58578189662b908e35e69a72dcd4b0">sf::ui::TextField</a>, <a class="el" href="classsf_1_1ui_1_1_check_box.html#aa125c2eae20bd011945e9cf9b67d40d7">sf::ui::CheckBox</a>, <a class="el" href="classsf_1_1ui_1_1_key_field.html#a34e16b013cbde23f5dede6fea2adfea0">sf::ui::KeyField</a>, and <a class="el" href="classsf_1_1ui_1_1_label.html#aa3b03ef8afb865033def88df0c8e18bb">sf::ui::Label</a>.</p>
 
+</div>
+</div>
+<a class="anchor" id="a73ed884e53bbd365451cc02647471194"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sf::ui::Component::updateSize </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the size of the component Call it when you update your texture after it was set, to recalculate the component's size with new texture loaded. </p>
+<p>Example: </p>
+<div class="fragment"><div class="line">sf::Texture texture;</div>
+<div class="line">sf::Label label(texture); <span class="comment">// Now label has a pointer to texture, moreover its size is (0;0)</span></div>
+<div class="line">texture.loadFromFile(<span class="stringliteral">&quot;texture.png&quot;</span>); <span class="comment">// New texture loaded, and so its size has changed</span></div>
+<div class="line">label.updateSize(); <span class="comment">// Tell label that it have to change its size, and calculate it with the updated texture&#39;s size</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -662,7 +687,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesf.html">sf</a></li><li class="navelem"><a class="el" href="namespacesf_1_1ui.html">ui</a></li><li class="navelem"><a class="el" href="classsf_1_1ui_1_1_component.html">Component</a></li>
-    <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
+    <li class="footer">Generated on Wed Mar 5 2014 23:56:00 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

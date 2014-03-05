@@ -11,6 +11,9 @@ var dir_4cabc74441f26485d2dcef8a4e58d85d =
     [ "CheckBox.h", "_check_box_8h.html", [
       [ "CheckBox", "classsf_1_1ui_1_1_check_box.html", "classsf_1_1ui_1_1_check_box" ]
     ] ],
+    [ "CheckBoxGroup.h", "_check_box_group_8h.html", [
+      [ "CheckBoxGroup", "classsf_1_1ui_1_1_check_box_group.html", "classsf_1_1ui_1_1_check_box_group" ]
+    ] ],
     [ "Component.h", "_component_8h.html", [
       [ "Component", "classsf_1_1ui_1_1_component.html", "classsf_1_1ui_1_1_component" ]
     ] ],

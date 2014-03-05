@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SFML-UI
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">Simple UI library for SFML</div>
   </td>
@@ -123,9 +123,14 @@ $(document).ready(function(){initNavTree('_u_i_8hpp.html','');});
 <code>#include &lt;<a class="el" href="_check_box_8h_source.html">SFML/UI/CheckBox.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_key_field_8h_source.html">SFML/UI/KeyField.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_text_field_8h_source.html">SFML/UI/TextField.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_check_box_group_8h_source.html">SFML/UI/CheckBoxGroup.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_component_event_8h_source.html">SFML/UI/Event/ComponentEvent.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_focused_event_8h_source.html">SFML/UI/Event/FocusedEvent.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_button_clicked_event_8h_source.html">SFML/UI/Event/ButtonClickedEvent.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_keyfield_set_event_8h_source.html">SFML/UI/Event/KeyfieldSetEvent.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_text_entered_event_8h_source.html">SFML/UI/Event/TextEnteredEvent.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_text_deleted_event_8h_source.html">SFML/UI/Event/TextDeletedEvent.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_check_box_change_event_8h_source.html">SFML/UI/Event/CheckBoxChangeEvent.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_text_field_model_8h_source.html">SFML/UI/Model/TextFieldModel.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_blacklist_text_field_model_8h_source.html">SFML/UI/Model/BlacklistTextFieldModel.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="_default_text_field_model_8h_source.html">SFML/UI/Model/DefaultTextFieldModel.h</a>&gt;</code><br/>
@@ -142,7 +147,9 @@ Macros</h2></td></tr>
 <tr class="separator:a91fbcbaacddfe8d34effd470ce574a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5897fb17fa689cfc54a43f8683c06722"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_u_i_8hpp.html#a5897fb17fa689cfc54a43f8683c06722">SFML_UI_VERSION_MINOR</a>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a5897fb17fa689cfc54a43f8683c06722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb3eb395b51923adc4ee08346158efd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_u_i_8hpp.html#afb3eb395b51923adc4ee08346158efd0">SFML_UI_VERSION_REVISION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a485f6519d4a18f8bbc89a591783fb553"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_u_i_8hpp.html#a485f6519d4a18f8bbc89a591783fb553">SFML_UI_VERSION_PATCH</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a485f6519d4a18f8bbc89a591783fb553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3eb395b51923adc4ee08346158efd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_u_i_8hpp.html#afb3eb395b51923adc4ee08346158efd0">SFML_UI_VERSION_REVISION</a>&#160;&#160;&#160;<a class="el" href="_u_i_8hpp.html#a485f6519d4a18f8bbc89a591783fb553">SFML_UI_VERSION_PATCH</a></td></tr>
 <tr class="separator:afb3eb395b51923adc4ee08346158efd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -172,12 +179,24 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a485f6519d4a18f8bbc89a591783fb553"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SFML_UI_VERSION_PATCH&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="afb3eb395b51923adc4ee08346158efd0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SFML_UI_VERSION_REVISION&#160;&#160;&#160;0</td>
+          <td class="memname">#define SFML_UI_VERSION_REVISION&#160;&#160;&#160;<a class="el" href="_u_i_8hpp.html#a485f6519d4a18f8bbc89a591783fb553">SFML_UI_VERSION_PATCH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -190,7 +209,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_75c9a9360f747771b8e72372db89d159.html">sfml-ui</a></li><li class="navelem"><a class="el" href="dir_d6142e3813d6d080cf63af0472235b19.html">include</a></li><li class="navelem"><a class="el" href="dir_c553f07c428d866955e51a7c49f1e5c6.html">SFML</a></li><li class="navelem"><a class="el" href="_u_i_8hpp.html">UI.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
+    <li class="footer">Generated on Wed Mar 5 2014 23:56:00 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

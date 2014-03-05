@@ -20,7 +20,7 @@ var classsf_1_1ui_1_1_button =
     [ "setFontColor", "classsf_1_1ui_1_1_button.html#a20d793aaea05e68f2eb597171e188267", null ],
     [ "setFontSize", "classsf_1_1ui_1_1_button.html#a64cbb346f532b31e2effb02f134f57ad", null ],
     [ "setText", "classsf_1_1ui_1_1_button.html#ab1bc7ada41f8712ea1ddb25ffdc42830", null ],
-    [ "setTextureFired", "classsf_1_1ui_1_1_button.html#adaf8b5bdc05dc5d63ac18e2ad0d2ae12", null ],
+    [ "setTextureFired", "classsf_1_1ui_1_1_button.html#a4e3075a2eb6f1bd0b61cf35e623edb14", null ],
     [ "updateCoord", "classsf_1_1ui_1_1_button.html#a464c7e5c70c12fca45b0b849b4235f1f", null ],
     [ "updateEvent", "classsf_1_1ui_1_1_button.html#a57cbd85f68795fd7af44f1c6a18bbb4f", null ],
     [ "updateFixed", "classsf_1_1ui_1_1_button.html#aae9e09424c3186ff8a7600d17710a4f2", null ],

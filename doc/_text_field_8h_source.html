@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">SFML-UI
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">Simple UI library for SFML</div>
   </td>
@@ -155,69 +155,71 @@ $(document).ready(function(){initNavTree('_text_field_8h_source.html','');});
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#ab16c8a320d11e1f6516d71d5e5350a3f" title="Called when the component need update its geometry Inherit when you need to update some sprite...">updateCoord</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#abf5a03ab1d90bd92b03edd89724ac998" title="Update the component each time an event has been polled. ">updateEvent</a>(sf::Event <span class="keyword">const</span> &amp;event);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#ae75c57e5babbf2175ca403367613e082" title="Delete the char at the given index Trigger a TextDeletedEvent. ">deleteText</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a5b58578189662b908e35e69a72dcd4b0" title="Update the component with the main loop&#39;s frequency Can be useful for animation, or time&#39;s needed stu...">updateFixed</a>(sf::Time delta);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//GETTERS/SETTERS ----------------------------------------------------</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> <a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a>* <a class="code" href="classsf_1_1ui_1_1_text_field.html#a49062ac8d3b8a69235f8b4437a74a2cb">getModel</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a18ff9236dc22eb02bf0ef2540961043e" title="Sets the model of the text field. ">setModel</a>(<a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a>* model);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> sf::String&amp; <a class="code" href="classsf_1_1ui_1_1_text_field.html#afa28ff9a86ac31418834e3d66c671325">getText</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a064ac9be6b082081ada502e4b938a7e2" title="Sets the text&#39;s string of the component Don&#39;t forget to set the font. ">setText</a>(sf::String <span class="keyword">const</span> &amp;text);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#abf5a03ab1d90bd92b03edd89724ac998" title="Update the component each time an event has been polled. ">updateEvent</a>(sf::Event <span class="keyword">const</span> &amp;event);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a5b58578189662b908e35e69a72dcd4b0" title="Update the component with the main loop&#39;s frequency Can be useful for animation, or time&#39;s needed stu...">updateFixed</a>(sf::Time delta);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//GETTERS/SETTERS ----------------------------------------------------</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> <a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a>* <a class="code" href="classsf_1_1ui_1_1_text_field.html#a49062ac8d3b8a69235f8b4437a74a2cb">getModel</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a18ff9236dc22eb02bf0ef2540961043e" title="Sets the model of the text field. ">setModel</a>(<a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a>* model);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> sf::String&amp; <a class="code" href="classsf_1_1ui_1_1_text_field.html#afa28ff9a86ac31418834e3d66c671325">getText</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> sf::Font* <a class="code" href="classsf_1_1ui_1_1_text_field.html#a142ed8d4c52a1fcd0c7c4f5cd87d06af">getFont</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a55f7ff770de77af96135759d240b57da" title="Sets the font of the component&#39;s text. ">setFont</a>(sf::Font <span class="keyword">const</span> &amp;font);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a52b84d1233c6e529bdd41cd63d51164b">getFontSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#ab199f163be1373844a3041c339a27366" title="Set the font&#39;s size of the component. ">setFontSize</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">virtual</span> sf::Color <a class="code" href="classsf_1_1ui_1_1_text_field.html#aff58b2b445335952dee7083c2dd846c6">getFontColor</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a6408c2d865cb8b26bd26845a5eb80b68" title="Sets the color&#39;s font of the text. ">setFontColor</a>(sf::Color color);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a1a69ff386d5b14c2bc0b542efd9e7633">getCursor</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a63552ddf822199296c17750aaa9d00b8" title="Sets the cursor&#39;s position. ">setCursor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cursor);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#aedd5a3b54174d2ba8e1fcd7dd35bc40e">getMaxLength</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#afe5ad497ddc7b4297b22fab76475d926" title="Sets the max length that the string can have -1 means the string has no length limit. ">setMaxLength</a>(<span class="keywordtype">int</span> maxLength);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a419503f20f27973058a4766b6790c533">canBeEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#adcb1fafffcefc096618c924edf31ab0b" title="Sets if the string can be empty. ">setCanBeEmpty</a>(<span class="keywordtype">bool</span> canBeEmpty);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">//FIELDS -------------------------------------------------------------</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#ad142c8bb82a90dc41d543ceaae9048e3">  237</a></span>&#160;    sf::Text <a class="code" href="classsf_1_1ui_1_1_text_field.html#ad142c8bb82a90dc41d543ceaae9048e3">m_text</a>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#aa5381e09da8e191c31a31bccda2ce84a">  238</a></span>&#160;    <a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a> *<a class="code" href="classsf_1_1ui_1_1_text_field.html#aa5381e09da8e191c31a31bccda2ce84a">m_model</a>;</div>
-<div class="line"><a name="l00239"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a2bf360f8acf7e4e19bae8a21217f256f">  239</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a2bf360f8acf7e4e19bae8a21217f256f">m_cursor</a>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a392442bf396a4177acf0bcecdb364aa1">  240</a></span>&#160;    sf::RectangleShape <a class="code" href="classsf_1_1ui_1_1_text_field.html#a392442bf396a4177acf0bcecdb364aa1">m_cursorShape</a>;</div>
-<div class="line"><a name="l00241"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a05aeb1dca8dd1ff0575241a5f2bd3162">  241</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a05aeb1dca8dd1ff0575241a5f2bd3162">m_maxLength</a>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#af12301531905aa382ef209d02984f2d8">  242</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#af12301531905aa382ef209d02984f2d8">m_canBeEmpty</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a064ac9be6b082081ada502e4b938a7e2" title="Sets the text&#39;s string of the component Don&#39;t forget to set the font. ">setText</a>(sf::String <span class="keyword">const</span> &amp;text);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> sf::Font* <a class="code" href="classsf_1_1ui_1_1_text_field.html#a142ed8d4c52a1fcd0c7c4f5cd87d06af">getFont</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a55f7ff770de77af96135759d240b57da" title="Sets the font of the component&#39;s text. ">setFont</a>(sf::Font <span class="keyword">const</span> &amp;font);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a52b84d1233c6e529bdd41cd63d51164b">getFontSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#ab199f163be1373844a3041c339a27366" title="Set the font&#39;s size of the component. ">setFontSize</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">virtual</span> sf::Color <a class="code" href="classsf_1_1ui_1_1_text_field.html#aff58b2b445335952dee7083c2dd846c6">getFontColor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a6408c2d865cb8b26bd26845a5eb80b68" title="Sets the color&#39;s font of the text. ">setFontColor</a>(sf::Color color);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a1a69ff386d5b14c2bc0b542efd9e7633">getCursor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a63552ddf822199296c17750aaa9d00b8" title="Sets the cursor&#39;s position. ">setCursor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cursor);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#aedd5a3b54174d2ba8e1fcd7dd35bc40e">getMaxLength</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#afe5ad497ddc7b4297b22fab76475d926" title="Sets the max length that the string can have -1 means the string has no length limit. ">setMaxLength</a>(<span class="keywordtype">int</span> maxLength);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a419503f20f27973058a4766b6790c533">canBeEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#adcb1fafffcefc096618c924edf31ab0b" title="Sets if the string can be empty. ">setCanBeEmpty</a>(<span class="keywordtype">bool</span> canBeEmpty);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;};</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;} <span class="comment">/* namespace ui */</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;} <span class="comment">/* namespace sf */</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TEXTFIELD_H_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">//FIELDS -------------------------------------------------------------</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#ad142c8bb82a90dc41d543ceaae9048e3">  247</a></span>&#160;    sf::Text <a class="code" href="classsf_1_1ui_1_1_text_field.html#ad142c8bb82a90dc41d543ceaae9048e3">m_text</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#aa5381e09da8e191c31a31bccda2ce84a">  248</a></span>&#160;    <a class="code" href="classsf_1_1ui_1_1_text_field_model.html" title="The abstract class that defines what can be typed into the text field. ">TextFieldModel</a> *<a class="code" href="classsf_1_1ui_1_1_text_field.html#aa5381e09da8e191c31a31bccda2ce84a">m_model</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a2bf360f8acf7e4e19bae8a21217f256f">  249</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a2bf360f8acf7e4e19bae8a21217f256f">m_cursor</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a392442bf396a4177acf0bcecdb364aa1">  250</a></span>&#160;    sf::RectangleShape <a class="code" href="classsf_1_1ui_1_1_text_field.html#a392442bf396a4177acf0bcecdb364aa1">m_cursorShape</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#a05aeb1dca8dd1ff0575241a5f2bd3162">  251</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#a05aeb1dca8dd1ff0575241a5f2bd3162">m_maxLength</a>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="classsf_1_1ui_1_1_text_field.html#af12301531905aa382ef209d02984f2d8">  252</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classsf_1_1ui_1_1_text_field.html#af12301531905aa382ef209d02984f2d8">m_canBeEmpty</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">//--------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;};</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;} <span class="comment">/* namespace ui */</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;} <span class="comment">/* namespace sf */</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TEXTFIELD_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_75c9a9360f747771b8e72372db89d159.html">sfml-ui</a></li><li class="navelem"><a class="el" href="dir_d6142e3813d6d080cf63af0472235b19.html">include</a></li><li class="navelem"><a class="el" href="dir_c553f07c428d866955e51a7c49f1e5c6.html">SFML</a></li><li class="navelem"><a class="el" href="dir_4cabc74441f26485d2dcef8a4e58d85d.html">UI</a></li><li class="navelem"><a class="el" href="_text_field_8h.html">TextField.h</a></li>
-    <li class="footer">Generated on Tue Mar 4 2014 17:15:48 for SFML-UI by
+    <li class="footer">Generated on Wed Mar 5 2014 23:56:00 for SFML-UI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

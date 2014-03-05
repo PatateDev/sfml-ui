@@ -15,6 +15,7 @@ var classsf_1_1ui_1_1_component =
     [ "updateCoord", "classsf_1_1ui_1_1_component.html#a83932e7b8da38e94e5ff95fb95b8fa81", null ],
     [ "updateEvent", "classsf_1_1ui_1_1_component.html#a4df4b2373f53cb24236c1a5e125d95d5", null ],
     [ "updateFixed", "classsf_1_1ui_1_1_component.html#a944c251fcced34859846811a68134e1b", null ],
+    [ "updateSize", "classsf_1_1ui_1_1_component.html#a73ed884e53bbd365451cc02647471194", null ],
     [ "m_sprite", "classsf_1_1ui_1_1_component.html#ad12b55206288603188a6c30c6a80dc08", null ],
     [ "m_texture", "classsf_1_1ui_1_1_component.html#ac4a73e37dcac79a1ec037dc6ffa84bd6", null ]
 ];

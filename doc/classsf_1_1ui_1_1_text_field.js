@@ -5,6 +5,7 @@ var classsf_1_1ui_1_1_text_field =
     [ "TextField", "classsf_1_1ui_1_1_text_field.html#a9dbce4649ad5198316db25e808893f6b", null ],
     [ "~TextField", "classsf_1_1ui_1_1_text_field.html#a400392fbaf1a39afcc3157ff4664eb95", null ],
     [ "canBeEmpty", "classsf_1_1ui_1_1_text_field.html#a419503f20f27973058a4766b6790c533", null ],
+    [ "deleteText", "classsf_1_1ui_1_1_text_field.html#ae75c57e5babbf2175ca403367613e082", null ],
     [ "draw", "classsf_1_1ui_1_1_text_field.html#a7b5220f73f8c0ae6371230b2d2440bd2", null ],
     [ "getCursor", "classsf_1_1ui_1_1_text_field.html#a1a69ff386d5b14c2bc0b542efd9e7633", null ],
     [ "getFont", "classsf_1_1ui_1_1_text_field.html#a142ed8d4c52a1fcd0c7c4f5cd87d06af", null ],
