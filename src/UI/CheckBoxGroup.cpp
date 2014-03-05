@@ -37,7 +37,7 @@ unsigned int CheckBoxGroup::addCheckBox(CheckBox& checkbox)
 {
     int index = countCheckbox();
     m_checkBoxVector.push_back(&checkbox);
-    m_checkBoxIndexVector[index] = checkbox.addObserver(this);
+    m_checkBoxIndexVector.push_back(checkbox.addObserver(this));
     return index;
 }
 

@@ -49,6 +49,7 @@ void Focusable::setFocused(bool focused)
     bool triggerEvent = m_focused != focused;
 
 	m_focused = focused;
+	m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
 
 	if (triggerEvent)
 	{
