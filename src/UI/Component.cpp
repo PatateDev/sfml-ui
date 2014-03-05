@@ -84,6 +84,11 @@ void Component::setPosition(float x, float y)
 	updateCoord();
 }
 
+void Component::updateSize()
+{
+    setTexture(*m_texture);
+}
+
 sf::Vector2f Component::getSize() const
 {
 	sf::FloatRect bounds = m_sprite.getGlobalBounds();

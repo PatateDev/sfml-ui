@@ -117,9 +117,9 @@ const sf::Texture* Button::getTextureFired() const
 	return m_textureFired;
 }
 
-void Button::setTextureFired(const sf::Texture* textureFired)
+void Button::setTextureFired(const sf::Texture& textureFired)
 {
-	m_textureFired = textureFired;
+	m_textureFired = &textureFired;
 }
 
 const sf::String& Button::getText() const

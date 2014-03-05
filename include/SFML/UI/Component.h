@@ -73,6 +73,24 @@ public:
 
 	////////////////////////////////////////////////////////////
 	///
+	/// \brief Update the size of the component
+	/// Call it when you update your texture
+	/// after it was set, to recalculate the component's size
+	/// with new texture loaded.
+	///
+	/// Example:
+	/// \code
+	/// sf::Texture texture;
+	/// sf::Label label(texture); // Now label has a pointer to texture, moreover its size is (0;0)
+	/// texture.loadFromFile("texture.png"); // New texture loaded, and so its size has changed
+	/// label.updateSize(); // Tell label that it have to change its size, and calculate it with the updated texture's size
+	/// \endcode
+	///
+	////////////////////////////////////////////////////////////
+	void updateSize();
+
+	////////////////////////////////////////////////////////////
+	///
 	/// \brief Move the component
 	///
 	/// \param vector the move's vector

@@ -218,7 +218,7 @@ public:
 	/// \param textureFired the texture when the button is fired
 	///
 	////////////////////////////////////////////////////////////
-	void setTextureFired(sf::Texture const *textureFired);
+	void setTextureFired(sf::Texture const &textureFired);
 
 	////////////////////////////////////////////////////////////
 	///
