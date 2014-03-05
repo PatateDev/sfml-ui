@@ -82,7 +82,7 @@ private:
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::TextDeltedEvent
+/// \class sf::ui::TextDeletedEvent
 /// \brief An event triggered when a text is deleted on a TextField
 /// \ingroup ui
 ///
