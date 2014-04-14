@@ -209,6 +209,12 @@ const sf::String& TextField::getText() const
 void TextField::setText(const sf::String& text)
 {
 	m_text.setString(text);
+	
+	if (m_cursor > m_text.getString().getSize())
+	{
+	    m_cursor = m_text.getString().getSize();
+	    updateCoord();
+	}
 }
 
 const sf::Font* TextField::getFont() const
