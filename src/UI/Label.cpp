@@ -16,6 +16,8 @@
  */
 
 #include <SFML/UI/Label.h>
+#include <cmath>
+#include <iostream>
 
 using namespace sf::ui;
 
@@ -112,4 +114,12 @@ void Label::setImage(const sf::Texture& image)
 {
 	m_texture = &image;
 	m_sprite.setTexture(image, true);
+}
+
+sf::Vector2f Label::getSize() const
+{
+    float x = fmaxf(m_text.getLocalBounds().width, m_sprite.getLocalBounds().width);
+    float y = fmaxf(m_text.getLocalBounds().height, m_sprite.getLocalBounds().height);
+    
+    return sf::Vector2f(x, y);
 }
