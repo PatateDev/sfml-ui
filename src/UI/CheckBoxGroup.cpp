@@ -55,8 +55,10 @@ void CheckBoxGroup::removeCheckbox(unsigned int index)
         m_checkBoxVector.erase(m_checkBoxVector.begin() + index);
         m_checkBoxIndexVector.erase(m_checkBoxIndexVector.begin() + index);
     }
-    else
+    /*else
         throw "index out of bounds";
+     CMake Android toolchain disable the exceptions
+    */
 }
 
 unsigned int CheckBoxGroup::countCheckbox() const
