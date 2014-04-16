@@ -1,4 +1,17 @@
 cmake_minimum_required(VERSION 2.8)
+
+# define a macro that helps defining an option
+macro(sfml_set_option var default type docstring)
+    if(NOT DEFINED ${var})
+        set(${var} ${default})
+    endif()
+    set(${var} ${${var}} CACHE ${type} ${docstring} FORCE)
+endmacro()
+
+# set a default build type if none was provided
+# this has to be done before the project() instruction!
+sfml_set_option(CMAKE_BUILD_TYPE Release STRING "Choose the type of build (Debug or Release)")
+
 project(sfml-ui)
 
 # include the configuration file
@@ -9,19 +22,14 @@ set(VERSION_MAJOR 0)
 set(VERSION_MINOR 3)
 set(VERSION_PATCH 1)
 
-# define a macro that helps defining an option
-macro(sfml_set_option var default type docstring)
-    if(NOT DEFINED ${var})
-        set(${var} ${default})
-    endif()
-    set(${var} ${${var}} CACHE ${type} ${docstring} FORCE)
-endmacro()
-
 sfml_set_option(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE)
 
 if (SFML_OS_WINDOWS)
     sfml_set_option(SFML_INCLUDE_PATH  "C:/Program Files (x86)/SFML/include" CACHE PATH "Location of SFML's include folder" FORCE)
     sfml_set_option(SFML_LIBRARY_PATH  "C:/Program Files (x86)/SFML/lib" CACHE PATH "Location of SFML's library folder" FORCE)
+elseif (SFML_OS_ANDROID)
+    sfml_set_option(SFML_INCLUDE_PATH  ${ANDROID_NDK}/sources/sfml/include CACHE PATH "Location of SFML's include folder" FORCE)
+    sfml_set_option(SFML_LIBRARY_PATH  ${ANDROID_NDK}/sources/sfml/lib/${ANDROID_ABI} CACHE PATH "Location of SFML's library folder" FORCE)
 else()
     sfml_set_option(SFML_INCLUDE_PATH  /usr/include CACHE PATH "Location of SFML's include folder" FORCE)
     sfml_set_option(SFML_LIBRARY_PATH  /usr/lib CACHE PATH "Location of SFML's library folder" FORCE)
@@ -137,7 +145,7 @@ target_link_libraries(
 	sfml-system
 )
 
-install(TARGETS sfml-ui DESTINATION lib/${LIB_SUFFIX})
+install(TARGETS sfml-ui DESTINATION lib${LIB_SUFFIX})
 install(DIRECTORY include DESTINATION .)
 
 if(SFML_OS_ANDROID)
