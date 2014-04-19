@@ -41,7 +41,7 @@ else()
     if(SFML_OS_IOS)
         set(BUILD_SHARED_LIBS FALSE)
     elseif(SFML_OS_ANDROID)
-        set(BUILD_SHARED_LIBS TRUE)
+        set(BUILD_SHARED_LIBS FALSE) # For now, sfml-ui is used as static library, as on Android, linking a shared library need a few more steps
     endif()
 endif()
 
@@ -68,7 +68,7 @@ if(SFML_OS_ANDROID)
     endif()
 
     # install everything in $NDK/sources/ because this path is appended by the NDK (convenient)
-    set(CMAKE_INSTALL_PREFIX ${ANDROID_NDK}/sources/sfml)
+    set(CMAKE_INSTALL_PREFIX ${ANDROID_NDK}/sources/sfml-ui)
 
     # we install libs in a subdirectory named after the ABI (lib/mips/*.so)
     set(LIB_SUFFIX "/${ANDROID_ABI}")
