@@ -64,7 +64,7 @@ protected:
 	/// \param y - the y coord
 	///
 	////////////////////////////////////////////////////////////
-	virtual bool checkClickOn(sf::Mouse::Button button, int x, int y) const;
+	virtual bool checkClickOn(int x, int y) const;
 
     ////////////////////////////////////////////////////////////
     ///

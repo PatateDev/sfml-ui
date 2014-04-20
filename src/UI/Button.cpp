@@ -28,48 +28,63 @@ Button::~Button()
 
 void Button::updateEvent(const sf::Event& event)
 {
-	switch (event.type)
-	{
-	case sf::Event::MouseMoved:
-		setFocused(isCoordOnComponent(event.mouseMove.x, event.mouseMove.y));
+    if (event.type == sf::Event::MouseMoved || event.type == sf::Event::TouchMoved)
+    {
+        int x = (event.type == sf::Event::MouseMoved ? event.mouseMove.x : event.touch.x);
+        int y = (event.type == sf::Event::MouseMoved ? event.mouseMove.y : event.touch.y);
+        
+		setFocused(isCoordOnComponent(x, y));
 
-		if (m_focused && sf::Mouse::isButtonPressed(sf::Mouse::Left) && m_textureFired)
+		if (m_focused && (event.type == sf::Event::MouseMoved ? sf::Mouse::isButtonPressed(sf::Mouse::Left) : true) && m_textureFired)
 			m_sprite.setTexture(*m_textureFired, false);
 		else if (m_focused && m_textureFocused)
 			m_sprite.setTexture(*m_textureFocused, false);
 		else
 			m_sprite.setTexture(*m_texture, false);
-
-		break;
-	case sf::Event::MouseButtonPressed:
-		if (event.mouseButton.button != sf::Mouse::Left)
-			break;
-
-		m_clicked = checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
-
-		if (m_clicked && m_textureFired)
-			m_sprite.setTexture(*m_textureFired, false);
-		else if (m_clicked)
-			m_sprite.setTexture(*m_textureFocused, false);
-
-		break;
-	case sf::Event::MouseButtonReleased:
-		if (event.mouseButton.button != sf::Mouse::Left)
-			break;
-
-		if (isCoordOnComponent(event.mouseButton.x, event.mouseButton.y) && m_textureFocused)
+	}
+	else if (event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::TouchBegan)
+	{
+	    int x = (event.type == sf::Event::MouseButtonPressed ? event.mouseButton.x : event.touch.x);
+        int y = (event.type == sf::Event::MouseButtonPressed ? event.mouseButton.y : event.touch.y);
+	    
+	    
+		if (event.type != sf::Event::MouseButtonPressed || event.mouseButton.button == sf::Mouse::Left)
 		{
-            sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
-            onClick();
-			m_sprite.setTexture(*m_textureFocused, false);
-			triggerEvent(buttonEvent);
-		}
-		else
-			m_sprite.setTexture(*m_texture, false);
+		    m_clicked = checkClickOn(x, y);
 
-		break;
-	default:
-		break;
+		    if (m_clicked && m_textureFired)
+			    m_sprite.setTexture(*m_textureFired, false);
+		    else if (m_clicked)
+			    m_sprite.setTexture(*m_textureFocused, false);
+		}
+
+	}
+	else if (event.type == sf::Event::MouseButtonReleased || event.type == sf::Event::TouchEnded)
+	{
+	    int x = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.x : event.touch.x);
+        int y = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.y : event.touch.y);
+        
+        if (event.type != sf::Event::MouseButtonPressed || event.mouseButton.button == sf::Mouse::Left)
+        {
+		    if (isCoordOnComponent(x, y) && m_textureFocused)
+		    {
+		        if (event.type == sf::Event::MouseButtonReleased)
+		        {
+                    sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
+                    onClick();
+			        m_sprite.setTexture(*m_textureFocused, false);
+			        triggerEvent(buttonEvent);
+			    }
+			    else if (event.type == sf::Event::TouchEnded)
+			    {
+			        //TODO sf::ui::ButtonTouchedEvent
+			        onClick();
+			        m_sprite.setTexture(*m_texture, false);
+			    }
+		    }
+		    else
+			    m_sprite.setTexture(*m_texture, false);
+		}
 	}
 
 }

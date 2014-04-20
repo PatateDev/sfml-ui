@@ -43,7 +43,7 @@ void AbstractButton::updateEvent(const sf::Event& event)
 	{
 	case sf::Event::MouseButtonReleased:
 
-		if (checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y))
+		if (checkClickOn(event.mouseButton.x, event.mouseButton.y))
 		{
 		    sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
 			onClick();
@@ -51,6 +51,15 @@ void AbstractButton::updateEvent(const sf::Event& event)
 		}
 
 		break;
+	case sf::Event::TouchEnded:
+	    
+	    if (checkClickOn(event.touch.x, event.touch.y))
+	    {
+	        //TODO sf::ui::ButtonTouchedEvent
+	        onClick();
+	    }
+	    
+	    break;
 	default:
 		break;
 	}

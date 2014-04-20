@@ -65,8 +65,8 @@ void TextField::updateEvent(const sf::Event& event)
 {
 	switch (event.type)
 	{
-	case sf::Event::MouseButtonPressed:
-		if (checkClickOn(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y))
+	case sf::Event::MouseButtonPressed: //TODO Handle touch event 
+		if (event.mouseButton.button == sf::Mouse::Left && checkClickOn(event.mouseButton.x, event.mouseButton.y))
 			setFocused(true);
 		else if (event.mouseButton.button == sf::Mouse::Left && !isCoordOnComponent(event.mouseButton.x, event.mouseButton.y)
 					&& !(m_text.getString().getSize() == 0 && !m_canBeEmpty))
