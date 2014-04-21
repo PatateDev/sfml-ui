@@ -63,21 +63,26 @@ void TextField::updateFixed(sf::Time delta)
 
 void TextField::updateEvent(const sf::Event& event)
 {
-	switch (event.type)
+	if (event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::TouchBegan) 
 	{
-	case sf::Event::MouseButtonPressed: //TODO Handle touch event 
-		if (event.mouseButton.button == sf::Mouse::Left && checkClickOn(event.mouseButton.x, event.mouseButton.y))
-			setFocused(true);
-		else if (event.mouseButton.button == sf::Mouse::Left && !isCoordOnComponent(event.mouseButton.x, event.mouseButton.y)
-					&& !(m_text.getString().getSize() == 0 && !m_canBeEmpty))
-			setFocused(false);
+	    int x = (event.type == sf::Event::MouseButtonPressed ? event.mouseButton.x : event.touch.x);
+        int y = (event.type == sf::Event::MouseButtonPressed ? event.mouseButton.y : event.touch.y);
+        
+        if (event.type != sf::Event::MouseButtonPressed || event.mouseButton.button == sf::Mouse::Left)
+		{
+		    if (checkClickOn(event.mouseButton.x, event.mouseButton.y))
+			    setFocused(true);
+		    else if (m_text.getString().getSize() != 0 || m_canBeEmpty)
+			    setFocused(false);
+		}
 
 		m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
-		break;
-	case sf::Event::KeyPressed:
-		if (!m_focused)
-			break;
-
+#ifdef SFML_SYSTEM_ANDROID
+		sf::Keyboard::setVirtualKeyboardVisible(m_focused);
+#endif
+	}
+	else if (event.type == sf::Event::KeyPressed && m_focused) 
+	{
 		switch(event.key.code)
 		{
 		case sf::Keyboard::Return:
@@ -87,6 +92,9 @@ void TextField::updateEvent(const sf::Event& event)
 			setFocused(false);
 			m_cursor = m_text.getString().getSize();
 			m_sprite.setTexture(*m_texture, false);
+#ifdef SFML_SYSTEM_ANDROID
+	    	sf::Keyboard::setVirtualKeyboardVisible(false);
+#endif
 			break;
 		case sf::Keyboard::Left:
 			if (m_cursor > 0)
@@ -118,15 +126,13 @@ void TextField::updateEvent(const sf::Event& event)
 		default:
 			break;
 		}
+		
 		updateCoord();
-
-		break;
-	case sf::Event::TextEntered:
+	}
+	else if (event.type ==  sf::Event::TextEntered && (m_maxLength == -1 || m_text.getString().getSize() < static_cast<unsigned int>(m_maxLength)))
 	{
 		sf::Uint32 text = event.text.unicode;
-		if (m_maxLength != -1 && m_text.getString().getSize() >= static_cast<unsigned int>(m_maxLength))
-			break;
-
+		
 		if (m_model->isCharAllowed(text) && m_focused)
 		{
 			sf::String string = m_text.getString();
@@ -137,11 +143,6 @@ void TextField::updateEvent(const sf::Event& event)
 			TextEnteredEvent textEvent(this, text);
 			triggerEvent(textEvent);
 		}
-
-		break;
-	}
-	default:
-		break;
 	}
 }
 
