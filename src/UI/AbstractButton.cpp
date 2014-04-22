@@ -17,6 +17,7 @@
 
 #include <SFML/UI/AbstractButton.h>
 #include <SFML/UI/Event/ButtonClickedEvent.h>
+#include <SFML/UI/Event/ButtonTouchedEvent.h>
 
 using namespace sf::ui;
 
@@ -55,8 +56,9 @@ void AbstractButton::updateEvent(const sf::Event& event)
 	    
 	    if (checkClickOn(event.touch.x, event.touch.y))
 	    {
-	        //TODO sf::ui::ButtonTouchedEvent
+	        sf::ui::ButtonTouchedEvent buttonEvent(this, event.touch.finger, event.touch.x, event.touch.y);
 	        onClick();
+	        triggerEvent(buttonEvent);
 	    }
 	    
 	    break;

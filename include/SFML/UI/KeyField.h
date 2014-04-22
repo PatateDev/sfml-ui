@@ -218,6 +218,7 @@ protected:
 ///
 /// \class sf::ui::KeyField
 /// \brief A field that stores a keyboard's key
+/// Not supported on mobile platforms
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////

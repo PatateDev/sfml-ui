@@ -18,6 +18,7 @@
 #include <SFML/UI/Button.h>
 #include <SFML/UI/SFMLUtils.h>
 #include <SFML/UI/Event/ButtonClickedEvent.h>
+#include <SFML/UI/Event/ButtonTouchedEvent.h>
 
 using namespace sf::ui;
 
@@ -68,19 +69,20 @@ void Button::updateEvent(const sf::Event& event)
         {
 		    if (isCoordOnComponent(x, y) && m_textureFocused)
 		    {
+		        onClick();
+			    
 		        if (event.type == sf::Event::MouseButtonReleased)
 		        {
                     sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
-                    onClick();
-			        m_sprite.setTexture(*m_textureFocused, false);
 			        triggerEvent(buttonEvent);
 			    }
 			    else if (event.type == sf::Event::TouchEnded)
 			    {
-			        //TODO sf::ui::ButtonTouchedEvent
-			        onClick();
-			        m_sprite.setTexture(*m_texture, false);
+			        sf::ui::ButtonTouchedEvent buttonEvent(this, event.touch.finger, event.touch.x, event.touch.y);
+			        triggerEvent(buttonEvent);
 			    }
+			    
+			    m_sprite.setTexture(*m_textureFocused, false);
 		    }
 		    else
 			    m_sprite.setTexture(*m_texture, false);

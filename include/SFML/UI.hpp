@@ -40,6 +40,7 @@
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/Event/FocusedEvent.h>
 #include <SFML/UI/Event/ButtonClickedEvent.h>
+#include <SFML/UI/Event/ButtonTouchedEvent.h>
 #include <SFML/UI/Event/KeyfieldSetEvent.h>
 #include <SFML/UI/Event/TextEnteredEvent.h>
 #include <SFML/UI/Event/TextDeletedEvent.h>
