@@ -18,7 +18,7 @@
 #ifndef COMPONENTOBSERVABLE_H_
 #define COMPONENTOBSERVABLE_H_
 
-#include <vector>
+#include <set>
 #include <SFML/UI/ComponentObserver.h>
 
 namespace sf
@@ -47,17 +47,22 @@ public:
     ///
     /// \brief Add an observer
     ///
-    /// \return the index of the observer
-    ///
     ////////////////////////////////////////////////////////////
-    int addObserver(sf::ui::ComponentObserver* observer);
+    void addObserver(sf::ui::ComponentObserver* observer);
 
     ////////////////////////////////////////////////////////////
     ///
-    /// \return the observer at the given index
+    /// \return the begin of the observers' iterator
     ///
     ////////////////////////////////////////////////////////////
-    const sf::ui::ComponentObserver* getObserver(int index) const;
+    std::set<sf::ui::ComponentObserver*>::const_iterator getObserversBegin() const;
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the end of the observers' iterator
+    ///
+    ////////////////////////////////////////////////////////////
+    std::set<sf::ui::ComponentObserver*>::const_iterator getObserversEnd() const;
 
     ////////////////////////////////////////////////////////////
     ///
@@ -70,8 +75,10 @@ public:
     ///
     /// \brief Remove the observer at the given index
     ///
+    /// \param observer the observer to remove
+    ///
     ////////////////////////////////////////////////////////////
-    void removeObserver(int index);
+    void removeObserver(sf::ui::ComponentObserver* observer);
 
     ////////////////////////////////////////////////////////////
     ///
@@ -97,7 +104,7 @@ protected:
 
 //FIELDS ------------------------------------------------------------------------------
 protected:
-    std::vector<sf::ui::ComponentObserver*> m_observers;
+    std::set<sf::ui::ComponentObserver*> m_observers;
 //-------------------------------------------------------------------------------------
 };
 

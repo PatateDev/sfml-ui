@@ -20,7 +20,7 @@
 
 #include <SFML/UI/ComponentObserver.h>
 #include <SFML/UI/CheckBox.h>
-#include <vector>
+#include <set>
 
 namespace sf
 {
@@ -51,29 +51,32 @@ public:
     ///
     /// \param checkbox the checkbox to add
     ///
-    /// \return the index of the checkbox in this group
-    ///
     ////////////////////////////////////////////////////////////
-    unsigned int addCheckBox(CheckBox &checkbox);
+    void addCheckBox(CheckBox &checkbox);
 
     ////////////////////////////////////////////////////////////
     ///
-    /// \return the checkbox at the given index
-    ///
-    /// \param index the checkbox's index in this group
+    /// \return the begin of checkbox's iterator
     ///
     ////////////////////////////////////////////////////////////
-    CheckBox* getCheckbox(unsigned int index);
+    std::set<CheckBox*>::const_iterator getCheckboxBegin() const;
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the end of checkbox's iterator
+    ///
+    ////////////////////////////////////////////////////////////
+    std::set<CheckBox*>::const_iterator getCheckboxEnd() const;
 
     ////////////////////////////////////////////////////////////
     ///
     /// \brief Remove a checkbox to this group;
     /// This function does NOT delete the checkbox
     ///
-    /// \param index - the checkbox's index in this group
+    /// \param checkbox - the checkbox to remove
     ///
     ////////////////////////////////////////////////////////////
-    void removeCheckbox(unsigned int index);
+    void removeCheckbox(CheckBox& checkbox);
 
     ////////////////////////////////////////////////////////////
     ///
@@ -116,8 +119,7 @@ private:
 
 //FIELDS ------------------------------------------------------------------------------
 private:
-    std::vector<CheckBox*> m_checkBoxVector;
-    std::vector<int> m_checkBoxIndexVector;
+    std::set<CheckBox*> m_checkBox;
 //-------------------------------------------------------------------------------------
 };
 

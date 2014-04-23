@@ -31,17 +31,19 @@ ComponentObservable::~ComponentObservable()
 
 }
 
-int ComponentObservable::addObserver(ComponentObserver* observer)
+void ComponentObservable::addObserver(ComponentObserver* observer)
 {
-    int index = m_observers.size();
-    m_observers.push_back(observer);
-
-    return index;
+    m_observers.insert(observer);
 }
 
-const ComponentObserver* ComponentObservable::getObserver(int index) const
+std::set<sf::ui::ComponentObserver*>::const_iterator ComponentObservable::getObserversBegin() const
 {
-    return m_observers[index];
+    return m_observers.begin();
+}
+
+std::set<sf::ui::ComponentObserver*>::const_iterator ComponentObservable::getObserversEnd() const
+{
+    return m_observers.begin();
 }
 
 int ComponentObservable::countObservers()
@@ -49,9 +51,9 @@ int ComponentObservable::countObservers()
     return m_observers.size();
 }
 
-void ComponentObservable::removeObserver(int index)
+void ComponentObservable::removeObserver(sf::ui::ComponentObserver* observer)
 {
-    m_observers.erase(m_observers.begin() + index);
+    m_observers.erase(observer);
 }
 
 void sf::ui::ComponentObservable::removeAllObservers()
@@ -61,8 +63,8 @@ void sf::ui::ComponentObservable::removeAllObservers()
 
 void ComponentObservable::triggerEvent(sf::ui::ComponentEvent &event)
 {
-    for (int i = 0; i < m_observers.size(); i++)
-        m_observers[i]->onComponentEvent(event);
+    for (std::set<sf::ui::ComponentObserver*>::iterator it = m_observers.begin(); it != m_observers.end(); it++)
+        (*it)->onComponentEvent(event);
 }
 
 
