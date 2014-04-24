@@ -36,6 +36,7 @@
 #include <SFML/UI/KeyField.h>
 #include <SFML/UI/TextField.h>
 #include <SFML/UI/CheckBoxGroup.h>
+#include <SFML/UI/PasswordField.h>
 
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/Event/FocusedEvent.h>
@@ -51,6 +52,7 @@
 #include <SFML/UI/Model/WhitelistTextFieldModel.h>
 #include <SFML/UI/Model/AlphaNumericTextFieldModel.h>
 #include <SFML/UI/Model/AsciiTextFieldModel.h>
+#include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.h>
 #include <SFML/UI/Model/NumericTextFieldModel.h>
 
 #endif /* UI_HPP_ */

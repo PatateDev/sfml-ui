@@ -129,13 +129,8 @@ void TextField::updateEvent(const sf::Event& event)
 
 		if (m_model->isCharAllowed(text) && m_focused)
 		{
-			sf::String string = m_text.getString();
-			string.insert(m_cursor, text);
-			m_text.setString(string);
-			m_cursor++;
-			updateCoord();
-			TextEnteredEvent textEvent(this, text);
-			triggerEvent(textEvent);
+		    insertText(text, m_cursor);
+		    updateCoord();
 		}
 
 		break;
@@ -143,6 +138,16 @@ void TextField::updateEvent(const sf::Event& event)
 	default:
 		break;
 	}
+}
+
+void TextField::insertText(sf::Uint32 text, unsigned int index)
+{
+    sf::String string = m_text.getString();
+	string.insert(index, text);
+	m_text.setString(string);
+	m_cursor++;
+	TextEnteredEvent textEvent(this, text, index);
+	triggerEvent(textEvent);
 }
 
 void TextField::deleteText(unsigned int index)
