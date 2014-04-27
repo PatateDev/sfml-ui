@@ -55,6 +55,9 @@
 #include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.h>
 #include <SFML/UI/Model/NumericTextFieldModel.h>
 
+#include <SFML/UI/Format/Format.h>
+#include <SFML/UI/Format/IntFormat.h>
+
 #endif /* UI_HPP_ */
 
 ////////////////////////////////////////////////////////////
