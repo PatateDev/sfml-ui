@@ -15,51 +15,59 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PASSWORD_FIELD_H
-#define PASSWORD_FIELD_H
+#ifndef FORMATTED_TEXT_FIELD_H
+#define FORMATTED_TEXT_FIELD_H
 
 #include <SFML/UI/TextField.h>
+#include <SFML/UI/Format/Format.h>
+#include <SFML/UI/Format/IntFormat.h>
 
 namespace sf
 {
 namespace ui
 {
 
-class PasswordField : public TextField
+class FormattedTextField : public TextField
 {
 public:
 	//CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 	////////////////////////////////////////////////////////////
 	///
-	/// \brief Creates an empty password field without texture, font ...
+	/// \brief Creates an empty text field without texture, font ...
 	/// Then do not forget to set its before displaying it
 	///
+	/// \param format the format of this formatted text field
+	///
 	////////////////////////////////////////////////////////////
-	PasswordField();
+	FormattedTextField(Format* format = 0);
 
 	////////////////////////////////////////////////////////////
 	///
-	/// \brief Creates a password field without font
+	/// \brief Creates a text field without font
 	/// Then do not forget to set the font before displaying it
 	///
 	/// \param texture the texture of the text field
 	/// \param textureFocused the texture when the text field is focused
+	/// \param format the format of this formatted text field
+	/// \param text the default text of the text field
 	///
 	////////////////////////////////////////////////////////////
-	PasswordField(sf::Texture const &texture, sf::Texture const &textureFocused);
+	FormattedTextField(sf::Texture const &texture, sf::Texture const &textureFocused, Format* format = 0, sf::String const &text = "");
 
 	////////////////////////////////////////////////////////////
 	///
-	/// \brief Creates a password field
+	/// \brief Creates a text field
 	///
 	/// \param texture the texture of the text field
 	/// \param textureFocused the texture when the text field is focused
 	/// \param font the text's font
+	/// \param format the format of this formatted text field
+	/// \param text the default text of the text field
 	///
 	////////////////////////////////////////////////////////////
-	PasswordField(sf::Texture const &texture, sf::Texture const &textureFocused, sf::Font const &font);
+	FormattedTextField(sf::Texture const &texture, sf::Texture const &textureFocused, sf::Font const &font, Format* format = 0, sf::String text = "");
 
-	virtual ~PasswordField();
+	virtual ~FormattedTextField();
 	//--------------------------------------------------------------------
 	
 	//METHODS ------------------------------------------------------------
@@ -88,52 +96,75 @@ protected:
 	///
 	////////////////////////////////////////////////////////////
 	virtual bool deleteText(unsigned int index);
-	
-	////////////////////////////////////////////////////////////
-	///
-	/// \brief Replace the TextField's chars by '•'
-	///
-	////////////////////////////////////////////////////////////
-	void replaceTextDisplayed();
 	//--------------------------------------------------------------------
-
+	
 	//GETTERS/SETTERS ----------------------------------------------------
 public:
-
-	////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief The value returned should be copy into a full object,
+    /// or a primitive type, as the pointer is deleted when the
+    /// value is changed    /// \brief The value returned should be copy into a full object,
+    /// or a primitive type, as the pointer is deleted when the
+    /// value is changed (with the function parse for example)
+    ///
+    /// \return a pointer to the value got with the format
+    ///
+    ////////////////////////////////////////////////////////////
+    const void* getValue() const;
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Set the value for this formatted text field
+    /// The given value is automatically deleted when changed
+    ///
+    /// \param value the new value
+    ///
+    ////////////////////////////////////////////////////////////
+    void setValue(void* value);
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the format
+    ///
+    ////////////////////////////////////////////////////////////
+    const Format* getFormat() const;
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \brief Sets the new format of this field, and delete the old one
+    ///
+    /// \param format the new format, automatically deleted by the field
+    ///
+    ////////////////////////////////////////////////////////////
+    void setFormat(Format *format);
+    
+    ////////////////////////////////////////////////////////////
 	///
-	/// \return the password stored
-	///
-	////////////////////////////////////////////////////////////
-	const sf::String& getPassword() const;
-
-	////////////////////////////////////////////////////////////
-	///
-	/// \brief Sets the password of the component
+	/// \brief Sets the text's string of the component
 	/// Don't forget to set the font
 	///
-	/// \param password the new password of the component
+	/// \param text - the new string of the component
 	///
 	////////////////////////////////////////////////////////////
-	void setPassword(sf::String const &password);
-
-	//--------------------------------------------------------------------
-
-	//FIELDS -------------------------------------------------------------
+	virtual void setText(sf::String const &text);
+    //--------------------------------------------------------------------
+    
+    //FIELDS -------------------------------------------------------------
 protected:
-    sf::String m_password;
+    Format *m_format;
 	//--------------------------------------------------------------------
 };
 
 }
 }
+#endif
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::PasswordField
-/// \brief A text field which stores a password
+/// \class sf::ui::FormattedTextField
+/// \brief A formatted text field which stores a value defined by a sf::ui::Format
+/// It can be a sf::Int64, a double, or even a class ... 
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////
-
-#endif

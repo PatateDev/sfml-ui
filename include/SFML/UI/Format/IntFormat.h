@@ -89,7 +89,7 @@ public:
     /// \return the value of the last string parsed
     ///
     ////////////////////////////////////////////////////////////
-    virtual void* getValue() const;
+    virtual const void* getValue() const;
 //--------------------------------------------------------------------
 
 //FIELDS -------------------------------------------------------------

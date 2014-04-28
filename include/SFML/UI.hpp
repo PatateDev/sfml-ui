@@ -37,6 +37,7 @@
 #include <SFML/UI/TextField.h>
 #include <SFML/UI/CheckBoxGroup.h>
 #include <SFML/UI/PasswordField.h>
+#include <SFML/UI/FormattedTextField.h>
 
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/Event/FocusedEvent.h>

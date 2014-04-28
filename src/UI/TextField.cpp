@@ -102,8 +102,12 @@ void TextField::updateEvent(const sf::Event& event)
 
 			if (m_cursor != 0 && m_text.getString().getSize() > 0)
 			{
-			    deleteText(m_cursor - 1);
 			    m_cursor--;
+			    
+			    if (!deleteText(m_cursor))
+			    {
+			        m_cursor++;
+			    }
 			}
 
 			break;
@@ -129,8 +133,10 @@ void TextField::updateEvent(const sf::Event& event)
 
 		if (m_model->isCharAllowed(text) && m_focused)
 		{
-		    insertText(text, m_cursor);
-		    updateCoord();
+		    if (insertText(text, m_cursor))
+		    {
+		        updateCoord();
+		    }
 		}
 
 		break;
@@ -140,23 +146,27 @@ void TextField::updateEvent(const sf::Event& event)
 	}
 }
 
-void TextField::insertText(sf::Uint32 text, unsigned int index)
+bool TextField::insertText(sf::Uint32 text, unsigned int index)
 {
     sf::String string = m_text.getString();
 	string.insert(index, text);
-	m_text.setString(string);
 	m_cursor++;
+	setText(string);
 	TextEnteredEvent textEvent(this, text, index);
 	triggerEvent(textEvent);
+	
+	return true;
 }
 
-void TextField::deleteText(unsigned int index)
+bool TextField::deleteText(unsigned int index)
 {
     sf::String str = m_text.getString();
     TextDeletedEvent textEvent(this, str[index], index);
     str.erase(index);
-    m_text.setString(str);
+    setText(str);
     triggerEvent(textEvent);
+    
+    return true;
 }
 
 void TextField::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -43,18 +43,32 @@ PasswordField::~PasswordField()
 
 }
 	
-void PasswordField::insertText(sf::Uint32 text, unsigned int index)
+bool PasswordField::insertText(sf::Uint32 text, unsigned int index)
 {
-    TextField::insertText(text, index);
-    m_password.insert(index, text);
-    replaceTextDisplayed();
+    if (TextField::insertText(text, index))
+    {
+        m_password.insert(index, text);
+        replaceTextDisplayed();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 	
-void PasswordField::deleteText(unsigned int index)
+bool PasswordField::deleteText(unsigned int index)
 {
-    TextField::deleteText(index);
-    m_password.erase(index);
-    replaceTextDisplayed();
+    if (TextField::deleteText(index))
+    {
+        m_password.erase(index);
+        replaceTextDisplayed();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 	
 void PasswordField::replaceTextDisplayed()

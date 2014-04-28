@@ -45,7 +45,7 @@ sf::String IntFormat::toString() const
 
 bool IntFormat::isAllowed(sf::String str) const
 {
-    return strtol(str.toAnsiString().c_str(), NULL, 10) != 0 || str == "0";
+    return strtol(str.toAnsiString().c_str(), NULL, 10) != 0 || str == "0" || str == "" || str == "-";
 }
 
 void IntFormat::parse(sf::String str) 
@@ -67,7 +67,7 @@ void IntFormat::setValue(void* value)
     }
 }
 
-void* IntFormat::getValue() const
+const void* IntFormat::getValue() const
 {
     return m_value;
 }
