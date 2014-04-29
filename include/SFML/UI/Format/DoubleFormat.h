@@ -15,8 +15,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LONG_FORMAT_H
-#define LONG_FORMAT_H
+#ifndef DOUBLE_FORMAT_H
+#define DOUBLE_FORMAT_H
 
 #include <SFML/UI/Format/Format.h>
 
@@ -25,18 +25,18 @@ namespace sf
 namespace ui
 {
 
-class LongFormat : public Format
+class DoubleFormat : public Format
 {
 //CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief Creates a long format
+    /// \brief Creates a double format
     ///
     ////////////////////////////////////////////////////////////
-    LongFormat();
+    DoubleFormat();
     
-    virtual ~LongFormat();
+    virtual ~DoubleFormat();
 //--------------------------------------------------------------------
 
 //METHODS ------------------------------------------------------------
@@ -74,7 +74,7 @@ public:
     ///
     /// \brief Set the value for this format
     /// The given value is automatically deleted by the format class
-    /// Warning : giving value which is not a sf::Int64 can lead to bugs, memory leak ...
+    /// Warning : giving value which is not a double can lead to bugs, memory leak ...
     ///
     /// \param value the new value
     ///
@@ -87,7 +87,7 @@ public:
     /// or a primitive type, as the pointer is deleted when the
     /// value is changed (with the function parse for example)
     ///
-    /// \return the value of the last string parsed as pointer to a sf::Int64
+    /// \return the value of the last string parsed as pointer to a double
     ///
     ////////////////////////////////////////////////////////////
     virtual const void* getValue() const;
@@ -95,7 +95,7 @@ public:
 
 //FIELDS -------------------------------------------------------------
 protected:
-    sf::Int64 *m_value;
+    double *m_value;
 //--------------------------------------------------------------------
 };
 
@@ -105,8 +105,8 @@ protected:
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::LongFormat
-/// \brief Format to parse long (stored as sf::Int64*)
+/// \class sf::ui::DoubleFormat
+/// \brief Format to parse double
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////
