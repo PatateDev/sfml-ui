@@ -20,7 +20,6 @@
 
 #include <SFML/UI/TextField.h>
 #include <SFML/UI/Format/Format.h>
-#include <SFML/UI/Format/IntFormat.h>
 
 namespace sf
 {

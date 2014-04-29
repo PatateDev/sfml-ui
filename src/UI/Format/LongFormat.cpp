@@ -15,19 +15,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <SFML/UI/Format/IntFormat.h>
+#include <SFML/UI/Format/LongFormat.h>
 #include <cstdlib>
 #include <sstream>
 
 using namespace sf::ui;
 
-IntFormat::IntFormat()
-: m_value(new int(0))
+LongFormat::LongFormat()
+: m_value(new sf::Int64(0))
 {
 
 }
     
-IntFormat::~IntFormat()
+LongFormat::~LongFormat()
 {
     if (m_value)
     {
@@ -36,26 +36,26 @@ IntFormat::~IntFormat()
     }
 }
 
-sf::String IntFormat::toString() const
+sf::String LongFormat::toString() const
 {
     std::ostringstream stream;
     stream << *m_value;
     return stream.str();
 }
 
-bool IntFormat::isAllowed(sf::String str) const
+bool LongFormat::isAllowed(sf::String str) const
 {
     return strtol(str.toAnsiString().c_str(), NULL, 10) != 0 || str == "0" || str == "" || str == "-";
 }
 
-void IntFormat::parse(sf::String str) 
+void LongFormat::parse(sf::String str) 
 {
-    setValue(new int(strtol(str.toAnsiString().c_str(), NULL, 10)));
+    setValue(new sf::Int64(strtol(str.toAnsiString().c_str(), NULL, 10)));
 }
 
-void IntFormat::setValue(void* value)
+void LongFormat::setValue(void* value)
 {
-    if (static_cast<int*>(value) == value && m_value != value)
+    if (m_value != value)
     {
         if (m_value)
         {
@@ -63,11 +63,11 @@ void IntFormat::setValue(void* value)
             m_value = 0;
         }
         
-        m_value = static_cast<int*>(value);
+        m_value = static_cast<sf::Int64*>(value);
     }
 }
 
-const void* IntFormat::getValue() const
+const void* LongFormat::getValue() const
 {
     return m_value;
 }

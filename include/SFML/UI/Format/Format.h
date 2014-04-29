@@ -78,6 +78,7 @@ public:
     ///
     /// \brief Set the value for this format
     /// The given value is automatically deleted by the format class
+    /// Warning : giving value which is not expected can lead to bugs, memory leak ...
     ///
     /// \param value the new value
     ///

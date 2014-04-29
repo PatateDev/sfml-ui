@@ -25,7 +25,7 @@ namespace sf
 namespace ui
 {
 
-class IntFormat : public Format
+class LongFormat : public Format
 {
 //CONSTRUCTORS/DESTRUCTORS -------------------------------------------
 public:
@@ -34,9 +34,9 @@ public:
     /// \brief Creates an integer format
     ///
     ////////////////////////////////////////////////////////////
-    IntFormat();
+    LongFormat();
     
-    virtual ~IntFormat();
+    virtual ~LongFormat();
 //--------------------------------------------------------------------
 
 //METHODS ------------------------------------------------------------
@@ -74,6 +74,7 @@ public:
     ///
     /// \brief Set the value for this format
     /// The given value is automatically deleted by the format class
+    /// Warning : giving value which is not a sf::Int64 can lead to bugs, memory leak ...
     ///
     /// \param value the new value
     ///
@@ -86,7 +87,7 @@ public:
     /// or a primitive type, as the pointer is deleted when the
     /// value is changed (with the function parse for example)
     ///
-    /// \return the value of the last string parsed
+    /// \return the value of the last string parsed as pointer to a sf::Int64
     ///
     ////////////////////////////////////////////////////////////
     virtual const void* getValue() const;
@@ -94,7 +95,7 @@ public:
 
 //FIELDS -------------------------------------------------------------
 protected:
-    int *m_value;
+    sf::Int64 *m_value;
 //--------------------------------------------------------------------
 };
 
@@ -104,8 +105,8 @@ protected:
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::IntFormat
-/// \brief Format to parse integers
+/// \class sf::ui::LongFormat
+/// \brief Format to parse long (stored as sf::Int64*)
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////
