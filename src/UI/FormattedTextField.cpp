@@ -48,48 +48,15 @@ FormattedTextField::~FormattedTextField()
     }
 }
 
-bool FormattedTextField::insertText(sf::Uint32 text, unsigned int index)
-{    
-    if (m_format)
-    {
-        sf::String string = m_text.getString();
-	    string.insert(index, text);
-	    
-	    if (m_format->isAllowed(string))
-	    {
-	        return TextField::insertText(text, index);
-	    }
-	    else
-	    {
-	        return false;
-	    }
-	}
-	else
-	{
-	    return TextField::insertText(text, index);
-	}
-}
-
-bool FormattedTextField::deleteText(unsigned int index)
+void FormattedTextField::lostFocus()
 {
+    TextField::lostFocus();
+    
     if (m_format)
     {
-        sf::String string = m_text.getString();
-	    string.erase(index);
-	    
-	    if (m_format->isAllowed(string))
-	    {
-	        return TextField::deleteText(index);
-	    }
-	    else
-	    {
-	        return false;
-	    }
-	}
-	else
-	{
-	    return TextField::deleteText(index);
-	}
+        m_format->parse(getText());
+        setText(m_format->toString());
+    }
 }
 
 const void* FormattedTextField::getValue() const
@@ -129,23 +96,5 @@ void FormattedTextField::setFormat(Format *format)
         }
         
         m_format = format;
-    }
-}
-
-void FormattedTextField::setText(sf::String const &text)
-{
-    if (m_format)
-    {
-        m_format->parse(text);
-        TextField::setText(m_format->toString());
-        
-        if (text == "")
-        {
-            m_cursor = m_text.getString().getSize();
-        }
-    }
-    else
-    {
-        TextField::setText(text);
     }
 }

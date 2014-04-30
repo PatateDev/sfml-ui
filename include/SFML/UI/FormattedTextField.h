@@ -73,28 +73,10 @@ public:
 protected:
 	////////////////////////////////////////////////////////////
 	///
-	/// \brief Insert a char at the given index
-	/// Trigger a TextEnteredEvent
-	///
-	/// \param text the text to insert
-	/// \param index the index of the insertion
-	///
-	/// \return if the text has been successfully inserted
+	/// \brief Called when the component lost focus
 	///
 	////////////////////////////////////////////////////////////
-	virtual bool insertText(sf::Uint32 text, unsigned int index);	
-
-	////////////////////////////////////////////////////////////
-	///
-	/// \brief Delete the char at the given index
-	/// Trigger a TextDeletedEvent
-	///
-	/// \param index the index of the char to delete
-	///
-	/// \return if the text has been successfully deleted
-	///
-	////////////////////////////////////////////////////////////
-	virtual bool deleteText(unsigned int index);
+	virtual void lostFocus();
 	//--------------------------------------------------------------------
 	
 	//GETTERS/SETTERS ----------------------------------------------------
@@ -137,16 +119,6 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     void setFormat(Format *format);
-    
-    ////////////////////////////////////////////////////////////
-	///
-	/// \brief Sets the text's string of the component
-	/// Don't forget to set the font
-	///
-	/// \param text - the new string of the component
-	///
-	////////////////////////////////////////////////////////////
-	virtual void setText(sf::String const &text);
     //--------------------------------------------------------------------
     
     //FIELDS -------------------------------------------------------------

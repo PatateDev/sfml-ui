@@ -39,6 +39,20 @@ Focusable::~Focusable()
 
 }
 
+void Focusable::gainFocus()
+{
+    m_focused = true;
+    FocusedEvent event(this, m_focused);
+    triggerEvent(event);
+}
+
+void Focusable::lostFocus()
+{
+    m_focused = false;
+    FocusedEvent event(this, m_focused);
+    triggerEvent(event);
+}
+
 bool Focusable::isFocused() const
 {
 	return m_focused;
@@ -46,16 +60,17 @@ bool Focusable::isFocused() const
 
 void Focusable::setFocused(bool focused)
 {
-    bool triggerEvent = m_focused != focused;
+    if (focused && !m_focused)
+    {
+        gainFocus();
+    }
+    else if (!focused && m_focused)
+    {
+        lostFocus();
+    }
 
 	m_focused = focused;
 	m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
-
-	if (triggerEvent)
-	{
-	    FocusedEvent event(this, focused);
-	    this->triggerEvent(event);
-	}
 }
 
 const sf::Texture* Focusable::getTextureFocused() const
