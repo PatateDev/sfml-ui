@@ -58,6 +58,7 @@
 
 #include <SFML/UI/Format/Format.h>
 #include <SFML/UI/Format/LongFormat.h>
+#include <SFML/UI/Format/UnsignedLongFormat.h>
 #include <SFML/UI/Format/DoubleFormat.h>
 
 #endif /* UI_HPP_ */
