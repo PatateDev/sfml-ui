@@ -63,6 +63,7 @@
 #include <SFML/UI/Format/DoubleFormat.h>
 #include <SFML/UI/Format/Sequence.h>
 #include <SFML/UI/Format/LongSequence.h>
+#include <SFML/UI/Format/UnsignedLongSequence.h>
 
 #endif /* UI_HPP_ */
 
