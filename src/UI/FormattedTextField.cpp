@@ -16,6 +16,7 @@
  */
 
 #include <SFML/UI/FormattedTextField.h>
+#include <SFML/UI/Event/FormattedValueEnteredEvent.h>
 
 using namespace sf::ui;
 
@@ -52,10 +53,18 @@ void FormattedTextField::lostFocus()
 {
     TextField::lostFocus();
     
+    updateValue();
+}
+
+void FormattedTextField::updateValue()
+{
     if (m_format)
     {
         m_format->parse(getText());
         setText(m_format->toString());
+        
+        FormattedValueEnteredEvent event(this, *m_format, m_format->getValue());
+        triggerEvent(event);
     }
 }
 
@@ -77,6 +86,9 @@ void FormattedTextField::setValue(void* value)
     {
         m_format->setValue(value);
         setText(m_format->toString());
+        
+        FormattedValueEnteredEvent event(this, *m_format, m_format->getValue());
+        triggerEvent(event);
     }
 }
 

@@ -46,6 +46,7 @@
 #include <SFML/UI/Event/TextEnteredEvent.h>
 #include <SFML/UI/Event/TextDeletedEvent.h>
 #include <SFML/UI/Event/CheckBoxChangeEvent.h>
+#include <SFML/UI/Event/FormattedValueEnteredEvent.h>
 
 #include <SFML/UI/Model/TextFieldModel.h>
 #include <SFML/UI/Model/BlacklistTextFieldModel.h>
