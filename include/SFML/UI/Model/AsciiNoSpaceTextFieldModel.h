@@ -66,8 +66,8 @@ public:
 
 ////////////////////////////////////////////////////////////
 ///
-/// \class sf::ui::AsciiTextFieldModel
-/// \brief A textfield model that allows only ASCII chars
+/// \class sf::ui::AsciiNoSpaceTextFieldModel
+/// \brief A textfield model that allows only ASCII chars, without spaces
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////
