@@ -1,4 +1,0 @@
-var dir_d6142e3813d6d080cf63af0472235b19 =
-[
-    [ "SFML", "dir_c553f07c428d866955e51a7c49f1e5c6.html", "dir_c553f07c428d866955e51a7c49f1e5c6" ]
-];

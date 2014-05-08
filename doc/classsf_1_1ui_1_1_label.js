@@ -9,6 +9,7 @@ var classsf_1_1ui_1_1_label =
     [ "getFontColor", "classsf_1_1ui_1_1_label.html#a11c0b6f88e9f078429a53d2c0db13cae", null ],
     [ "getFontSize", "classsf_1_1ui_1_1_label.html#a454f046f62b5ecb79d842b0a729d150f", null ],
     [ "getImage", "classsf_1_1ui_1_1_label.html#a95621d117d6cfd20a08686df59876b17", null ],
+    [ "getSize", "classsf_1_1ui_1_1_label.html#aacc79a1d27bbbc8b2bfeac3234853b5f", null ],
     [ "getText", "classsf_1_1ui_1_1_label.html#a7a39a14d50ac9d5bbb97b2e9da1d87c3", null ],
     [ "setFont", "classsf_1_1ui_1_1_label.html#a09cc2a45aa231b3bc3a890dd1109d141", null ],
     [ "setFontColor", "classsf_1_1ui_1_1_label.html#ae3bb92fa81396806c7cd8f40f1d9788d", null ],
