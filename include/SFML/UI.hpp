@@ -20,7 +20,7 @@
 
 #define SFML_UI_VERSION_MAJOR 0
 #define SFML_UI_VERSION_MINOR 4
-#define SFML_UI_VERSION_PATCH 0
+#define SFML_UI_VERSION_PATCH 1
 
 #include <SFML/Graphics.hpp>
 
