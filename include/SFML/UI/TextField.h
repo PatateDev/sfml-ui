@@ -82,6 +82,19 @@ protected:
 	///
 	////////////////////////////////////////////////////////////
 	virtual void updateCoord();
+	
+	////////////////////////////////////////////////////////////
+	///
+	/// \brief Insert a char at the given index
+	/// Trigger a TextEnteredEvent
+	///
+	/// \param text the text to insert
+	/// \param index the index of the insertion
+	///
+	/// \return if the text has been successfully inserted
+	///
+	////////////////////////////////////////////////////////////
+	virtual bool insertText(sf::Uint32 text, unsigned int index);	
 
 	////////////////////////////////////////////////////////////
 	///
@@ -90,8 +103,10 @@ protected:
 	///
 	/// \param index the index of the char to delete
 	///
+	/// \return if the text has been successfully deleted
+	///
 	////////////////////////////////////////////////////////////
-	virtual void deleteText(unsigned int index);
+	virtual bool deleteText(unsigned int index);
 
 public:
 	////////////////////////////////////////////////////////////

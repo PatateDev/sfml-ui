@@ -93,5 +93,5 @@ sf::Vector2f Component::getSize() const
 {
 	sf::FloatRect bounds = m_sprite.getGlobalBounds();
 
-	return sf::Vector2f(bounds.width, bounds.top);
+	return sf::Vector2f(bounds.width, bounds.height);
 }

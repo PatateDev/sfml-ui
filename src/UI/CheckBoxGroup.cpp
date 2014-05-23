@@ -14,16 +14,16 @@
  *  You should have received a copy of the GNU Lesser General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-//TODO Replace int index of ComponentObservable by a better system (directly with the ComponentObserver pointer)
 
 #include <SFML/UI/CheckBoxGroup.h>
 #include <SFML/UI/Event/CheckBoxChangeEvent.h>
+#include <iostream>
 
 using namespace sf::ui;
 
 CheckBoxGroup::CheckBoxGroup()
 : ComponentObserver(),
-  m_checkBoxVector(), m_checkBoxIndexVector()
+  m_checkBox()
 {
 
 }
@@ -33,48 +33,36 @@ CheckBoxGroup::~CheckBoxGroup()
 
 }
 
-unsigned int CheckBoxGroup::addCheckBox(CheckBox& checkbox)
+void CheckBoxGroup::addCheckBox(CheckBox& checkbox)
 {
-    int index = countCheckbox();
-    m_checkBoxVector.push_back(&checkbox);
-    m_checkBoxIndexVector.push_back(checkbox.addObserver(this));
-    return index;
+    m_checkBox.insert(&checkbox);
+    checkbox.addObserver(this);
 }
 
-CheckBox* CheckBoxGroup::getCheckbox(unsigned int index)
+std::set<CheckBox*>::const_iterator CheckBoxGroup::getCheckboxBegin() const
 {
-    return m_checkBoxVector[index];
+    return m_checkBox.begin();
 }
 
-void CheckBoxGroup::removeCheckbox(unsigned int index)
+std::set<CheckBox*>::const_iterator CheckBoxGroup::getCheckboxEnd() const
 {
-    if (index < countCheckbox())
-    {
-        CheckBox* checkbox = getCheckbox(index);
-        checkbox->removeObserver(m_checkBoxIndexVector[index]);
-        m_checkBoxVector.erase(m_checkBoxVector.begin() + index);
-        m_checkBoxIndexVector.erase(m_checkBoxIndexVector.begin() + index);
-    }
-    /*else
-        throw "index out of bounds";
-     CMake Android toolchain disable the exceptions
-    */
+    return m_checkBox.end();
+}
+
+
+void CheckBoxGroup::removeCheckbox(CheckBox& checkbox)
+{
+    m_checkBox.erase(&checkbox);
 }
 
 unsigned int CheckBoxGroup::countCheckbox() const
 {
-    return m_checkBoxVector.size();
+    return m_checkBox.size();
 }
 
 bool CheckBoxGroup::isCheckBoxInGroup(CheckBox* checkbox) const
 {
-    for (unsigned int i = 0; i < countCheckbox(); i++)
-    {
-        if (checkbox == m_checkBoxVector[i])
-            return true;
-    }
-
-    return false;
+    return m_checkBox.find(checkbox) != m_checkBox.end();
 }
 
 void CheckBoxGroup::onComponentEvent(const ComponentEvent& event)
@@ -82,6 +70,7 @@ void CheckBoxGroup::onComponentEvent(const ComponentEvent& event)
     if (dynamic_cast<CheckBoxChangeEvent const*>(&event))
     {
         const CheckBoxChangeEvent &changeEvent = dynamic_cast<CheckBoxChangeEvent const&>(event);
+        
         if (isCheckBoxInGroup(static_cast<CheckBox*>(changeEvent.getSource())))
         {
             if (changeEvent.isSelected())
@@ -105,9 +94,9 @@ void CheckBoxGroup::onComponentEvent(const ComponentEvent& event)
 
 CheckBox* CheckBoxGroup::firstSelected(CheckBox* excluded) const
 {
-    for (unsigned int i = 0; i < countCheckbox(); i++)
+    for (std::set<CheckBox*>::iterator it = m_checkBox.begin(); it != m_checkBox.end(); it++)
     {
-        CheckBox *c = m_checkBoxVector[i];
+        CheckBox *c = *it;
 
         if (c->isSelected() && c != excluded)
             return c;

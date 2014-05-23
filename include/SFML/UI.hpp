@@ -19,9 +19,8 @@
 #define UI_HPP_
 
 #define SFML_UI_VERSION_MAJOR 0
-#define SFML_UI_VERSION_MINOR 3
+#define SFML_UI_VERSION_MINOR 4
 #define SFML_UI_VERSION_PATCH 1
-#define SFML_UI_VERSION_REVISION SFML_UI_VERSION_PATCH
 
 #include <SFML/Graphics.hpp>
 
@@ -36,6 +35,8 @@
 #include <SFML/UI/KeyField.h>
 #include <SFML/UI/TextField.h>
 #include <SFML/UI/CheckBoxGroup.h>
+#include <SFML/UI/PasswordField.h>
+#include <SFML/UI/FormattedTextField.h>
 
 #include <SFML/UI/Event/ComponentEvent.h>
 #include <SFML/UI/Event/FocusedEvent.h>
@@ -45,6 +46,7 @@
 #include <SFML/UI/Event/TextEnteredEvent.h>
 #include <SFML/UI/Event/TextDeletedEvent.h>
 #include <SFML/UI/Event/CheckBoxChangeEvent.h>
+#include <SFML/UI/Event/FormattedValueEnteredEvent.h>
 
 #include <SFML/UI/Model/TextFieldModel.h>
 #include <SFML/UI/Model/BlacklistTextFieldModel.h>
@@ -52,7 +54,13 @@
 #include <SFML/UI/Model/WhitelistTextFieldModel.h>
 #include <SFML/UI/Model/AlphaNumericTextFieldModel.h>
 #include <SFML/UI/Model/AsciiTextFieldModel.h>
+#include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.h>
 #include <SFML/UI/Model/NumericTextFieldModel.h>
+
+#include <SFML/UI/Format/Format.h>
+#include <SFML/UI/Format/LongFormat.h>
+#include <SFML/UI/Format/UnsignedLongFormat.h>
+#include <SFML/UI/Format/DoubleFormat.h>
 
 #endif /* UI_HPP_ */
 

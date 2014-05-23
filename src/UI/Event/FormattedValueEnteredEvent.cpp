@@ -15,28 +15,28 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <SFML/UI/Event/TextEnteredEvent.h>
+#include <SFML/UI/Event/FormattedValueEnteredEvent.h>
 
 using namespace sf::ui;
 
-TextEnteredEvent::TextEnteredEvent(TextField* source, sf::Uint32 text, unsigned int position)
+FormattedValueEnteredEvent::FormattedValueEnteredEvent(Component *source, const Format& format, const void *value)
 : ComponentEvent(source),
-  m_text(text), m_position(position)
+  m_format(format), m_value(value)
 {
 
 }
 
-TextEnteredEvent::~TextEnteredEvent()
+FormattedValueEnteredEvent::~FormattedValueEnteredEvent()
 {
 
 }
 
-sf::Uint32 TextEnteredEvent::getText() const
+const Format& FormattedValueEnteredEvent::getFormat() const
 {
-    return m_text;
+    return m_format;
 }
 
-unsigned int TextEnteredEvent::getPosition() const
+const void* FormattedValueEnteredEvent::getValue() const
 {
-    return m_position;
+    return m_value;
 }

@@ -38,9 +38,10 @@ public:
     ///
     /// \param source source the TextField that has triggered this event
     /// \param text the text entered
+    /// \param position the position where the text is entered
     ///
     ///////////////////////////////////////////////////////////////
-    TextEnteredEvent(TextField* source, sf::Uint32 text);
+    TextEnteredEvent(TextField* source, sf::Uint32 text, unsigned int position);
 
     virtual ~TextEnteredEvent();
 //-------------------------------------------------------------------------------------
@@ -57,11 +58,19 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     sf::Uint32 getText() const;
+    
+    ////////////////////////////////////////////////////////////
+    ///
+    /// \return the position where the text's been entered
+    ///
+    ////////////////////////////////////////////////////////////
+    unsigned int getPosition() const;
 //-------------------------------------------------------------------------------------
 
 //FIELDS ------------------------------------------------------------------------------
 private:
     const sf::Uint32 m_text;
+    unsigned int m_position;
 //-------------------------------------------------------------------------------------
 };
 

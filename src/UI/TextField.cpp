@@ -110,8 +110,12 @@ void TextField::updateEvent(const sf::Event& event)
 
 			if (m_cursor != 0 && m_text.getString().getSize() > 0)
 			{
-			    deleteText(m_cursor - 1);
 			    m_cursor--;
+			    
+			    if (!deleteText(m_cursor))
+			    {
+			        m_cursor++;
+			    }
 			}
 
 			break;
@@ -135,24 +139,35 @@ void TextField::updateEvent(const sf::Event& event)
 		
 		if (m_model->isCharAllowed(text) && m_focused)
 		{
-			sf::String string = m_text.getString();
-			string.insert(m_cursor, text);
-			m_text.setString(string);
-			m_cursor++;
-			updateCoord();
-			TextEnteredEvent textEvent(this, text);
-			triggerEvent(textEvent);
+		    if (insertText(text, m_cursor))
+		    {
+		        updateCoord();
+		    }
 		}
 	}
 }
 
-void TextField::deleteText(unsigned int index)
+bool TextField::insertText(sf::Uint32 text, unsigned int index)
+{
+    sf::String string = m_text.getString();
+	string.insert(index, text);
+	m_cursor++;
+	setText(string);
+	TextEnteredEvent textEvent(this, text, index);
+	triggerEvent(textEvent);
+	
+	return true;
+}
+
+bool TextField::deleteText(unsigned int index)
 {
     sf::String str = m_text.getString();
     TextDeletedEvent textEvent(this, str[index], index);
     str.erase(index);
-    m_text.setString(str);
+    setText(str);
     triggerEvent(textEvent);
+    
+    return true;
 }
 
 void TextField::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -210,6 +225,12 @@ const sf::String& TextField::getText() const
 void TextField::setText(const sf::String& text)
 {
 	m_text.setString(text);
+	
+	if (m_cursor > m_text.getString().getSize())
+	{
+	    m_cursor = m_text.getString().getSize();
+	    updateCoord();
+	}
 }
 
 const sf::Font* TextField::getFont() const

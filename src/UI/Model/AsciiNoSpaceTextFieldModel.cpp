@@ -15,28 +15,21 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <SFML/UI/Event/TextEnteredEvent.h>
+#include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.h>
 
 using namespace sf::ui;
 
-TextEnteredEvent::TextEnteredEvent(TextField* source, sf::Uint32 text, unsigned int position)
-: ComponentEvent(source),
-  m_text(text), m_position(position)
+AsciiNoSpaceTextFieldModel::AsciiNoSpaceTextFieldModel()
 {
 
 }
 
-TextEnteredEvent::~TextEnteredEvent()
+AsciiNoSpaceTextFieldModel::~AsciiNoSpaceTextFieldModel()
 {
 
 }
 
-sf::Uint32 TextEnteredEvent::getText() const
+bool AsciiNoSpaceTextFieldModel::isCharAllowed(sf::Uint32 c) const
 {
-    return m_text;
-}
-
-unsigned int TextEnteredEvent::getPosition() const
-{
-    return m_position;
+	return c > 32 && c <= 126;
 }
