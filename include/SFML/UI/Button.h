@@ -69,7 +69,7 @@ public:
 	/// Do not forget to set textures and font !
 	///
 	/// \param object the object that contains the function to execute
-	///	\function the function to execute
+	///	\param function the function to execute
 	///
 	////////////////////////////////////////////////////////////
 	template<typename C>
@@ -278,7 +278,7 @@ public:
 	///
 	/// \brief Sets the color's font of the text
 	/// 
-	/// \param the text's color
+	/// \param color the text's color
 	///
 	////////////////////////////////////////////////////////////
 	virtual void setFontColor(sf::Color color);

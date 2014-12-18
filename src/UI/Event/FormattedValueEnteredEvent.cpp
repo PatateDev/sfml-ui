@@ -19,9 +19,9 @@
 
 using namespace sf::ui;
 
-FormattedValueEnteredEvent::FormattedValueEnteredEvent(Component *source, const Format& format, const void *value)
+FormattedValueEnteredEvent::FormattedValueEnteredEvent(Component *source, const Format& format)
 : ComponentEvent(source),
-  m_format(format), m_value(value)
+  m_format(format)
 {
 
 }
@@ -36,7 +36,4 @@ const Format& FormattedValueEnteredEvent::getFormat() const
     return m_format;
 }
 
-const void* FormattedValueEnteredEvent::getValue() const
-{
-    return m_value;
-}
+

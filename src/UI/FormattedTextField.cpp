@@ -63,31 +63,7 @@ void FormattedTextField::updateValue()
         m_format->parse(getText());
         setText(m_format->toString());
         
-        FormattedValueEnteredEvent event(this, *m_format, m_format->getValue());
-        triggerEvent(event);
-    }
-}
-
-const void* FormattedTextField::getValue() const
-{
-    if (m_format)
-    {
-        return m_format->getValue();
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-void FormattedTextField::setValue(void* value)
-{
-    if (m_format)
-    {
-        m_format->setValue(value);
-        setText(m_format->toString());
-        
-        FormattedValueEnteredEvent event(this, *m_format, m_format->getValue());
+        FormattedValueEnteredEvent event(this, *m_format);
         triggerEvent(event);
     }
 }

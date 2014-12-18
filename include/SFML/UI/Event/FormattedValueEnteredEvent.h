@@ -36,10 +36,9 @@ public:
     ///
     /// \param source the component that triggers this event
     /// \param format the format of the value
-    /// \param value the value entered on the component
     ///
     ////////////////////////////////////////////////////////////
-    FormattedValueEnteredEvent(Component *source, const Format& format, const void *value);
+    FormattedValueEnteredEvent(Component *source, const Format& format);
 
     virtual ~FormattedValueEnteredEvent();
     //--------------------------------------------------------------------
@@ -52,19 +51,11 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     const Format& getFormat() const;
-    
-    ////////////////////////////////////////////////////////////
-    ///
-    /// \return the value, must be copied to the type specified by the format
-    ///
-    ////////////////////////////////////////////////////////////
-    const void* getValue() const;
     //--------------------------------------------------------------------
     
     //FIELDS -------------------------------------------------------------
 protected:
     const Format &m_format;
-    const void *m_value;
     //--------------------------------------------------------------------
 };
 

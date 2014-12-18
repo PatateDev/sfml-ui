@@ -160,7 +160,7 @@ public:
 	///
 	/// \brief Sets the color's font of the text
 	///
-	/// \param the text's color
+	/// \param color the text's color
 	///
 	////////////////////////////////////////////////////////////
 	virtual void setFontColor(sf::Color color);
