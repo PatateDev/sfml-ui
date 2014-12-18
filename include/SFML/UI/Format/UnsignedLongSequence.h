@@ -37,35 +37,35 @@ public:
 
 //GETTERS/SETTERS ----------------------------------------------------
 public:
-    ////////////////////////////////////////////////////////////
+   ////////////////////////////////////////////////////////////
     ///
-    /// \return the next value of the sequence, need to be deleted then
+    /// \brief set to the next value of the sequence
     ///
     ////////////////////////////////////////////////////////////
-    virtual void* getNext() const;
+    virtual void next();
     
     ////////////////////////////////////////////////////////////
     ///
-    /// \return the previous value of the sequence, need to be deleted then
+    /// \brief set the previous value of the sequence
     ///
     ////////////////////////////////////////////////////////////
-    virtual void* getPrevious() const;
+    virtual void previous();
     
     ////////////////////////////////////////////////////////////
     ///
     /// \return the value
     ///
     ////////////////////////////////////////////////////////////
-    virtual const void* getValue() const;
+    sf::Uint64 getValue() const;
     
     ////////////////////////////////////////////////////////////
     ///
     /// \brief sets the current value
     ///
-    /// \param value the new value, automatically deleted when needed
+    /// \param value the new value
     ///
     ////////////////////////////////////////////////////////////
-    virtual void setValue(void* value);
+    void setValue(sf::Uint64 value);
     
     ////////////////////////////////////////////////////////////
     ///

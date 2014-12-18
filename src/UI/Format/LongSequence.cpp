@@ -23,7 +23,7 @@ LongSequence::LongSequence(sf::Int64 initialValue, sf::Int64 min, sf::Int64 max,
 : Sequence(),
   m_format(), m_min(min), m_max(max), m_step(step)
 {
-    m_format.setValue(new sf::Int64(initialValue));
+    m_format.setValue(initialValue);
 }
 
 LongSequence::~LongSequence()
@@ -31,24 +31,24 @@ LongSequence::~LongSequence()
 
 }
 
-void* LongSequence::getNext() const
+void LongSequence::next()
 {
-    sf::Int64 value = *((sf::Int64*)m_format.getValue()) + m_step;
-    return new sf::Int64(value > m_max ? m_max : value);
+    sf::Int64 value = m_format.getValue() + m_step;
+    setValue(value > m_max ? m_max : value);
 }
 
-void* LongSequence::getPrevious() const
+void LongSequence::previous()
 {
-    sf::Int64 value = *((sf::Int64*)m_format.getValue()) - m_step;
-    return new sf::Int64(value < m_min ? m_min : value);
+    sf::Int64 value = m_format.getValue() - m_step;
+    setValue(value < m_min ? m_min : value);
 }
     
-const void* LongSequence::getValue() const
+sf::Int64 LongSequence::getValue() const
 {
     return m_format.getValue();
 }
     
-void LongSequence::setValue(void* value)
+void LongSequence::setValue(sf::Int64 value)
 {
     m_format.setValue(value);
 }

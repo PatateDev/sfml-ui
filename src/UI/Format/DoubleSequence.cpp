@@ -23,7 +23,7 @@ DoubleSequence::DoubleSequence(double initialValue, double min, double max, doub
 : Sequence(),
   m_format(), m_min(min), m_max(max), m_step(step)
 {
-    m_format.setValue(new double(initialValue));
+    m_format.setValue(initialValue);
 }
 
 DoubleSequence::~DoubleSequence()
@@ -31,24 +31,24 @@ DoubleSequence::~DoubleSequence()
 
 }
 
-void* DoubleSequence::getNext() const
+void DoubleSequence::next()
 {
-    double value = *((double*)m_format.getValue()) + m_step;
-    return new double(value > m_max ? m_max : value);
+    double value = m_format.getValue() + m_step;
+    setValue(value > m_max ? m_max : value);
 }
 
-void* DoubleSequence::getPrevious() const
+void DoubleSequence::previous()
 {
-    double value = *((double*)m_format.getValue()) - m_step;
-    return new double(value < m_min ? m_min : value);
+    double value = m_format.getValue() - m_step;
+    setValue(value < m_min ? m_min : value);
 }
-    
-const void* DoubleSequence::getValue() const
+
+double DoubleSequence::getValue() const
 {
     return m_format.getValue();
 }
     
-void DoubleSequence::setValue(void* value)
+void DoubleSequence::setValue(double value)
 {
     m_format.setValue(value);
 }

@@ -23,7 +23,7 @@ UnsignedLongSequence::UnsignedLongSequence(sf::Uint64 initialValue, sf::Uint64 m
 : Sequence(),
   m_format(), m_min(min), m_max(max), m_step(step)
 {
-    m_format.setValue(new sf::Uint64(initialValue));
+    m_format.setValue(initialValue);
 }
 
 UnsignedLongSequence::~UnsignedLongSequence()
@@ -31,29 +31,32 @@ UnsignedLongSequence::~UnsignedLongSequence()
 
 }
 
-void* UnsignedLongSequence::getNext() const
+void UnsignedLongSequence::next()
 {    
-    sf::Uint64 value = *((sf::Uint64*)m_format.getValue()) + m_step;
-    return new sf::Uint64(value > m_max ? m_max : value);
+    sf::Uint64 value = m_format.getValue() + m_step;
+    setValue(value > m_max ? m_max : value);
 }
 
-void* UnsignedLongSequence::getPrevious() const
+void UnsignedLongSequence::previous()
 {
-    if (*((sf::Uint64*)m_format.getValue()) == 0)
+    if (m_format.getValue() < m_step)
     {
-        return new sf::Uint64(0);
+        setValue(0);
+    }
+    else
+    {
+        sf::Uint64 value = m_format.getValue() - m_step;
+        setValue(value < m_min ? m_min : value);
     }
     
-    sf::Uint64 value = *((sf::Uint64*)m_format.getValue()) - m_step;
-    return new sf::Uint64(value < m_min ? m_min : value);
 }
     
-const void* UnsignedLongSequence::getValue() const
+sf::Uint64 UnsignedLongSequence::getValue() const
 {
     return m_format.getValue();
 }
     
-void UnsignedLongSequence::setValue(void* value)
+void UnsignedLongSequence::setValue(sf::Uint64 value)
 {
     m_format.setValue(value);
 }
