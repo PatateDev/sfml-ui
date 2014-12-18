@@ -22,24 +22,20 @@
 using namespace sf::ui;
 
 DoubleFormat::DoubleFormat()
-: m_value(new double(0))
+: m_value(0)
 {
 
 }
     
 DoubleFormat::~DoubleFormat()
 {
-    if (m_value)
-    {
-        delete m_value;
-        m_value = 0;
-    }
+    
 }
 
 sf::String DoubleFormat::toString() const
 {
     std::ostringstream stream;
-    stream << *m_value;
+    stream << m_value;
     return stream.str();
 }
 
@@ -50,24 +46,15 @@ bool DoubleFormat::isAllowed(sf::String str) const
 
 void DoubleFormat::parse(sf::String str) 
 {
-    setValue(new double(strtod(str.toAnsiString().c_str(), NULL)));
+    setValue(strtod(str.toAnsiString().c_str(), NULL));
 }
 
-void DoubleFormat::setValue(void* value)
+void DoubleFormat::setValue(double value)
 {
-    if (m_value != value)
-    {
-        if (m_value)
-        {
-            delete m_value;
-            m_value = 0;
-        }
-        
-        m_value = static_cast<double*>(value);
-    }
+    m_value = value;
 }
 
-const void* DoubleFormat::getValue() const
+double DoubleFormat::getValue() const
 {
     return m_value;
 }

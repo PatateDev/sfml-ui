@@ -72,30 +72,22 @@ public:
 public:    
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief Set the value for this format
-    /// The given value is automatically deleted by the format class
-    /// Warning : giving value which is not a sf::Uint64 can lead to bugs, memory leak ...
-    ///
     /// \param value the new value
     ///
     ////////////////////////////////////////////////////////////
-    virtual void setValue(void* value);
+    void setValue(sf::Uint64 value);
     
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief The value returned should be copy into a full object,
-    /// or a primitive type, as the pointer is deleted when the
-    /// value is changed (with the function parse for example)
-    ///
-    /// \return the value of the last string parsed as pointer to a sf::Uint64
+    /// \return the value of the last string parsed
     ///
     ////////////////////////////////////////////////////////////
-    virtual const void* getValue() const;
+    sf::Uint64 getValue() const;
 //--------------------------------------------------------------------
 
 //FIELDS -------------------------------------------------------------
 protected:
-    sf::Uint64 *m_value;
+    sf::Uint64 m_value;
 //--------------------------------------------------------------------
 };
 
@@ -106,7 +98,7 @@ protected:
 ////////////////////////////////////////////////////////////
 ///
 /// \class sf::ui::UnsignedLongFormat
-/// \brief Format to parse unsigned long (stored as sf::Uint64*)
+/// \brief Format to parse unsigned long
 /// \ingroup ui
 ///
 ////////////////////////////////////////////////////////////

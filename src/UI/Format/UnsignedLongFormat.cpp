@@ -22,24 +22,20 @@
 using namespace sf::ui;
 
 UnsignedLongFormat::UnsignedLongFormat()
-: m_value(new sf::Uint64(0))
+: m_value(0)
 {
 
 }
     
 UnsignedLongFormat::~UnsignedLongFormat()
 {
-    if (m_value)
-    {
-        delete m_value;
-        m_value = 0;
-    }
+
 }
 
 sf::String UnsignedLongFormat::toString() const
 {
     std::ostringstream stream;
-    stream << *m_value;
+    stream << m_value;
     return stream.str();
 }
 
@@ -50,24 +46,21 @@ bool UnsignedLongFormat::isAllowed(sf::String str) const
 
 void UnsignedLongFormat::parse(sf::String str) 
 {
-    setValue(new sf::Uint64(strtoul(str.toAnsiString().c_str(), NULL, 10)));
-}
-
-void UnsignedLongFormat::setValue(void* value)
-{
-    if (m_value != value)
+    std::size_t minusPos;
+    while ((minusPos = str.find('-')) != sf::String::InvalidPos)
     {
-        if (m_value)
-        {
-            delete m_value;
-            m_value = 0;
-        }
-        
-        m_value = static_cast<sf::Uint64*>(value);
+        str.erase(minusPos);
     }
+
+    setValue(strtoul(str.toAnsiString().c_str(), NULL, 10));
 }
 
-const void* UnsignedLongFormat::getValue() const
+void UnsignedLongFormat::setValue(sf::Uint64 value)
+{
+    m_value = value;    
+}
+
+sf::Uint64 UnsignedLongFormat::getValue() const
 {
     return m_value;
 }
