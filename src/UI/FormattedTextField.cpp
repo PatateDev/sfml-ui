@@ -72,7 +72,11 @@ const Format* FormattedTextField::getFormat() const
 {
     return m_format;
 }
-    
+
+Format* FormattedTextField::getFormat()
+{
+    return m_format;
+}   
 void FormattedTextField::setFormat(Format *format)
 {
     if (m_format != format)
