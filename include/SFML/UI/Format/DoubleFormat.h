@@ -72,30 +72,22 @@ public:
 public:    
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief Set the value for this format
-    /// The given value is automatically deleted by the format class
-    /// Warning : giving value which is not a double can lead to bugs, memory leak ...
-    ///
     /// \param value the new value
     ///
     ////////////////////////////////////////////////////////////
-    virtual void setValue(void* value);
+    void setValue(double value);
     
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief The value returned should be copy into a full object,
-    /// or a primitive type, as the pointer is deleted when the
-    /// value is changed (with the function parse for example)
-    ///
-    /// \return the value of the last string parsed as pointer to a double
+    /// \return the value of the last string parsed as a double
     ///
     ////////////////////////////////////////////////////////////
-    virtual const void* getValue() const;
+    double getValue() const;
 //--------------------------------------------------------------------
 
 //FIELDS -------------------------------------------------------------
 protected:
-    double *m_value;
+    double m_value;
 //--------------------------------------------------------------------
 };
 

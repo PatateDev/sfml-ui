@@ -90,33 +90,17 @@ protected:
 public:
     ////////////////////////////////////////////////////////////
     ///
-    /// \brief The value returned should be copy into a full object,
-    /// or a primitive type, as the pointer is deleted when the
-    /// value is changed    /// \brief The value returned should be copy into a full object,
-    /// or a primitive type, as the pointer is deleted when the
-    /// value is changed (with the function parse for example)
-    ///
-    /// \return a pointer to the value got with the format
+    /// \return the format
     ///
     ////////////////////////////////////////////////////////////
-    const void* getValue() const;
-    
-    ////////////////////////////////////////////////////////////
-    ///
-    /// \brief Set the value for this formatted text field
-    /// The given value is automatically deleted when changed
-    ///
-    /// \param value the new value
-    ///
-    ////////////////////////////////////////////////////////////
-    void setValue(void* value);
+    const Format* getFormat() const;
     
     ////////////////////////////////////////////////////////////
     ///
     /// \return the format
     ///
     ////////////////////////////////////////////////////////////
-    const Format* getFormat() const;
+    Format* getFormat();
     
     ////////////////////////////////////////////////////////////
     ///

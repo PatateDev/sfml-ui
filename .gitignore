@@ -30,3 +30,6 @@ CodeBlocks
 
 #Temporary files
 *~
+
+#Vim files
+*.swp

@@ -62,28 +62,7 @@ public:
 //--------------------------------------------------------------------
 
 //GETTERS/SETTERS ----------------------------------------------------
-public:
-    ////////////////////////////////////////////////////////////
-    ///
-    /// \brief The value returned should be copy into a full object,
-    /// or a primitive type, as the pointer is deleted when the
-    /// value is changed (with the function parse for example)
-    ///
-    /// \return the value of the last string parsed
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual const void* getValue() const = 0;
-    
-    ////////////////////////////////////////////////////////////
-    ///
-    /// \brief Set the value for this format
-    /// The given value is automatically deleted by the format class
-    /// Warning : giving value which is not expected can lead to bugs, memory leak ...
-    ///
-    /// \param value the new value
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual void setValue(void* value) = 0;
+
 //--------------------------------------------------------------------
 
 //FIELDS -------------------------------------------------------------

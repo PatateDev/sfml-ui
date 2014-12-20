@@ -22,24 +22,20 @@
 using namespace sf::ui;
 
 LongFormat::LongFormat()
-: m_value(new sf::Int64(0))
+: m_value(0)
 {
 
 }
     
 LongFormat::~LongFormat()
 {
-    if (m_value)
-    {
-        delete m_value;
-        m_value = 0;
-    }
+
 }
 
 sf::String LongFormat::toString() const
 {
     std::ostringstream stream;
-    stream << *m_value;
+    stream << m_value;
     return stream.str();
 }
 
@@ -50,24 +46,15 @@ bool LongFormat::isAllowed(sf::String str) const
 
 void LongFormat::parse(sf::String str) 
 {
-    setValue(new sf::Int64(strtol(str.toAnsiString().c_str(), NULL, 10)));
+    setValue(strtol(str.toAnsiString().c_str(), NULL, 10));
 }
 
-void LongFormat::setValue(void* value)
+void LongFormat::setValue(sf::Int64 value)
 {
-    if (m_value != value)
-    {
-        if (m_value)
-        {
-            delete m_value;
-            m_value = 0;
-        }
-        
-        m_value = static_cast<sf::Int64*>(value);
-    }
+    m_value = value;
 }
 
-const void* LongFormat::getValue() const
+sf::Int64 LongFormat::getValue() const
 {
     return m_value;
 }
