@@ -24,46 +24,46 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <SFML/UI/Component.h>
-#include <SFML/UI/ComponentObservable.h>
-#include <SFML/UI/ComponentObserver.h>
-#include <SFML/UI/Label.h>
-#include <SFML/UI/Focusable.h>
-#include <SFML/UI/AbstractButton.h>
-#include <SFML/UI/Button.h>
-#include <SFML/UI/CheckBox.h>
-#include <SFML/UI/KeyField.h>
-#include <SFML/UI/TextField.h>
-#include <SFML/UI/CheckBoxGroup.h>
-#include <SFML/UI/PasswordField.h>
-#include <SFML/UI/FormattedTextField.h>
+#include <SFML/UI/Component.hpp>
+#include <SFML/UI/ComponentObservable.hpp>
+#include <SFML/UI/ComponentObserver.hpp>
+#include <SFML/UI/Label.hpp>
+#include <SFML/UI/Focusable.hpp>
+#include <SFML/UI/AbstractButton.hpp>
+#include <SFML/UI/Button.hpp>
+#include <SFML/UI/CheckBox.hpp>
+#include <SFML/UI/KeyField.hpp>
+#include <SFML/UI/TextField.hpp>
+#include <SFML/UI/CheckBoxGroup.hpp>
+#include <SFML/UI/PasswordField.hpp>
+#include <SFML/UI/FormattedTextField.hpp>
 
-#include <SFML/UI/Event/ComponentEvent.h>
-#include <SFML/UI/Event/FocusedEvent.h>
-#include <SFML/UI/Event/ButtonClickedEvent.h>
-#include <SFML/UI/Event/KeyfieldSetEvent.h>
-#include <SFML/UI/Event/TextEnteredEvent.h>
-#include <SFML/UI/Event/TextDeletedEvent.h>
-#include <SFML/UI/Event/CheckBoxChangeEvent.h>
-#include <SFML/UI/Event/FormattedValueEnteredEvent.h>
+#include <SFML/UI/Event/ComponentEvent.hpp>
+#include <SFML/UI/Event/FocusedEvent.hpp>
+#include <SFML/UI/Event/ButtonClickedEvent.hpp>
+#include <SFML/UI/Event/KeyfieldSetEvent.hpp>
+#include <SFML/UI/Event/TextEnteredEvent.hpp>
+#include <SFML/UI/Event/TextDeletedEvent.hpp>
+#include <SFML/UI/Event/CheckBoxChangeEvent.hpp>
+#include <SFML/UI/Event/FormattedValueEnteredEvent.hpp>
 
-#include <SFML/UI/Model/TextFieldModel.h>
-#include <SFML/UI/Model/BlacklistTextFieldModel.h>
-#include <SFML/UI/Model/DefaultTextFieldModel.h>
-#include <SFML/UI/Model/WhitelistTextFieldModel.h>
-#include <SFML/UI/Model/AlphaNumericTextFieldModel.h>
-#include <SFML/UI/Model/AsciiTextFieldModel.h>
-#include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.h>
-#include <SFML/UI/Model/NumericTextFieldModel.h>
+#include <SFML/UI/Model/TextFieldModel.hpp>
+#include <SFML/UI/Model/BlacklistTextFieldModel.hpp>
+#include <SFML/UI/Model/DefaultTextFieldModel.hpp>
+#include <SFML/UI/Model/WhitelistTextFieldModel.hpp>
+#include <SFML/UI/Model/AlphaNumericTextFieldModel.hpp>
+#include <SFML/UI/Model/AsciiTextFieldModel.hpp>
+#include <SFML/UI/Model/AsciiNoSpaceTextFieldModel.hpp>
+#include <SFML/UI/Model/NumericTextFieldModel.hpp>
 
-#include <SFML/UI/Format/Format.h>
-#include <SFML/UI/Format/LongFormat.h>
-#include <SFML/UI/Format/UnsignedLongFormat.h>
-#include <SFML/UI/Format/DoubleFormat.h>
-#include <SFML/UI/Format/Sequence.h>
-#include <SFML/UI/Format/LongSequence.h>
-#include <SFML/UI/Format/UnsignedLongSequence.h>
-#include <SFML/UI/Format/DoubleSequence.h>
+#include <SFML/UI/Format/Format.hpp>
+#include <SFML/UI/Format/LongFormat.hpp>
+#include <SFML/UI/Format/UnsignedLongFormat.hpp>
+#include <SFML/UI/Format/DoubleFormat.hpp>
+#include <SFML/UI/Format/Sequence.hpp>
+#include <SFML/UI/Format/LongSequence.hpp>
+#include <SFML/UI/Format/UnsignedLongSequence.hpp>
+#include <SFML/UI/Format/DoubleSequence.hpp>
 
 #endif /* UI_HPP_ */
 
