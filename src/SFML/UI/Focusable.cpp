@@ -16,7 +16,7 @@
  */
 
 #include <SFML/UI/Focusable.hpp>
-#include <SFML/UI/Event/FocusedEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -42,15 +42,23 @@ Focusable::~Focusable()
 void Focusable::gainFocus()
 {
     m_focused = true;
-    FocusedEvent event(this, m_focused);
-    triggerEvent(event);
+    sf::ui::ComponentEvent cevent;
+    cevent.source = this;
+    cevent.type = sf::ui::ComponentEvent::FocusGained;
+    cevent.focus.source = this;
+    cevent.focus.focused = true;
+    triggerEvent(cevent);
 }
 
 void Focusable::lostFocus()
 {
     m_focused = false;
-    FocusedEvent event(this, m_focused);
-    triggerEvent(event);
+    sf::ui::ComponentEvent cevent;
+    cevent.source = this;
+    cevent.type = sf::ui::ComponentEvent::FocusLost;
+    cevent.focus.source = this;
+    cevent.focus.focused = false;
+    triggerEvent(cevent);
 }
 
 bool Focusable::isFocused() const

@@ -14,6 +14,7 @@ set(SRC
     ${INCROOT}/CheckBoxGroup.hpp
     ${SRCROOT}/Component.cpp
     ${INCROOT}/Component.hpp
+    ${INCROOT}/ComponentEvent.hpp
     ${SRCROOT}/ComponentObservable.cpp
     ${INCROOT}/ComponentObservable.hpp
     ${SRCROOT}/ComponentObserver.cpp
@@ -36,29 +37,6 @@ set(SRC
     ${INCROOT}/TextField.hpp
 )
 source_group("" FILES ${SRC})
-
-# event sources
-set(EVENT_SRC
-    ${SRCROOT}/Event/ButtonClickedEvent.cpp
-    ${INCROOT}/Event/ButtonClickedEvent.hpp
-    ${SRCROOT}/Event/ButtonTouchedEvent.cpp
-    ${INCROOT}/Event/ButtonTouchedEvent.hpp
-    ${SRCROOT}/Event/CheckBoxChangeEvent.cpp
-    ${INCROOT}/Event/CheckBoxChangeEvent.hpp
-    ${SRCROOT}/Event/ComponentEvent.cpp
-    ${INCROOT}/Event/ComponentEvent.hpp
-    ${SRCROOT}/Event/FocusedEvent.cpp
-    ${INCROOT}/Event/FocusedEvent.hpp
-    ${SRCROOT}/Event/FormattedValueEnteredEvent.cpp
-    ${INCROOT}/Event/FormattedValueEnteredEvent.hpp
-    ${SRCROOT}/Event/KeyfieldSetEvent.cpp
-    ${INCROOT}/Event/KeyfieldSetEvent.hpp
-    ${SRCROOT}/Event/TextDeletedEvent.cpp
-    ${INCROOT}/Event/TextDeletedEvent.hpp
-    ${SRCROOT}/Event/TextEnteredEvent.cpp
-    ${INCROOT}/Event/TextEnteredEvent.hpp
-)
-source_group("event" FILES ${EVENT_SRC})
 
 # format sources
 set(FORMAT_SRC
@@ -109,5 +87,5 @@ list(APPEND UI_EXT_LIBS ${SFML_LIBRARIES})
 
 # define the sfml-ui target
 sfml_add_library(sfml-ui
-                 SOURCES ${SRC} ${EVENT_SRC} ${FORMAT_SRC} ${MODEL_SRC}
+                 SOURCES ${SRC} ${FORMAT_SRC} ${MODEL_SRC}
                  EXTERNAL_LIBS ${UI_EXT_LIBS})

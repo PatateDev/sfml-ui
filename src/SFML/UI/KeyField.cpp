@@ -17,7 +17,7 @@
 
 #include <SFML/UI/KeyField.hpp>
 #include <SFML/UI/SFMLUtils.hpp>
-#include <SFML/UI/Event/KeyfieldSetEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 #include <iostream>
 
 using namespace sf::ui;
@@ -68,12 +68,17 @@ void KeyField::updateEvent(const sf::Event& event)
 
 		if (m_focused && isKeyAllowed(key))
 		{
-		    KeyfieldSetEvent keyfieldEvent(this, key);
+			sf::ui::ComponentEvent cevent;
+			cevent.source = this;
+			cevent.type = sf::ui::ComponentEvent::KeyFieldSet;
+			cevent.keyFieldSet.source = this;
+			cevent.keyFieldSet.key = key;
+			
 			m_key = key;
 			m_text.setString(SFMLUtils::keyToString(m_key));
 			updateCoord();
 			setFocused(false);
-			triggerEvent(keyfieldEvent);
+			triggerEvent(cevent);
 		}
 		else if (key == sf::Keyboard::Escape)
 			setFocused(false);

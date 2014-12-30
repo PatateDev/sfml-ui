@@ -18,12 +18,11 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
-#include <SFML/UI/Event/ComponentEvent.hpp>
-
 namespace sf
 {
 namespace ui
 {
+class ComponentEvent;
 
 class ComponentObserver
 {

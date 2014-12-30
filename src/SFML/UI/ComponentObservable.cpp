@@ -16,7 +16,7 @@
  */
 
 #include <SFML/UI/ComponentObservable.hpp>
-#include <SFML/UI/Event/ComponentEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -61,7 +61,7 @@ void sf::ui::ComponentObservable::removeAllObservers()
     m_observers.clear();
 }
 
-void ComponentObservable::triggerEvent(sf::ui::ComponentEvent &event)
+void ComponentObservable::triggerEvent(const sf::ui::ComponentEvent &event)
 {
     for (std::set<sf::ui::ComponentObserver*>::iterator it = m_observers.begin(); it != m_observers.end(); it++)
         (*it)->onComponentEvent(event);

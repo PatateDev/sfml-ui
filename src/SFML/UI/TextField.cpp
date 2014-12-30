@@ -18,8 +18,7 @@
 #include <SFML/UI/TextField.hpp>
 #include <SFML/UI/SFMLUtils.hpp>
 #include <SFML/UI/Model/DefaultTextFieldModel.hpp>
-#include <SFML/UI/Event/TextEnteredEvent.hpp>
-#include <SFML/UI/Event/TextDeletedEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -149,12 +148,18 @@ void TextField::updateEvent(const sf::Event& event)
 
 bool TextField::insertText(sf::Uint32 text, unsigned int index)
 {
-    sf::String string = m_text.getString();
+	sf::String string = m_text.getString();
 	string.insert(index, text);
 	m_cursor++;
 	setText(string);
-	TextEnteredEvent textEvent(this, text, index);
-	triggerEvent(textEvent);
+
+	sf::ui::ComponentEvent cevent;
+	cevent.source = this;
+	cevent.type = sf::ui::ComponentEvent::TextEntered;
+	cevent.text.source = this;
+	cevent.text.text = text;
+	cevent.text.position = index;
+	triggerEvent(cevent);
 	
 	return true;
 }
@@ -162,10 +167,18 @@ bool TextField::insertText(sf::Uint32 text, unsigned int index)
 bool TextField::deleteText(unsigned int index)
 {
     sf::String str = m_text.getString();
-    TextDeletedEvent textEvent(this, str[index], index);
+    
+    sf::ui::ComponentEvent cevent;
+    cevent.source = this;
+    cevent.type = sf::ui::ComponentEvent::TextDeleted;
+    cevent.text.source = this;
+    cevent.text.text = str[index];
+    cevent.text.position = index;
+
     str.erase(index);
     setText(str);
-    triggerEvent(textEvent);
+
+    triggerEvent(cevent);
     
     return true;
 }

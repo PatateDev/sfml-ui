@@ -27,6 +27,7 @@
 #include <SFML/UI/Component.hpp>
 #include <SFML/UI/ComponentObservable.hpp>
 #include <SFML/UI/ComponentObserver.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 #include <SFML/UI/Label.hpp>
 #include <SFML/UI/Focusable.hpp>
 #include <SFML/UI/AbstractButton.hpp>
@@ -37,15 +38,6 @@
 #include <SFML/UI/CheckBoxGroup.hpp>
 #include <SFML/UI/PasswordField.hpp>
 #include <SFML/UI/FormattedTextField.hpp>
-
-#include <SFML/UI/Event/ComponentEvent.hpp>
-#include <SFML/UI/Event/FocusedEvent.hpp>
-#include <SFML/UI/Event/ButtonClickedEvent.hpp>
-#include <SFML/UI/Event/KeyfieldSetEvent.hpp>
-#include <SFML/UI/Event/TextEnteredEvent.hpp>
-#include <SFML/UI/Event/TextDeletedEvent.hpp>
-#include <SFML/UI/Event/CheckBoxChangeEvent.hpp>
-#include <SFML/UI/Event/FormattedValueEnteredEvent.hpp>
 
 #include <SFML/UI/Model/TextFieldModel.hpp>
 #include <SFML/UI/Model/BlacklistTextFieldModel.hpp>

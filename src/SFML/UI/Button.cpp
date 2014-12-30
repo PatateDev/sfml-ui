@@ -17,8 +17,7 @@
 
 #include <SFML/UI/Button.hpp>
 #include <SFML/UI/SFMLUtils.hpp>
-#include <SFML/UI/Event/ButtonClickedEvent.hpp>
-#include <SFML/UI/Event/ButtonTouchedEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -62,30 +61,41 @@ void Button::updateEvent(const sf::Event& event)
 	}
 	else if (event.type == sf::Event::MouseButtonReleased || event.type == sf::Event::TouchEnded)
 	{
-	    int x = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.x : event.touch.x);
-        int y = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.y : event.touch.y);
+		int x = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.x : event.touch.x);
+        	int y = (event.type == sf::Event::MouseButtonReleased ? event.mouseButton.y : event.touch.y);
         
-        if (event.type != sf::Event::MouseButtonPressed || event.mouseButton.button == sf::Mouse::Left)
-        {
-		    if (isCoordOnComponent(x, y) && m_textureFocused)
-		    {
-		        onClick();
+        	if (event.type != sf::Event::MouseButtonPressed || event.mouseButton.button == sf::Mouse::Left)
+        	{
+			if (isCoordOnComponent(x, y) && m_textureFocused)
+			{
+				onClick();
+				if (event.type == sf::Event::MouseButtonReleased)
+				{
+					sf::ui::ComponentEvent cevent;
+					cevent.source = this;
+					cevent.type = sf::ui::ComponentEvent::ButtonClicked;
+					cevent.buttonClick.source = this;
+					cevent.buttonClick.button = event.mouseButton.button;
+					cevent.buttonClick.x = event.mouseButton.x;
+					cevent.buttonClick.y =  event.mouseButton.y;
+			        	triggerEvent(cevent);
+				}
+				else if (event.type == sf::Event::TouchEnded)
+				{
+					sf::ui::ComponentEvent cevent;
+					cevent.source = this;
+					cevent.type = sf::ui::ComponentEvent::ButtonTouched;
+					cevent.buttonTouch.source = this;
+					cevent.buttonTouch.finger = event.touch.finger;
+					cevent.buttonTouch.x = event.touch.x;
+					cevent.buttonTouch.y = event.touch.y;
+					triggerEvent(cevent);
+				}
 			    
-		        if (event.type == sf::Event::MouseButtonReleased)
-		        {
-                    sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
-			        triggerEvent(buttonEvent);
-			    }
-			    else if (event.type == sf::Event::TouchEnded)
-			    {
-			        sf::ui::ButtonTouchedEvent buttonEvent(this, event.touch.finger, event.touch.x, event.touch.y);
-			        triggerEvent(buttonEvent);
-			    }
-			    
-			    m_sprite.setTexture(*m_textureFocused, false);
-		    }
-		    else
-			    m_sprite.setTexture(*m_texture, false);
+				m_sprite.setTexture(*m_textureFocused, false);
+			}
+			else
+				m_sprite.setTexture(*m_texture, false);
 		}
 	}
 

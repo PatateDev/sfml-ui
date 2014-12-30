@@ -17,7 +17,7 @@
 
 #include <SFML/UI/CheckBox.hpp>
 #include <SFML/UI/SFMLUtils.hpp>
-#include <SFML/UI/Event/CheckBoxChangeEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -57,9 +57,15 @@ void CheckBox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 void CheckBox::onClick()
 {
 	setFocused(!m_focused);
-	CheckBoxChangeEvent checkboxEvent(this, m_focused);
+
+	sf::ui::ComponentEvent cevent;
+	cevent.source = this;
+	cevent.type = sf::ui::ComponentEvent::CheckBoxChanged;
+	cevent.checkBoxChange.source = this;
+	cevent.checkBoxChange.selected = m_focused;
+
 	m_sprite.setTexture(*(m_focused ? m_textureFocused : m_texture), false);
-	triggerEvent(checkboxEvent);
+	triggerEvent(cevent);
 }
 
 bool CheckBox::isSelected() const

@@ -16,8 +16,7 @@
  */
 
 #include <SFML/UI/AbstractButton.hpp>
-#include <SFML/UI/Event/ButtonClickedEvent.hpp>
-#include <SFML/UI/Event/ButtonTouchedEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -46,9 +45,15 @@ void AbstractButton::updateEvent(const sf::Event& event)
 
 		if (checkClickOn(event.mouseButton.x, event.mouseButton.y))
 		{
-		    sf::ui::ButtonClickedEvent buttonEvent(this, event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
+			sf::ui::ComponentEvent cevent;
+			cevent.source = this;
+			cevent.type = sf::ui::ComponentEvent::ButtonClicked;
+			cevent.buttonClick.source = this;
+			cevent.buttonClick.button = event.mouseButton.button;
+			cevent.buttonClick.x = event.mouseButton.x;
+			cevent.buttonClick.y = event.mouseButton.y;
 			onClick();
-			triggerEvent(buttonEvent);
+			triggerEvent(cevent);
 		}
 
 		break;
@@ -56,9 +61,15 @@ void AbstractButton::updateEvent(const sf::Event& event)
 	    
 	    if (checkClickOn(event.touch.x, event.touch.y))
 	    {
-	        sf::ui::ButtonTouchedEvent buttonEvent(this, event.touch.finger, event.touch.x, event.touch.y);
+		sf::ui::ComponentEvent cevent;
+		cevent.source = this;
+		cevent.type = sf::ui::ComponentEvent::ButtonTouched;
+		cevent.buttonTouch.source = this;
+		cevent.buttonTouch.finger = event.touch.finger;
+		cevent.buttonTouch.x = event.touch.x;
+		cevent.buttonTouch.y = event.touch.y;
 	        onClick();
-	        triggerEvent(buttonEvent);
+	        triggerEvent(cevent);
 	    }
 	    
 	    break;

@@ -16,7 +16,7 @@
  */
 
 #include <SFML/UI/FormattedTextField.hpp>
-#include <SFML/UI/Event/FormattedValueEnteredEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 
 using namespace sf::ui;
 
@@ -63,8 +63,12 @@ void FormattedTextField::updateValue()
         m_format->parse(getText());
         setText(m_format->toString());
         
-        FormattedValueEnteredEvent event(this, *m_format);
-        triggerEvent(event);
+        sf::ui::ComponentEvent cevent;
+	cevent.source = this;
+	cevent.type = sf::ui::ComponentEvent::FormattedValueEntered;
+	cevent.formattedValueEnter.source = this;
+	cevent.formattedValueEnter.format = m_format;
+        triggerEvent(cevent);
     }
 }
 

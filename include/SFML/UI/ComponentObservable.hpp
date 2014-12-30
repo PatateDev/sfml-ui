@@ -21,6 +21,7 @@
 #include <set>
 #include <SFML/UI/ComponentObserver.hpp>
 
+
 namespace sf
 {
 namespace ui
@@ -95,7 +96,7 @@ protected:
     /// \param event - the event to push
     ///
     ////////////////////////////////////////////////////////////
-    void triggerEvent(sf::ui::ComponentEvent &event);
+    void triggerEvent(const sf::ui::ComponentEvent &event);
 //-------------------------------------------------------------------------------------
 
 //GETTERS - SETTERS -------------------------------------------------------------------

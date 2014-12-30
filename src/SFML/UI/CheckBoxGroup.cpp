@@ -16,7 +16,7 @@
  */
 
 #include <SFML/UI/CheckBoxGroup.hpp>
-#include <SFML/UI/Event/CheckBoxChangeEvent.hpp>
+#include <SFML/UI/ComponentEvent.hpp>
 #include <iostream>
 
 using namespace sf::ui;
@@ -67,15 +67,13 @@ bool CheckBoxGroup::isCheckBoxInGroup(CheckBox* checkbox) const
 
 void CheckBoxGroup::onComponentEvent(const ComponentEvent& event)
 {
-    if (dynamic_cast<CheckBoxChangeEvent const*>(&event))
+    if (event.type == sf::ui::ComponentEvent::CheckBoxChanged)
     {
-        const CheckBoxChangeEvent &changeEvent = dynamic_cast<CheckBoxChangeEvent const&>(event);
-        
-        if (isCheckBoxInGroup(static_cast<CheckBox*>(changeEvent.getSource())))
+        if (isCheckBoxInGroup(event.checkBoxChange.source))
         {
-            if (changeEvent.isSelected())
+            if (event.checkBoxChange.selected)
             {
-                CheckBox *newSelected = dynamic_cast<CheckBox*>(changeEvent.getSource());
+                CheckBox *newSelected = event.checkBoxChange.source;
                 CheckBox *beforeSelected = firstSelected(newSelected);
 
                 if (beforeSelected)
@@ -83,7 +81,7 @@ void CheckBoxGroup::onComponentEvent(const ComponentEvent& event)
             }
             else
             {
-                CheckBox *unselected = dynamic_cast<CheckBox*>(changeEvent.getSource());
+                CheckBox *unselected = event.checkBoxChange.source;
 
                 if (!firstSelected(unselected))
                     unselected->setSelected(true);
