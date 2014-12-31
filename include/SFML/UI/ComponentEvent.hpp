@@ -21,17 +21,18 @@
 #include <SFML/Window.hpp>
 #include <SFML/UI/Format/Format.hpp>
 
+#include <SFML/UI/Component.hpp>
+#include <SFML/UI/Focusable.hpp>
+#include <SFML/UI/AbstractButton.hpp>
+#include <SFML/UI/CheckBox.hpp>
+#include <SFML/UI/TextField.hpp>
+#include <SFML/UI/FormattedTextField.hpp>
+#include <SFML/UI/KeyField.hpp>
+
 namespace sf
 {
 namespace ui
 {
-class Component;
-class AbstractButton;
-class Focusable;
-class CheckBox;
-class FormattedTextField;
-class KeyField;
-class TextField;
 
 class ComponentEvent
 {
@@ -158,14 +159,6 @@ public:
 
 }
 }
-
-#include <SFML/UI/Component.hpp>
-#include <SFML/UI/Focusable.hpp>
-#include <SFML/UI/AbstractButton.hpp>
-#include <SFML/UI/CheckBox.hpp>
-#include <SFML/UI/TextField.hpp>
-#include <SFML/UI/FormattedTextField.hpp>
-#include <SFML/UI/KeyField.hpp>
 
 #endif
 

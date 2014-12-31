@@ -207,5 +207,9 @@ if(SFML_OS_ANDROID)
    # install Android.mk so the NDK knows how to set up SFML
     install(FILES src/SFML/Android.mk DESTINATION .)
 
-endif()
+else()
 
+    # install find sfml-ui module
+    install(FILES cmake/Modules/FindSFML_UI.cmake DESTINATION ${INSTALL_MISC_DIR}/cmake/Modules)
+
+endif()
