@@ -37,6 +37,13 @@ else()
     endif()
 endif()
 
+# add an option for building the examples
+if(NOT (SFML_OS_IOS OR SFML_OS_ANDROID))
+    sfml_set_option(SFML_UI_BUILD_EXAMPLES FALSE BOOL "TRUE to build the SFML-UI examples, FALSE to ignore them")
+else()
+    set(SFML_UI_BUILD_EXAMPLES FALSE)
+endif()
+
 # add an option for building the API documentation
 sfml_set_option(SFML_UI_BUILD_DOC FALSE BOOL "TRUE to generate the API documentation, FALSE to ignore it")
 
@@ -144,7 +151,10 @@ set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake")
 
 # add the subdirectories
 add_subdirectory(src/SFML)
-if(SFML_BUILD_DOC)
+if(SFML_UI_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
+if(SFML_UI_BUILD_DOC)
     add_subdirectory(doc)
 endif()
 
